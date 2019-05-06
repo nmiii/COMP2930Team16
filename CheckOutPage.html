@@ -148,7 +148,29 @@
                 transform: translateY(-20px);
             }
         </style>
-    </head>
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyA5lvb0QICVZWn8nfDLiBeEAxDMDitldbY",
+                authDomain: "ship-green.firebaseapp.com",
+                databaseURL: "https://ship-green.firebaseio.com",
+                projectId: "ship-green",
+                storageBucket: "ship-green.appspot.com",
+                messagingSenderId: "1082500586647",
+                appId: "1:1082500586647:web:4e925b6ff426a908"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        
+    </head> 
     
     <body>
         
@@ -230,7 +252,7 @@
                 <input type="radio" name="shipping" value="oneDayShipping">CDN$11.97 One-Day Shipping<br>
                 <input type="radio" name="shipping" value="twoDayShipping">FREE Two-Day Shipping<br>
                 <input type="radio" name="shipping" value="standardShipping">FREE Standard Shipping<br>
-                 <input type="radio" name="shipping" value="greenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
+                 <input type="radio" name="shipping" value="greenShipping" onclick="showGreenSaving()">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
             </div>
             
         </div>
@@ -252,16 +274,16 @@
             
                 <span>Order Total: CDN$44.75</span><br>
                 <hr>
-            
-                By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
-                you have saved <span style="color: #61C98E">0.1%</span> carbon emmision <br>
-                that is released to the environment,<br>
-                you have saved <span style="color: #61C98E">0.03%</span> of a tree,<br>
-                you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
-                <hr>
-            
-                THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.
-            
+                <div id="greenShippingChosen" style="display: none">
+                    By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
+                    you have saved <span style="color: #61C98E">0.1%</span> carbon emmision <br>
+                    that is released to the environment,<br>
+                    you have saved <span style="color: #61C98E">0.03%</span> of a tree,<br>
+                    you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
+                    <hr>
+                </div>
+                    THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.
+                
             </p>
         </div>
         
@@ -270,7 +292,12 @@
         </div>
         
         
-        
+        <script>
+            function showGreenSaving(){
+                document.getElementById("greenShippingChosen").style.display = 'block'; 
+                }
+            }
+        </script>
         
     </body>
 </html>
