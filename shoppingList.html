@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Shopping Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<style>
+
+body, html {
+  height: 100%;
+    /* The image used */
+  background-image: url("bg.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+    
+.logo > img{
+    width: 170px; 
+    height: 150px;
+    float: left;
+} 
+  
+/* for search bar */    
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+    .pure-button{
+        background-color: #3A7855;
+        float: right;
+        margin-right: 20px;
+        margin-top: 2px;
+        padding: 12px 10px 12px 40px;
+        text-align: center;
+        color: white;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }  
+     
+.sideNav{
+    width: 200px;
+    height: 350px;
+    float: left;
+    clear: both;
+    background-color:#679267;
+    margin: 10px 10px 10px 10px;
+    opacity: 0.7;
+    color: beige;
+    
+}  
+    
+.main{
+    width: 1000px;
+    height: 600px;
+    float: left;
+    background-color: #679267;
+    margin: 10px 10px 10px 10px;
+    opacity: 0.7;
+    color: beige;
+    
+}    
+    
+/* media queries for responsive mobile-friendly page*/    
+@media screen and (max-width: 480px){
+    .pure-button{
+        display:flex;
+    }    
+}
+</style>
+        
+</head>
+    <body>
+    <!-- logo -->    
+     <div class="logo" style="float: left;">
+        <img src="logo%20(2).png"/>
+        </div> 
+    
+        <!-- Search bar -->
+        <form style="float: left;">
+         <input type="text" name="search" placeholder="Search..">
+        </form>  
+        <!-- Cart & Checkout button-->
+    <a class="pure-button" href="#">
+        <i class="fa fa-shopping-cart fa-lg"></i>
+        Cart
+    </a>
+                 
+    <a class="pure-button" href="#">
+        <i class="fa fa-arrow-right"></i>
+        Checkout
+    </a>
+        <div class="sideNav">
+            <br/>
+            <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;"></a>
+            
+            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
+            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Gardening</a></li>
+            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Pet Food</a></li>
+            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Grocery</a></li>
+            </div>    
+                
+        </div>
+        <div class="main"></div>
+        
+        <script>
+         function myFunction() {
+  var x = document.getElementById("list");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+        </script>
+    </body>
+</html>
