@@ -208,6 +208,19 @@
                 font-size: 36px;
             }
             
+            @keyframes roll {
+                from { transform: rotate(0deg) }
+                to   { transform: rotate(360deg) }
+            }
+            @-webkit-keyframes roll {
+                from { -webkit-transform: rotate(0deg) }
+                to   { -webkit-transform: rotate(360deg) }
+            }
+
+            @-moz-keyframes roll {
+                from { -moz-transform: rotate(0deg) }
+                to   { -moz-transform: rotate(360deg) }
+            }
             
              @media only screen and (min-device-width:320px) and (max-device-width: 500px) and (orientation: portrait) {
                  body {
@@ -396,6 +409,7 @@
     </head> 
     
     <body>
+        
        <div id="checkOutDiv">
         
             <h1 id="reviewYourOrder">Review Your Order</h1>
@@ -432,8 +446,10 @@
             
                 <div class="right" id="promo">
                     <h2>Gift card and promotional code</h2>
-                    <input type="text" pattern="[0-9A-Za-z]" name="promo" placeholder="Enter code">
-                    <button type="button">Apply</button>
+                    
+                        <input type="text" pattern="[a-z]{1,15}" name="promo" placeholder="Enter code" id="promoCode">
+                        <button type="button" onclick="promoCodeApply()">Apply</button>
+                    
                 </div>
             
             
@@ -586,6 +602,26 @@
         
         
         <script>
+            
+            
+            
+            
+            
+            function promoCodeApply(){
+                var easterEgg = document.getElementById("promoCode").value;
+                if ( easterEgg == "barrelroll") {
+                    document.body.style.animationDuration = "4s";
+                    document.body.style.animationIterationCount = "1";
+                    document.body.style.animationName = "roll";
+                    console.log("success");
+                    
+                }
+            }
+            
+            
+            
+            
+            
             function manageOrder() {
                 document.getElementById("checkOutDiv").style.visibility="visible";
                 document.getElementById("thankYouDiv").style.visibility="hidden";
@@ -641,13 +677,13 @@
             
            //============================================================================================
              /* This function is used to send the feedback to the database. */
-            function writeFeedback(data) {
-            var shippingAddessInput = document.getElementById("shippingAddessP").value;
+           // function writeFeedback(data) {
+           // var shippingAddessInput = document.getElementById("shippingAddessP").value;
             
-            firebase.database().ref("ShippingAddress/").set({
-                shippingAddress: shippingAddessInput
-            });
-        }
+          //  firebase.database().ref("ShippingAddress/").set({
+          //      shippingAddress: shippingAddessInput
+          //  });
+       // }
         
            
             
@@ -658,8 +694,7 @@
             
         </script>
     
-    <script async src="https://pay.google.com/gp/pjs/pay.js" onload="onGooglePayLoaded()">
-    </script>
+    
     
     <script>
         // Google Pay API
