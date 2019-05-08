@@ -43,7 +43,7 @@
                 border:solid #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
-                padding-bottom: 25px;
+                padding-bottom: 35px;
                 width: 72%;
                 
             }
@@ -98,7 +98,9 @@
                 padding-bottom: 5px;
                 border-color: #3A7855;
             }
-            
+            .placeYourOrder:hover{
+                cursor: pointer;
+            }
             .content{
                 float: right;
             }
@@ -144,7 +146,7 @@
             #shipping{
                 position: absolute;
                 left: 47%;
-                top: 47%;
+                top: 360px;
             }
             
             #bottomButton{
@@ -155,7 +157,7 @@
                 width: 22%;
                 float: right;
                 position: absolute;
-                top: 146.7%;
+                top: 1080px;
                 left: 74%;
             }
             #shippingAddressContent{
@@ -164,6 +166,48 @@
             #hiddenHr{
                 visibility: hidden;
             }
+            #thankYouDiv {
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                border: solid #C4C4C4;
+                background: #E5E5E5;
+                opacity: 0.91;
+                padding: 25px;
+                padding-right: 100px;
+                
+                
+            }
+            
+            #greenShippingChosenThankYouDiv{
+                text-align: center;
+            }
+            
+            .textCenter{
+                text-align: center;
+                display: block;
+                width: 100%;
+            }
+            #thankYouSummary{
+                float: right;
+                position:absolute;
+                top: 165px;
+                left: 400px;
+                font-size: 10px;
+                border-left: 0.5px solid #C4C4C4; 
+                padding-left: 30px;
+                
+            }
+            #thankYouEstimate{
+                font-size: 18px;
+               
+                padding-right: -50px;
+            }
+            #thankYouHeader{
+                padding-left: 50px;
+                font-size: 36px;
+            }
+            
             
              @media only screen and (min-device-width:320px) and (max-device-width: 500px) and (orientation: portrait) {
                  body {
@@ -267,7 +311,7 @@
                      visibility: hidden;
                  }
                  #shippingAddessP{
-                     width: 100%;
+                     width: 95%;
                  }
                  
                  .productImage {
@@ -315,6 +359,8 @@
                      margin-top: 80px;
                      visibility: visible;
                  }
+                 
+                 
             }
             
             
@@ -350,12 +396,13 @@
     </head> 
     
     <body>
+       <div id="checkOutDiv">
         
-        <h1 id="reviewYourOrder">Review Your Order</h1>
+            <h1 id="reviewYourOrder">Review Your Order</h1>
         
-        <div id="top">
-            <div id="shippingAddress">
-                <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddess()" value="Save"/>
+            <div id="top">
+                <div id="shippingAddress">
+                    <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddess()" value="Save"/>
                 <div id="shippingAddressContent">
                     <p id="shippingAddessP" >
                         Jane Doe<br>
@@ -367,28 +414,32 @@
                     
                 </div>
                 
-            </div>
+                </div>
             
-            <div class="right" id="payment">
-                <h2 class="h2Inline">Payment Method </h2><span class="change">Change</span>
+                <div class="right" id="payment">
+                    <h2 class="h2Inline">Payment Method </h2><span class="change">Change</span>
                 
-                <!-- Google Pay API -->
-                <br>
-                <br>
-                <h2 class="h2Inline">Billing Address </h2><input type="submit" class="change" onclick="changeBillingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreBillindAddress()" value="Save" />
-                <p id="billindAddressP">Same as billing address</p>
+                    <!-- Google Pay API -->
+                    <br>
+                    <br>
+                    <h2 class="h2Inline">Billing Address </h2><input type="submit" class="change" onclick="changeBillingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreBillindAddress()" value="Save" />
+                    <p id="billindAddressP">Jane Doe<br>
+                        3700 Willingdon Ave <br>
+                        Burnaby, British Columbia V5G 3H2<br>   
+                        Canada<br>
+                        Phone: 778-111-11111</p>
+                </div>
+            
+                <div class="right" id="promo">
+                    <h2>Gift card and promotional code</h2>
+                    <input type="text" pattern="[0-9A-Za-z]" name="promo" placeholder="Enter code">
+                    <button type="button">Apply</button>
+                </div>
+            
+            
             </div>
-            
-            <div class="right" id="promo">
-                <h2>Gift card and promotional code</h2>
-                <input type="text" pattern="[0-9A-Za-z]" name="promo" placeholder="Enter code">
-                <button type="button">Apply</button>
-            </div>
-            
-            
-        </div>
         
-        <div id="products" style="visibility: visible">
+        <div id="products">
             <div id="product001" data-price="11.49" class="product">
                 <img src="images/pencil.jpg" height="129" width="129" class="productImage">
                 <div id="Content001" class="content">
@@ -436,20 +487,22 @@
             <hr id="hiddenHr">
              <div id="shipping">
                 <h3>Choose your delivery options:</h3>
-                <input type="radio" name="shipping" value="oneDayShipping" onclick="showNone()" class="radioButton">CDN$11.97 One-Day Shipping<br>
-                <input type="radio" name="shipping" value="twoDayShipping" onclick="showNone()" class="radioButton">FREE Two-Day Shipping<br>
-                <input type="radio" name="shipping" value="standardShipping" onclick="showNone()" class="radioButton">FREE Standard Shipping<br>
-                 <input type="radio" name="shipping" value="greenShipping" onclick="showGreenSaving()" class="radioButton">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
+                <input type="radio" name="shipping" value="oneDayShipping" onclick="showNone()" class="radioButton" required>CDN$11.97 One-Day Shipping<br>
+                <input type="radio" name="shipping" value="twoDayShipping" onclick="showNone()" class="radioButton" required>FREE Two-Day Shipping<br>
+                <input type="radio" name="shipping" value="standardShipping" onclick="showNone()" class="radioButton" required>FREE Standard Shipping<br>
+                 <input type="radio" name="shipping" value="greenShipping" onclick="showGreenSaving()" class="radioButton" required="required">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
             </div>
             
         </div>
         
+        
+        
        
         
         <div id="rightSide" class="right">
-            <button type="button" class="placeYourOrder">Place your order</button>
-            
-            <p> Order summary:<br>
+            <button type="button" class="placeYourOrder" onclick="placeOrder()">Place your order</button>
+                <br>
+                Order summary:<br>
                 Items:(3) CDN$40.73 <br>
                 Shipping &amp; Handling: CDN$00.00<br>
                 <hr>
@@ -459,7 +512,7 @@
                 Estimate PST/RST/QST: CDN$02.35<br>
                 <hr>
             
-                <span>Order Total: CDN$44.75</span><br>
+            <span style="color: #61C98E">Order Total: <b>CDN$44.75</b></span><br>
                 <hr>
                 <div id="greenShippingChosen" style="display: none">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
@@ -469,17 +522,76 @@
                     you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
                     <hr id="willBeHidden">
                 </div>
-                    THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.
+                <div class="textCenter">THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
                 
-            </p>
         </div>
         
         <div id="bottomButton">
-            <button type="button" class="placeYourOrder" id="placeYourOrderBottom">Place your order</button>
+            <button type="button" class="placeYourOrder" id="placeYourOrderBottom" onclick="placeOrder()">Place your order</button>
+        </div>
+        
+        </div>
+    
+    
+        <div id="thankYouDiv" style="visibility: hidden">
+            <div id="thankYouForYourOrder">
+                <h2 class="textCenter" id="thankYouHeader">Thank You for Your Order!</h2>
+                Thank you for shopping with us.
+                <hr width="115%" align="left">
+            </div>
+            
+            <div>
+                <div id="thankYouEstimate">Estimate delivery date:
+                    <br>
+                    <span style="color: #61C98E">Monday, May 27th, 2019</span><br>
+                    <br>
+                   
+                    <button type="button" class="placeYourOrder" id="manageOrder" onclick="manageOrder()">View or manage your order</button>
+                   
+                </div>
+                <br>
+                <div id="thankYouSummary">
+                    Order summary:<br>
+                    Items:(3) CDN$40.73 <br>
+                    Shipping &amp; Handling: CDN$00.00<br>
+                    <hr>
+                
+                    Total before tax: CDN$40.73<br>
+                    Estimate GST/HST: CDN$01.67<br>
+                    Estimate PST/RST/QST: CDN$02.35<br>
+                    <hr>
+                
+                    <span style="color: #61C98E">Order Total: <b>CDN$44.75</b></span><br>
+                
+                </div>
+            </div>
+            <hr width="115%" align="left">
+            <div id="greenShippingChosenThankYouDiv" style="display: none; padding-left: 70px;">
+                    By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
+                    you have saved <span style="color: #61C98E">0.1%</span> carbon emmision <br>
+                    that is released to the environment,<br>
+                    you have saved <span style="color: #61C98E">0.03%</span> of a tree,<br>
+                    you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
+                    <hr id="willBeHidden" width="115%">
+            </div>
+            <div class="textCenter" style="padding-left: 40px;" >THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
         </div>
         
         
+        
+        
+        
+        
+        
         <script>
+            function manageOrder() {
+                document.getElementById("checkOutDiv").style.visibility="visible";
+                document.getElementById("thankYouDiv").style.visibility="hidden";
+            }
+            function placeOrder(){
+                document.getElementById("checkOutDiv").style.visibility="hidden";
+                document.getElementById("thankYouDiv").style.visibility="visible";
+            }
             
            
             function changeBillingAddressContent(){
@@ -516,10 +628,12 @@
             
             function showNone(){
                 document.getElementById("greenShippingChosen").style.display = "none"; 
+                document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
             }
             
             function showGreenSaving(){
                 document.getElementById("greenShippingChosen").style.display = "block"; 
+                document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
                 }
             
             
