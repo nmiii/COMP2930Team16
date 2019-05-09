@@ -17,7 +17,7 @@
 body, html {
   height: 100%;
     /* The image used */
-  background-image: url("bg.jpg");
+  background-image: url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
 
   /* Full height */
   height: 100%; 
@@ -34,7 +34,9 @@ body, html {
     height: 150px;
     float: left;
 } 
-  
+    .logo >img:hover{
+        cursor: pointer;
+    }
 /* for search bar */    
 input[type=text] {
   width: 130px;
@@ -43,8 +45,9 @@ input[type=text] {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url("searchicon.png");
-  background-position: 10px 10px; 
+  background-image: url("http://i47.tinypic.com/r02vbq.png");
+  background-position: left center;
+  outline: 0;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   -webkit-transition: width 0.4s ease-in-out;
@@ -88,6 +91,9 @@ input[type=text]:focus {
     color: beige;
     
 }    
+    #rightDirection:hover{
+        cursor: pointer;
+    }
     
 /* media queries for responsive mobile-friendly page*/    
 @media screen and (max-width: 480px){
@@ -120,7 +126,7 @@ input[type=text]:focus {
     <body>
     <!-- logo -->    
      <div class="logo" style="float: left;">
-        <img src="./images/transparent_logo.png"/>
+        <img src="./images/transparent_logo.png"/ onclick="redirectHomePage()">
         </div> 
     
         <!-- Search bar -->
@@ -140,7 +146,7 @@ input[type=text]:focus {
         <div class="sideNav">
             <br/>
             <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;"></a>
+                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
             
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
             <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Gardening</a></li>
@@ -266,6 +272,14 @@ input[type=text]:focus {
 
                   
         <script>
+             function redirectHomePage() {
+                window.location.href= "homePage.html";
+            }
+            
+            
+            
+            
+            
          function myFunction() {
   var x = document.getElementById("list");
   if (x.style.display === "none") {
