@@ -1,14 +1,7 @@
-<html lang="en"> 
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>Check out</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        
-        
         <style>
             body{
                 background-image:url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");  
@@ -68,7 +61,7 @@
             #payment {
                 position:absolute;
                 left:25%;
-                top: 10%;   
+                top: 14%;   
                 
             }
             .h2Inline {
@@ -198,7 +191,7 @@
             #thankYouSummary{
                 float: right;
                 position:absolute;
-                top: 120px;
+                top: 165px;
                 left: 400px;
                 font-size: 10px;
                 border-left: 0.5px solid #C4C4C4; 
@@ -213,10 +206,6 @@
             #thankYouHeader{
                 padding-left: 50px;
                 font-size: 36px;
-            }
-            
-            #logo{
-                float: left;
             }
             #logo:hover{
                 cursor: pointer;
@@ -450,9 +439,6 @@
             
         </style>
         
-     
-        
-        
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
 
@@ -477,19 +463,16 @@
     </head> 
     
     <body>
-    
-       <div id="checkOutDiv">
-            <div id="logoDiv">
-                <img src="Images%20for%20Shopping%20List/logo%20(2).png" alt="logo" width="50px" height="50px" id="logo" onclick="redirectHomePage()">
-            </div> 
-            <h1 id="reviewYourOrder">Review Your Order</h1>
         
+       <div id="checkOutDiv">
+            <img src="Images%20for%20Shopping%20List/logo%20(2).png" onclick="redirectHomePage()" alt="logo" width="80px" height="80px" style="float: left" id="logo">
+            <h1 id="reviewYourOrder">Review Your Order</h1>
+            <br>
             <div id="top">
                 <div id="shippingAddress">
                     <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddess()" value="Save"/>
                 <div id="shippingAddressContent">
                     <p id="shippingAddessP" >
-                        <br>
                         Jane Doe<br>
                         3700 Willingdon Ave <br>
                         Burnaby, British Columbia V5G 3H2<br>   
@@ -651,7 +634,6 @@
                 
                 </div>
             </div>
-            <br>
             <hr width="115%" align="left">
             <div id="greenShippingChosenThankYouDiv" style="display: none;">
                 <div style="padding-left: 70px">
@@ -661,11 +643,11 @@
                     you have saved <span style="color: #61C98E">0.03%</span> of a tree,<br>
                     you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
                 </div>
-                
                     <hr id="willBeHidden" width="115%" align="left">
             </div>
             <div class="textCenter" style="padding-left: 40px;" >THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
-            <a href="homePage.html" style="color: #61C98E; text-align: center; padding-left: 175px">Continue Shopping</a>
+            <br>
+            <a href="homePage.html" style="color: #61C98E; padding-left: 220px">Continue Shopping</a>
         </div>
         
         
@@ -676,10 +658,10 @@
         
         <script>
             
-            
             function redirectHomePage() {
                 window.location.href= "homePage.html";
             }
+            
             
             function promoCodeApply(){
                 var easterEgg = document.getElementById("promoCode").value;
@@ -714,7 +696,6 @@
             }
             
            
-            
             function changeBillingAddressContent(){
                 document.getElementById("billindAddressP").contentEditable ="true";
                 document.getElementById("billindAddressP").style.backgroundColor="white";
