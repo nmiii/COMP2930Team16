@@ -92,6 +92,7 @@
             #contentBanner {
                 background-color: green;
             }
+            
             /* Content Imgs */ /*plant watering tools accessories orange*/
             .contentImgs {
                 width: 200px;
@@ -138,7 +139,7 @@
             }
             #main{
                 width: 70vw;    
-                bottom: 9vw;
+                /*bottom: 9vw;*/
                 position: relative;
                 background-color: #679267;
                 margin-right: 5px;
@@ -149,6 +150,19 @@
                 text-align: center;
                 margin-bottom: 5px;
             }    
+            #information{
+                background-color: #679267;
+                width: 70vw;
+                float: right;
+                height: 100px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                margin-top: 5px;
+                position: relative;
+                text-align: center;  
+                line-height: 100px;
+                color: white;
+            }
             
             /*Hamburger Menu*/
             #hamburger {
@@ -242,6 +256,7 @@
         </div>
         
         <!-- Main Content -->
+        <div id="information">OUR WEBSITE DOES......!</div>
         <div id="main">
             <div id="seedImg" class="contentImgs">Seeds</div>
             <div id="plantImg" class="contentImgs">Plants</div>
@@ -257,17 +272,19 @@
             let burger = document.getElementById("hamburger");
             let menu = document.getElementById("sideNav");
             let main = document.getElementById("main");
-            
+            let information = document.getElementById("information");
             
             burger.onclick = function() {
                 if (main.style.display != "none") {
                     main.style.display = "none";
                     menu.style.display = "block";
+                    information.style.display = "none";
                     
                     menu.style.width = "100vw";
                 } else {
                     main.style.display = "block";
                     menu.style.display = "none";
+                    information.style.display = "block";
                     
                     menu.style.width = "20vw";
                 }
@@ -280,9 +297,14 @@
                     menu.style.display = "block";
                     menu.style.width = "20vw";
                     main.style.display = "block";
+                    information.style.bottom = "60px";
+                    main.style.bottom = "60px";
+                    
                 }
                 if (w <= 599){
                     menu.style.display = "none";
+                    information.style.bottom = "0px";
+                    main.style.bottom = "0px";
                 }
             }
             
