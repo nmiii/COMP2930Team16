@@ -42,7 +42,9 @@
                 margin-top: 5px;
                 margin-left: 5px;
             } 
-
+            .logo > img:hover{
+                cursor: pointer;
+            }
             /* for search bar */    
             input[type=text] {
               width: 130px;
@@ -181,6 +183,9 @@
                 visibility: hidden;
             }
             
+            #rightDirection:hover{
+                cursor: pointer;
+            }
             @media screen and (max-width: 950px) {
                 #main {
                     column-count: 2;
@@ -219,7 +224,7 @@
     <body onresize="resize()">
     <!-- logo -->    
         <div class="logo" style="float: left;">
-            <img src="./images/transparent_logo.png">
+            <img src="./images/transparent_logo.png" onclick="redirectHomePage()">
                 <div id="hamburger">
                     <div class="hamburgerDiv"></div>
                     <div class="hamburgerDiv"></div>
@@ -232,12 +237,12 @@
          <input type="text" name="search" placeholder="Search..">
         </form>  
         <!-- Cart & Checkout button -->
-            <a class="pure-button" href="#">
+            <a class="pure-button" href="">
                 <i class="fa fa-shopping-cart fa-lg"></i>
                 Cart
             </a>
 
-            <a class="pure-button" href="./CheckOutPage.html">
+            <a class="pure-button" href="CheckOutPage.html">
                 <i class="fa fa-arrow-right"></i>
                 Checkout
             </a>
@@ -245,12 +250,12 @@
         <div id="sideNav">
             <br/>
             <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;"></a>
+                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
             
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
-            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Gardening</a></li>
-            <li style="padding-bottom: 10px;"><a href="./petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
-            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Grocery</a></li>
+            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
+            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
+            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
             </div>    
                 
         </div>
@@ -268,6 +273,14 @@
         
         <!-- JavaScript -->
         <script>
+            
+             function redirectHomePage() {
+                window.location.href= "homePage.html";
+            }
+            
+            
+            
+            
             /* Hamburger on click */
             let burger = document.getElementById("hamburger");
             let menu = document.getElementById("sideNav");
