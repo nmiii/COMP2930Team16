@@ -222,6 +222,58 @@
                 to   { -moz-transform: rotate(360deg) }
             }
             
+            
+            @keyframes thanosAnimation{
+                0%{
+                    opacity: 1;
+                    transform: rotateX(90deg);
+                }
+                50%{
+                    opacity: 0.5;
+                    transform: rotateX(0deg);
+                }
+                100%{
+                    display: none;
+                    opacity: 0;
+                    transform: rotateX(90deg);
+                }
+            }
+            
+            @-webkit-keyframes thanosAnimation {
+                0%{
+                    opacity: 1;
+                    transform: rotateX(90deg);
+                }
+                50%{
+                    opacity: 0.5;
+                    transform: rotateX(0deg);
+                }
+                100%{
+                    display: none;
+                    opacity: 0;
+                    transform: rotateX(90deg);
+                }
+            }
+            
+            @-moz-keyframes thanosAnimation {
+                0%{
+                    opacity: 1;
+                    transform: rotateX(90deg);
+                }
+                50%{
+                    opacity: 0.5;
+                    transform: rotateX(0deg);
+                }
+                100%{
+                    display: none;
+                    opacity: 0;
+                    transform: rotateX(90deg);
+                }
+            }
+            
+            
+            
+            
              @media only screen and (min-device-width:320px) and (max-device-width: 500px) and (orientation: portrait) {
                  body {
                      background-size: 100% ;
@@ -243,6 +295,10 @@
                      float:none;
                      position: relative;
                      left: auto;
+                     margin-top: 30px;
+                     margin-left: 30px;
+                     margin-bottom: 30px;
+                     top: 0px;
                      
                  }
                  #bottomButton{
@@ -363,11 +419,7 @@
                      margin-top: 0;
                      
                  }
-                 #shipping {
-                     margin-top: 30px;
-                     margin-left: 30px;
-                     margin-bottom: 30px;
-                 }
+                 
                  #hiddenHr{
                      margin-top: 80px;
                      visibility: visible;
@@ -430,13 +482,13 @@
                 
                 </div>
             
-                <div class="right" id="payment">
+                <div class="right" id="payment" class="thanosClass">
                     <h2 class="h2Inline">Payment Method </h2><span class="change">Change</span>
                 
                     <!-- Google Pay API -->
                     <br>
                     <br>
-                    <h2 class="h2Inline">Billing Address </h2><input type="submit" class="change" onclick="changeBillingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreBillindAddress()" value="Save" />
+                    <h2 class="h2Inline" >Billing Address </h2><input type="submit" class="change" onclick="changeBillingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreBillindAddress()" value="Save" />
                     <p id="billindAddressP">Jane Doe<br>
                         3700 Willingdon Ave <br>
                         Burnaby, British Columbia V5G 3H2<br>   
@@ -484,7 +536,7 @@
                 <div class="buy-now"></div>
             </div>
             
-            <div id="product003" data-price="21.99" class="product">
+            <div id="product003" data-price="21.99" class="product" class="thanosClass">
 
                 <img src="images/moturizer.jpg" height="129" width="129" class="productImage" id="img3">
 
@@ -516,7 +568,7 @@
        
         
         <div id="rightSide" class="right">
-            <button type="button" class="placeYourOrder" onclick="placeOrder()">Place your order</button>
+            <button type="button" class="placeYourOrder" onclick="placeOrder()" id="placeYourOrderTop">Place your order</button>
                 <br>
                 Order summary:<br>
                 Items:(3) CDN$40.73 <br>
@@ -542,7 +594,7 @@
                 
         </div>
         
-        <div id="bottomButton">
+        <div id="bottomButton" class="thanosClass">
             <button type="button" class="placeYourOrder" id="placeYourOrderBottom" onclick="placeOrder()">Place your order</button>
         </div>
         
@@ -606,16 +658,23 @@
             
             
             
-            
             function promoCodeApply(){
                 var easterEgg = document.getElementById("promoCode").value;
                 if ( easterEgg == "barrelroll") {
                     document.body.style.animationDuration = "4s";
                     document.body.style.animationIterationCount = "1";
                     document.body.style.animationName = "roll";
-                    console.log("success");
+                    console.log("barrelroll success");
                     
                 }
+                
+                //if (easterEgg=="thanos") {
+                  //  document.getElementsByClassName("thanosClass").style.animationName = "thanosAnimation";
+                //    document.getElementsByClassName("thanosClass").style.animationDuration = "2000ms";
+                  //  document.getElementsByClassName("thanosClass").style.animationFillMode = "forwards";
+                //    document.getElementsByClassName("thanosClass").style.opacity= "0%";
+                  //  console.log("thanos success");
+                //}
             }
             
             
