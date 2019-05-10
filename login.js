@@ -1,4 +1,4 @@
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) { 
   if (user) {
       doocument.getElementById("pella").style.display = "none";
        doocument.getElementById("dooja").style.display = "block";
