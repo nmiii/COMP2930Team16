@@ -225,53 +225,7 @@
             }
             
             
-            @keyframes thanosAnimation{
-                0%{
-                    opacity: 1;
-                    transform: rotateX(90deg);
-                }
-                50%{
-                    opacity: 0.5;
-                    transform: rotateX(0deg);
-                }
-                100%{
-                    display: none;
-                    opacity: 0;
-                    transform: rotateX(90deg);
-                }
-            }
-            
-            @-webkit-keyframes thanosAnimation {
-                0%{
-                    opacity: 1;
-                    transform: rotateX(90deg);
-                }
-                50%{
-                    opacity: 0.5;
-                    transform: rotateX(0deg);
-                }
-                100%{
-                    display: none;
-                    opacity: 0;
-                    transform: rotateX(90deg);
-                }
-            }
-            
-            @-moz-keyframes thanosAnimation {
-                0%{
-                    opacity: 1;
-                    transform: rotateX(90deg);
-                }
-                50%{
-                    opacity: 0.5;
-                    transform: rotateX(0deg);
-                }
-                100%{
-                    display: none;
-                    opacity: 0;
-                    transform: rotateX(90deg);
-                }
-            }
+           
             
             
             
@@ -317,7 +271,7 @@
                      margin-left: 30px;
                      padding-left: 30px;
                      position: relative;
-                     top: 350px;
+                     top: 230px;
                      width:300px;
                  }
                  #payment {
@@ -362,7 +316,7 @@
                  
                  #greenShippingChosen {
                      position: absolute;
-                     top: 1700px;
+                     top: 1670px;
                      border: solid #C4C4C4;
                      padding: 25px;
                      background: #E5E5E5;
@@ -373,7 +327,7 @@
                  }
                  #products{
                      position: relative;
-                     top: 390px;
+                     top: 250px;
                      margin-left: 30px;
                      width: 330px;
                      
@@ -427,7 +381,9 @@
                      visibility: visible;
                  }
                  
-                 
+                 #shippingAddress{
+                     top:auto;
+                 }
             }
             
             
@@ -440,25 +396,32 @@
         </style>
         
         <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#config-web-app -->
 
         <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyA5lvb0QICVZWn8nfDLiBeEAxDMDitldbY",
-                authDomain: "ship-green.firebaseapp.com",
-                databaseURL: "https://ship-green.firebaseio.com",
-                projectId: "ship-green",
-                storageBucket: "ship-green.appspot.com",
-                messagingSenderId: "1082500586647",
-                appId: "1:1082500586647:web:4e925b6ff426a908"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA5lvb0QICVZWn8nfDLiBeEAxDMDitldbY",
+            authDomain: "ship-green.firebaseapp.com",
+            databaseURL: "https://ship-green.firebaseio.com",
+            projectId: "ship-green",
+            storageBucket: "ship-green.appspot.com",
+            messagingSenderId: "1082500586647",
+            appId: "1:1082500586647:web:6fec3fe76f25783a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
         </script>
+        
+        
+       
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+
+
+        
         
     </head> 
     
@@ -470,7 +433,7 @@
             <br>
             <div id="top">
                 <div id="shippingAddress">
-                    <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddess()" value="Save"/>
+                    <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddess()"  value="Save"/>
                 <div id="shippingAddressContent">
                     <p id="shippingAddessP" >
                         Jane Doe<br>
@@ -501,7 +464,7 @@
                 <div class="right" id="promoDiv">
                     <h2>Gift card and promotional code</h2>
                     
-                        <input type="text" pattern="[a-z]{1,15}" name="promo" placeholder="Enter code" id="promoCode">
+                        <input type="text" pattern="[a-zA-Z]{1,15}" name="promo" placeholder="Enter code" id="promoCode">
                         <button type="button" onclick="promoCodeApply()">Apply</button>
                     
                 </div>
@@ -585,7 +548,7 @@
                 <hr>
                 <div id="greenShippingChosen" style="display: none">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
-                    you have saved <span style="color: #61C98E">0.1%</span> carbon emmision <br>
+                    you have saved <span style="color: #61C98E">0.01%</span> carbon emmision <br>
                     that is released to the environment,<br>
                     you have saved <span style="color: #61C98E">0.03%</span> of a tree,<br>
                     you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
@@ -638,7 +601,7 @@
             <div id="greenShippingChosenThankYouDiv" style="display: none;">
                 <div style="padding-left: 70px">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
-                    you have saved <span style="color: #61C98E">0.1%</span> carbon emmision <br>
+                    you have saved <span style="color: #61C98E">0.01%</span> carbon emmision <br>
                     that is released to the environment,<br>
                     you have saved <span style="color: #61C98E">0.03%</span> of a tree,<br>
                     you have saved <span style="color: #61C98E">0.04L</span> of water.<br>
@@ -647,8 +610,9 @@
             </div>
             <div class="textCenter" style="padding-left: 40px;" >THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
             <br>
-            <a href="homePage.html" style="color: #61C98E; padding-left: 220px">Continue Shopping</a>
+            <a href="index.html" style="color: #61C98E; padding-left: 220px">Continue Shopping</a>
         </div>
+        
         
         
         
@@ -658,28 +622,21 @@
         
         <script>
             
+            
             function redirectHomePage() {
-                window.location.href= "homePage.html";
+                window.location.href= "index.html";
             }
             
             
             function promoCodeApply(){
                 var easterEgg = document.getElementById("promoCode").value;
-                if ( easterEgg == "barrelroll") {
+                if ( easterEgg == "shipGREEN") {
                     document.body.style.animationDuration = "4s";
                     document.body.style.animationIterationCount = "1";
                     document.body.style.animationName = "roll";
                     console.log("barrelroll success");
                     
                 }
-                
-                //if (easterEgg=="thanos") {
-                  //  document.getElementsByClassName("thanosClass").style.animationName = "thanosAnimation";
-                //    document.getElementsByClassName("thanosClass").style.animationDuration = "2000ms";
-                  //  document.getElementsByClassName("thanosClass").style.animationFillMode = "forwards";
-                //    document.getElementsByClassName("thanosClass").style.opacity= "0%";
-                  //  console.log("thanos success");
-                //}
             }
             
             
@@ -705,6 +662,12 @@
                 document.getElementById("billindAddressP").style.backgroundColor="#E5E5E5";
                 document.getElementById("billindAddressP").contentEditable ="false";
                 document.getElementById("billindAddressP").style.color = "black";
+                
+                 var billingAddessContentInput = document.getElementById("billingAddessP").value;
+            
+                firebase.database().ref("BillingAddress/").set({
+                    billingAddressContent: billingAddessContentInput
+                });
             }
             
             
@@ -715,11 +678,19 @@
                 
                 document.getElementById("shippingAddessP").contentEditable ="false";
                 document.getElementById("shippingAddessP").style.color = "black";
+                
+                 var shippingAddessContentInput = document.getElementById("shippingAddessP").value;
+            
+                firebase.database().ref("ShippingAddress/").set({
+                    shippingAddressContent: shippingAddessContentInput
+                });
+       
             }
             
             function changeShippingAddressContent(){
                 document.getElementById("shippingAddessP").contentEditable ="true";
                 document.getElementById("shippingAddessP").style.backgroundColor="white";
+                
             }
             
             
@@ -739,33 +710,19 @@
                 }
             
             
-           //============================================================================================
-             /* This function is used to send the feedback to the database. */
-           // function writeFeedback(data) {
-           // var shippingAddessInput = document.getElementById("shippingAddessP").value;
-            
-          //  firebase.database().ref("ShippingAddress/").set({
-          //      shippingAddress: shippingAddessInput
-          //  });
-       // }
-        
            
-            
-            
-           //==========================================database==========================================
-            
             
             
         </script>
     
     
     
-    <script>
-        // Google Pay API
+        <script>
+            // Google Pay API
         
         
         
-    </script>
+        </script>
         
     </body>
 </html>
