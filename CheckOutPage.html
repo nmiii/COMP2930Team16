@@ -225,6 +225,12 @@
             #thinkGreen{
                 padding-left: 150px;
             }
+            .desktopExtent{
+                width: 115%;
+            }
+            
+            
+            
             @keyframes roll {
                 from { transform: rotate(0deg) }
                 to   { transform: rotate(360deg) }
@@ -336,6 +342,7 @@
                      top: 1670px;
                      border: solid #C4C4C4;
                      padding: 25px;
+                     padding-left: 0;
                      background: #E5E5E5;
                      opacity: 0.91;
                      width: 280px;
@@ -426,6 +433,9 @@
                      height: 120px;
                      display: block;
                      transform: translate(140px,-40px);
+                 }
+                 .desktopExtent{
+                     width: 100%;
                  }
             }
             
@@ -627,7 +637,7 @@
             <div id="thankYouForYourOrder">
                 <h2 class="textCenter" id="thankYouHeader">Thank You for Your Order!</h2>
                 Thank you for shopping with us.
-                <hr width="100%" align="left">
+                <hr width="100%" align="left" class="desktopExtent">
             </div>
             
             <div>
@@ -655,9 +665,9 @@
                 
                 </div>
             </div>
-            <hr width="100%" align="left">
+            <hr width="100%" align="left" class="desktopExtent">
             <div id="greenShippingChosenThankYouDiv" style="display: none;">
-                <div style="padding-left: 70px">
+                <div>
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
                     you have saved <span style="color: #61C98E">0.01%</span> carbon emmision <br>
                     that is released to the environment,<br>
