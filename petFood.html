@@ -121,6 +121,30 @@ input[type=text]:focus {
 } 
 
 </style>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
+        </script>
+        <!-- the magic line -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+            authDomain: "ship-green-ec2e6.firebaseapp.com",
+            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+            projectId: "ship-green-ec2e6",
+            storageBucket: "ship-green-ec2e6.appspot.com",
+            messagingSenderId: "98708125955",
+            appId: "1:98708125955:web:abb3048244ea3bca"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+</script>
+ 
         
 </head>
     <body>
@@ -233,7 +257,7 @@ input[type=text]:focus {
     <div class="carousel-inner">
       <div class="item active">
              <div class="container2">
-             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button class="btn" style="transform: translate(-310%,300%)">Add to Cart</button></div>
+             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
              <img src="./images/dogFood2.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button class="btn" style="transform: translate(-135%,300%)">Add to Cart</button></div>
@@ -273,25 +297,33 @@ input[type=text]:focus {
   </div>
             </div>
         </div>
+        
+        <script>
+            // cart
+            var database = firebase.database();
+            function cartFunction() {
+                var user = firebase.auth().currentUser;
 
-                  
+                if (user) {
+                  console.log("user is signed in");
+                } else {
+                  console.log("user is not signed in");
+                }
+            }
+        </script>
+
         <script>
              function redirectHomePage() {
-                window.location.href= "index.html";
-            }
-            
-            
-            
-            
-            
-         function myFunction() {
-  var x = document.getElementById("list");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+                                window.location.href= "index.html";
+                            }
+                         function myFunction() {
+                  var x = document.getElementById("list");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+                }
         </script>
     </body>
 </html>
