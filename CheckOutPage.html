@@ -210,6 +210,12 @@
             #logo:hover{
                 cursor: pointer;
             }
+            #shippingAddressP{
+                width: 25%;
+            }
+            #billingAddressP{
+                width: 70%;
+            }
             @keyframes roll {
                 from { transform: rotate(0deg) }
                 to   { transform: rotate(360deg) }
@@ -384,6 +390,9 @@
                  #shippingAddress{
                      top:auto;
                  }
+                 #shippingAddressP{
+                     width: 80%;
+                 }
             }
             
             
@@ -404,13 +413,13 @@
         <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
-            apiKey: "AIzaSyA5lvb0QICVZWn8nfDLiBeEAxDMDitldbY",
-            authDomain: "ship-green.firebaseapp.com",
-            databaseURL: "https://ship-green.firebaseio.com",
-            projectId: "ship-green",
-            storageBucket: "ship-green.appspot.com",
-            messagingSenderId: "1082500586647",
-            appId: "1:1082500586647:web:6fec3fe76f25783a"
+            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+            authDomain: "ship-green-ec2e6.firebaseapp.com",
+            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+            projectId: "ship-green-ec2e6",
+            storageBucket: "ship-green-ec2e6.appspot.com",
+            messagingSenderId: "98708125955",
+            appId: "1:98708125955:web:abb3048244ea3bca"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -433,15 +442,15 @@
             <br>
             <div id="top">
                 <div id="shippingAddress">
-                    <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddess()"  value="Save"/>
+                    <h2 style="display: inline-block">Shipping Address  </h2><input type="submit" class="change" id="shippingAddressChange" onclick="changeShippingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreShippingAddress()"  value="Save"/>
                 <div id="shippingAddressContent">
-                    <p id="shippingAddessP" >
-                        Jane Doe<br>
-                        3700 Willingdon Ave <br>
-                        Burnaby, British Columbia V5G 3H2<br>   
-                        Canada<br>
-                        Phone: 778-111-11111
-                    </p>
+                    <div id="shippingAddressP"  >
+                        <div id="name">Jane Doe</div>
+                        <div id="address">3700 Willingdon Ave 
+                        Burnaby, British Columbia V5G 3H2  
+                        Canada</div>
+                        <div id="phone">7781111111</div>
+                    </div>
                     
                 </div>
                 
@@ -453,12 +462,14 @@
                     <!-- Google Pay API -->
                     <br>
                     <br>
-                    <h2 class="h2Inline" >Billing Address </h2><input type="submit" class="change" onclick="changeBillingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreBillindAddress()" value="Save" />
-                    <p id="billindAddressP">Jane Doe<br>
-                        3700 Willingdon Ave <br>
-                        Burnaby, British Columbia V5G 3H2<br>   
-                        Canada<br>
-                        Phone: 778-111-11111</p>
+                    <h2 class="h2Inline" >Billing Address </h2><input type="submit" class="change" onclick="changeBillingAddressContent()" value="Change"/><input type="submit" class="change" onclick="restoreBillingAddress()" value="Save" />
+                    <div id="billingAddressP"  >
+                        <div id="Bname">Jane Doe</div>
+                        <div id="Baddress">3700 Willingdon Ave 
+                        Burnaby, British Columbia V5G 3H2  
+                        Canada</div>
+                        <div id="Bphone">7781111111</div>
+                    </div>
                 </div>
             
                 <div class="right" id="promoDiv">
@@ -519,10 +530,10 @@
             <hr id="hiddenHr">
              <div id="shipping">
                 <h3>Choose your delivery options:</h3>
-                <input type="radio" name="shipping" value="oneDayShipping" onclick="showNone()" class="radioButton" required>CDN$11.97 One-Day Shipping<br>
-                <input type="radio" name="shipping" value="twoDayShipping" onclick="showNone()" class="radioButton" required>FREE Two-Day Shipping<br>
-                <input type="radio" name="shipping" value="standardShipping" onclick="showNone()" class="radioButton" required>FREE Standard Shipping<br>
-                 <input type="radio" name="shipping" value="greenShipping" onclick="showGreenSaving()" class="radioButton" required="required">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
+                <input type="radio" name="shipping" value="CDN$11.97" onclick="showNone()" onclick ="check()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
+                <input type="radio" name="shipping" value="CDN$00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeTwoDayShipping">FREE Two-Day Shipping<br>
+                <input type="radio" name="shipping" value="CDN$00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeStandardShipping">FREE Standard Shipping<br>
+                 <input type="radio" name="shipping" value="CDN$00.00" onclick="showGreenSaving()" onclick="check()" class="radioButton" required="required" id="freeGreenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
             </div>
             
         </div>
@@ -536,15 +547,17 @@
                 <br>
                 Order summary:<br>
                 Items:(3) CDN$27.91 <br>
-                Shipping &amp; Handling: CDN$00.00<br>
+                Shipping: <span id="shippingPrice">CDN$00.00</span>
+                
                 <hr>
                 
                 Total before tax: CDN$27.91<br>
                 Estimate GST/HST: CDN$00.00<br>
                 Estimate PST/RST/QST: CDN$00.00<br>
+                
                 <hr>
             
-            <span style="color: #61C98E">Order Total: <b>CDN$27.91</b></span><br>
+            <span style="color: #61C98E">Order Total: <b id="total">CDN$27.91</b></span><br>
                 <hr>
                 <div id="greenShippingChosen" style="display: none">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
@@ -585,7 +598,7 @@
                 <div id="thankYouSummary">
                     Order summary:<br>
                     Items:(3) CDN$27.91 <br>
-                    Shipping &amp; Handling: CDN$00.00<br>
+                    Shipping: <span id="tyshippingPrice">CDN$00.00</span>
                     <hr>
                 
                     Total before tax: CDN$27.91<br>
@@ -593,7 +606,7 @@
                     Estimate PST/RST/QST: CDN$00.00<br>
                     <hr>
                 
-                    <span style="color: #61C98E">Order Total: <b>CDN$27.91</b></span><br>
+                    <span style="color: #61C98E">Order Total: <b id="tytotal">CDN$27.91</b></span><br>
                 
                 </div>
             </div>
@@ -618,16 +631,47 @@
         
         
         
-        
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         
         <script>
             
             
+                
+            
+            /*change shipping price*/
+            $(document).ready(function(){
+                
+                //when button is clicked
+                $(oneDayShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("oneDayShipping").value;
+                    document.getElementById("total").innerHTML="CDN$39.88";
+                    
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("oneDayShipping").value;
+                    document.getElementById("tytotal").innerHTML="CDN$39.88";
+                });
+                $(freeTwoDayShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("freeTwoDayShipping").value;
+                    document.getElementById("total").innerHTML="CDN$27.91";
+                });
+                $(freeStandardShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("freeStandardShipping").value;
+                     document.getElementById("total").innerHTML="CDN$27.91";
+                });
+                $(freeGreenShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("freeGreenShipping").value;
+                     document.getElementById("total").innerHTML="CDN$27.91";
+                });
+            })
+            
+            
+            /*link tp index.html*/
             function redirectHomePage() {
                 window.location.href= "index.html";
             }
             
             
+            
+            /*add Easter egg*/
             function promoCodeApply(){
                 var easterEgg = document.getElementById("promoCode").value;
                 if ( easterEgg == "shipGREEN") {
@@ -642,7 +686,7 @@
             
             
             
-            
+            /*hide/show thank you div*/
             function manageOrder() {
                 document.getElementById("checkOutDiv").style.visibility="visible";
                 document.getElementById("thankYouDiv").style.visibility="hidden";
@@ -653,43 +697,78 @@
             }
             
            
+            /*change billing address content*/
             function changeBillingAddressContent(){
-                document.getElementById("billindAddressP").contentEditable ="true";
-                document.getElementById("billindAddressP").style.backgroundColor="white";
+                document.getElementById("billingAddressP").contentEditable ="true";
+                document.getElementById("billingAddressP").style.backgroundColor="white";
             }
             
-            function restoreBillindAddress(){
-                document.getElementById("billindAddressP").style.backgroundColor="#E5E5E5";
-                document.getElementById("billindAddressP").contentEditable ="false";
-                document.getElementById("billindAddressP").style.color = "black";
+            /*restore/save billing address content*/
+            function restoreBillingAddress(data){
+                document.getElementById("billingAddressP").style.backgroundColor="#E5E5E5";
+                document.getElementById("billingAddressP").contentEditable ="false";
+                document.getElementById("billingAddressP").style.color = "black";
                 
-                 var billingAddessContentInput = document.getElementById("billingAddessP").value;
-            
-                firebase.database().ref("BillingAddress/").set({
-                    billingAddressContent: billingAddessContentInput
-                });
+                /*update billing address on database*/
+                var AddressRef = firebase.database().ref("users/");
+                
+                AddressRef.update({
+                    user1:{
+                        ShippingAddress: {
+                            name: document.getElementById("name").innerHTML,
+                            address: document.getElementById("address").innerHTML,
+                            phone: document.getElementById("phone").innerHTML
+                        },
+                        BillingAddress: {
+                            Bname: document.getElementById("Bname").innerHTML,
+                            Baddress: document.getElementById("Baddress").innerHTML,
+                            Bphone: document.getElementById("Bphone").innerHTML
+                        }
+                    } 
+                })
+                 
             }
             
             
             
-            
-            function restoreShippingAddess(){
-                document.getElementById("shippingAddessP").style.backgroundColor="#E5E5E5";
+            /*restore/save shipping address content*/
+            function restoreShippingAddress(data){
+                document.getElementById("shippingAddressP").style.backgroundColor="#E5E5E5";
                 
-                document.getElementById("shippingAddessP").contentEditable ="false";
-                document.getElementById("shippingAddessP").style.color = "black";
+                document.getElementById("shippingAddressP").contentEditable ="false";
+                document.getElementById("shippingAddressP").style.color = "black";
                 
-                 var shippingAddessContentInput = document.getElementById("shippingAddessP").value;
+                 
             
-                firebase.database().ref("ShippingAddress/").set({
-                    shippingAddressContent: shippingAddessContentInput
-                });
+                /*update shipping address on database*/
+                var AddressRef = firebase.database().ref("users/");
+                
+                AddressRef.set({
+                    user1:{
+                        ShippingAddress: {
+                            name: document.getElementById("name").innerHTML,
+                            address: document.getElementById("address").innerHTML,
+                            phone: document.getElementById("phone").innerHTML
+                        },
+                        BillingAddress: {
+                            name: document.getElementById("Bname").innerHTML,
+                            address:document.getElementById("Baddress").innerHTML,
+                            phone: document.getElementById("Bphone").innerHTML
+                        }
+                    }
+                })
        
             }
             
+            
+            
+             
+            
+            
+            /*change shipping address content*/
             function changeShippingAddressContent(){
-                document.getElementById("shippingAddessP").contentEditable ="true";
-                document.getElementById("shippingAddessP").style.backgroundColor="white";
+                document.getElementById("shippingAddressP").contentEditable ="true";
+                document.getElementById("shippingAddressP").style.backgroundColor="white";
                 
             }
             
@@ -698,12 +777,13 @@
             
             
             
-            
+            /*hide the green div content*/
             function showNone(){
                 document.getElementById("greenShippingChosen").style.display = "none"; 
                 document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
             }
             
+            /*show the green div content*/
             function showGreenSaving(){
                 document.getElementById("greenShippingChosen").style.display = "block"; 
                 document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
