@@ -500,7 +500,7 @@
                         <input type="text" name="phone" placeholder="Phone number" id="phone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="restoreShippingAddress()"  value="Submit"/>
+                    <input type="submit" class="change" onclick="submitShippingAddress()"  value="Submit"/>
                 </div>
                 
                 </div>
@@ -529,7 +529,7 @@
                         <input type="text" name="phone" placeholder="Phone number" id="Bphone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="restoreBillingAddress()" value="Submit" />
+                    <input type="submit" class="change" onclick="submitBillingAddress()" value="Submit" />
                 </div>
             
             
@@ -814,83 +814,49 @@
             
             var dbRef = firebase.database().ref().child("users");
             
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
+            
+            if (user) {
                 // User is signed in.
-                    var uid = user.uid;
-                } else {
+                 var uid = user.uid;
+            } else {
                 // No user is signed in
-                     window.location.href = "123.html";
-                }
-            });
+                 console.log("not sign in");
+            }
+           
             //============================================================================
             
             
             
-            /*restore/save billing address content*/
-            function restoreBillingAddress(data){
-                document.getElementById("billingAddressP").style.backgroundColor="#E5E5E5";
-                document.getElementById("billingAddressP").contentEditable ="false";
-                document.getElementById("billingAddressP").style.color = "black";
+            /*submit billing address content*/
+            function submitBillingAddress(data){
+                
                 
                 /*update billing address on database*/
                 
+                    firebase.database().ref('users/' + uid + '/BillingAddress').set({
+                        Bname: document.getElementById("Bname").value,
+                        Baddress: document.getElementById("Baddress").value,
+                        Bphone: document.getElementById("Bphone").value
+                });
+                
                
-                
-                
-                dbRef.once('value', function(snapshot) {
-                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
-                          console.log("the uid node exists")
-                          
-                      } else { // if the uid node does NOT exist
-                          
-                            dbRef.child(uid).child("BillingAddress").set({
-                                Bname: document.getElementById("Bname").value,
-                                Baddress: document.getElementById("Baddress").value,
-                                Bphone: document.getElementById("Bphone").value
-                            });
-                            dbRef.child(uid).child("ShippingAddress").set({
-                                name: document.getElementById("name").value,
-                                address: document.getElementById("address").value,
-                                phone: document.getElementById("phone").value
-                            });
-                            }
-                })
             }
             
             
             
-            /*restore/save shipping address content*/
+            /*submit shipping address content*/
             
-            function restoreShippingAddress(data){
-                document.getElementById("shippingAddressP").style.backgroundColor="#E5E5E5";
+            function submitShippingAddress(data){
                 
-                document.getElementById("shippingAddressP").contentEditable ="false";
-                document.getElementById("shippingAddressP").style.color = "black";
-                
-                 
             
                 /*update shipping address on database*/
                
                 
-                dbRef.once('value', function(snapshot) {
-                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
-                          console.log("the uid node exists")
-                          
-                      } else { // if the uid node does NOT exist
-                          
-                            dbRef.child(uid).child("BillingAddress").set({
-                                Bname: document.getElementById("Bname").value,
-                                Baddress: document.getElementById("Baddress").value,
-                                Bphone: document.getElementById("Bphone").value
-                            });
-                            dbRef.child(uid).child("ShippingAddress").set({
-                                name: document.getElementById("name").value,
-                                address: document.getElementById("address").value,
-                                phone: document.getElementById("phone").value
-                            });
-                            }
-                })
+                firebase.database().ref('users/' + uid + '/ShippingAddress').set({
+                        Bname: document.getElementById("name").value,
+                        Baddress: document.getElementById("address").value,
+                        Bphone: document.getElementById("phone").value
+                });
             }
             
             
