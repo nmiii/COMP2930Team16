@@ -806,17 +806,36 @@
            
             /*change billing address content*/
             function changeBillingAddressContent(){
-                document.getElementById("billingAddressP").contentEditable ="true";
-                document.getElementById("billingAddressP").style.backgroundColor="white";
-            }
+                
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                var dbRef = firebase.database().ref().child("users");
+                
+                dbRef.once('value', function(snapshot) {
+                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
+                          console.log("the uid node exists")
+                          
+                      } else { // if the uid node does NOT exist
+                          
+                            dbRef.child(uid).child("BillingAddress").set({
+                                address: "the address goes here",
+                                name: "the name goes here",
+                                phone: "the phone number goes here"
+                            });
+                            dbRef.child(uid).child("ShippingAddress").set({
+                                address: "the address goes here",
+                                name: "the name goes here",
+                                phone: "the phone number goes here"
+                            });
+                }
             
             
             
             
-            /*databse script*/============================================================
+            /*databse script============================================================*/
             
             var user = firebase.auth().currentUser;
-            var AddressRef = firebase.database().ref("users/");
+            var AddressRef = firebase.database().ref("users");
             
             
             firebase.auth().onAuthStateChanged( user => {

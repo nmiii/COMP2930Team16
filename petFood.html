@@ -329,22 +329,22 @@ input[type=text]:focus {
                     
                     var dbRef = firebase.database().ref().child("users");
                     dbRef.once('value', function(snapshot) {
-                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist                          
+                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
                           console.log("the uid node exists")
                           
                       } else { // if the uid node does NOT exist
-                          var name;
-                          function getName(){
-                              var nameRef = firebase.database().ref().child("items").child(item).child("name").on("value", function(snap){
-                                  name = (snap.val()); // can't use name variable outside of function because asynchronous
+                            var name;
+                            var promise = firebase.database().ref().child("items").child(item).child("name").on("value", function(snap){
+                                  name = (snap.val());
                               });
-                          }
-                          console.log(name); // outputting undefined because function is asynchronous
+                            promise.then(function(){
+                                  console.log(name);
+                            });
                           
-                          var newUser = dbRef.child(uid).child("cart").child(item).set({
-                              name: "the name of the thing",
-                              price: "the price of the thing"
-                          });                          
+                            var newUser = dbRef.child(uid).child("cart").child(item).set({
+                                name: "the name of the thing",
+                                price: "the price of the thing"
+                            });                          
                       }
                     });
                 } else { // if user is not signed in
