@@ -84,7 +84,7 @@
                 background: #E5E5E5;
                 opacity: 0.91;
                 left: 74%;
-                top: 12.5%;
+                top: 95px;
             }
             h2 {
                 font-size: 24px;
@@ -805,25 +805,24 @@
             
            
             
+            /*hide the green div content*/
+            function showNone(){
+                document.getElementById("greenShippingChosen").style.display = "none"; 
+                document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
+            }
             
+            /*show the green div content*/
+            function showGreenSaving(){
+                document.getElementById("greenShippingChosen").style.display = "block"; 
+                document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
+                }
             
-            
+       
             
             /*databse script============================================================*/
             var user = firebase.auth().currentUser;
             
             var dbRef = firebase.database().ref().child("users");
-            
-            
-            if (user) {
-                // User is signed in.
-                 var uid = user.uid;
-            } else {
-                // No user is signed in
-                 console.log("not sign in");
-            }
-           
-            //============================================================================
             
             
             
@@ -842,9 +841,7 @@
                 
                
             }
-            
-            
-            
+                 
             /*submit shipping address content*/
             
             function submitShippingAddress(data){
@@ -863,62 +860,6 @@
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            //======================================================================================================
-            
-             
-            
-            
-            /*change shipping address content*/
-            
-            
-            
-            
-            
-            
-            
-            /*hide the green div content*/
-            function showNone(){
-                document.getElementById("greenShippingChosen").style.display = "none"; 
-                document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
-            }
-            
-            /*show the green div content*/
-            function showGreenSaving(){
-                document.getElementById("greenShippingChosen").style.display = "block"; 
-                document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
-                }
-            
-            
-           
-            
-            
         </script>
-    
-    
-    
-        
-        
-    </body>
+  </body>
 </html>
