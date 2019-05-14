@@ -42,7 +42,7 @@
             }
             
             #top {
-                border:solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
                 padding-bottom: 35px;
@@ -79,7 +79,7 @@
             
             #rightSide{
                 position: absolute;
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 padding: 25px;
                 background: #E5E5E5;
                 opacity: 0.91;
@@ -140,7 +140,7 @@
                 padding: 0;
             }
             #products{
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 width: 72%;
                 background: #E5E5E5;
                 opacity: 0.91;
@@ -153,7 +153,7 @@
             }
             
             #bottomButton{
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
                 padding: 25px;
@@ -173,7 +173,7 @@
                 position: absolute;
                 top: 25%;
                 left: 25%;
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
                 padding: 25px;
@@ -340,7 +340,7 @@
                  #greenShippingChosen {
                      position: absolute;
                      top: 1670px;
-                     border: solid #C4C4C4;
+                     border: solid 0.5px #C4C4C4;
                      padding: 25px;
                      padding-left: 0;
                      background: #E5E5E5;
@@ -451,6 +451,10 @@
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
+        
+        <!-- the magic line -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+        
         <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#config-web-app -->
 
@@ -471,7 +475,7 @@
         
         
        
-        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+        
 
 
         
@@ -806,6 +810,26 @@
                 document.getElementById("billingAddressP").style.backgroundColor="white";
             }
             
+            
+            
+            
+            /*databse script*/============================================================
+            
+            var user = firebase.auth().currentUser;
+            var AddressRef = firebase.database().ref("users/");
+            
+            
+            firebase.auth().onAuthStateChanged( user => {
+                if (user) { this.uid = user.uid }
+                else {
+                    window.location.href = "123.html";
+                }
+            });
+            
+            //============================================================================
+            
+            
+            
             /*restore/save billing address content*/
             function restoreBillingAddress(data){
                 document.getElementById("billingAddressP").style.backgroundColor="#E5E5E5";
@@ -813,10 +837,18 @@
                 document.getElementById("billingAddressP").style.color = "black";
                 
                 /*update billing address on database*/
-                var AddressRef = firebase.database().ref("users/");
+                
+                
+                
+                
+                //=======================================================================
+                 
+ 
+                //============================================================================
+                
                 
                 AddressRef.update({
-                    user1:{
+                    uid:{
                         ShippingAddress: {
                             name: document.getElementById("name").value,
                             address: document.getElementById("address").value,
@@ -835,6 +867,7 @@
             
             
             /*restore/save shipping address content*/
+            
             function restoreShippingAddress(data){
                 document.getElementById("shippingAddressP").style.backgroundColor="#E5E5E5";
                 
@@ -844,10 +877,10 @@
                  
             
                 /*update shipping address on database*/
-                var AddressRef = firebase.database().ref("users/");
+               
                 
                 AddressRef.set({
-                    user1:{
+                    uid:{
                         ShippingAddress: {
                             name: document.getElementById("name").value,
                             address: document.getElementById("address").value,
@@ -864,6 +897,30 @@
             }
             
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //======================================================================================================
             
              
             
