@@ -2,6 +2,26 @@
 <html>
     <head><title>Demo Home Page</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+    authDomain: "ship-green-ec2e6.firebaseapp.com",
+    databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+    projectId: "ship-green-ec2e6",
+    storageBucket: "ship-green-ec2e6.appspot.com",
+    messagingSenderId: "98708125955",
+    appId: "1:98708125955:web:abb3048244ea3bca"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
     </head>
     
     <style>
@@ -81,13 +101,38 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
         background-image: url("tool1.PNG");
     }
+    .sideNav2{
+        display: none;    
+    }    
+        
+    @media only screen and (max-width: 600px){
+        .sideNav{
+            display: none;
+        }    
+        .sideNav2{
+            display: block;
+            align-content: center;
+            float: right;
+            clear: none;
+            align-self: center;
+            padding: 10px 10px 10px 10px;
+            margin: 10px 10px 10px 10px;
+            
+        }
+        hr{
+            float: none;
+            clear: none;
+        }
+        
+    }
 
     </style>
     
     <body>
         <div class="search__container">
 
-        <input class="search__input" type="text" placeholder="Search">
+        <input id="searchinput"  class="search__input" type="text" placeholder="Search">
+            <button onclick="functionsearch()">search</button>
         
         <div class="logIn"><center>
            <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png" style="width:20px; float: left; clear: both; line-height: 18px; transform: translate(7px,0px);">  <p>LogIn</p></button> </center>
@@ -100,6 +145,8 @@
             <hr style="background-color: #d7d8d2; width: 70%; float: right; margin-right: 20px; clear: right;"/>
             <hr style="background-color: #d7d8d2; width: 20%; float: left; margin-left: 20px; clear: right; margin-top: -22px;"/>
         </div>    
+               <div class="sideNav2"><span style="font-size:30px;cursor:pointer align: center;" onclick="openNav()">&#9776; </span></div>
+
              <div class="sideNav">
               <a style="float: left; clear: both;">Home</a>
                  <br/>
@@ -120,30 +167,70 @@
             
             <div class="cards">
                 <p style="font-size: 20px;">Featured Collections</p><br/>
-                    <img src="tool1.PNG" style=" width: 300px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
-                    <img src="tool7.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/>
-                    <img src="pet_food.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/>
-                    <img src="home1.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top: 3px;"/>
-                    <img src="bestseller4.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/>
-                    <img src="bestseller6.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/>
+                    <img src="tool1.PNG" style=" width: 300px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;">Gardening</button>
+                    <img src="tool7.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;">Home Decor</button>
+                    <img src="pet_food.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px; display: inline-block; width: 170px;">Pet Food</button>
+                    <img src="home1.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top: 3px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;">Home Needs</button>
+                    <img src="bestseller4.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;">Seeds</button>
+                    <img src="bestseller6.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;">Grocery</button>
             </div>
 
+        
+        
+        
         <script>
-var myIndex = 0;
-carousel();
+            var myIndex = 0;
+            carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 9000);    
-}
-</script>
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 9000);    
+            }
+            </script>
+        <script>
+        function functionsearch(){
+                var input = document.getElementById("searchinput").value;
+            console.log(input);
+                var groceries = ["Groceries","groceries" , "Milk" ,"milk" , "food" , "bread" , "Bread","Oil","mustard oil" , "oliveoil" ,"Oliveoil" , "Cooking" , "Cooking oil" , "cooking oil" ];
+            var i;
+            for (i=0;i<=groceries.length ; i++){
+                if(input===(groceries[i])){
+                    //console.log("working");
+                    window.location.href = "Grocery.html";
+                    
+                    
+                }
+            }
+             var petfood = ["Pet","pet","Pet Food","pet food","animals","Animal","Dog","dog","Cat", "Catfood", "cat" , "Pedigree" , "pedigree" , "Friskies" , "cesar" , "friskies" ];
+            var j;
+            for (j=0;j<=petfood.length ; j++){
+                 if(input===(petfood[j])){
+                    //console.log("working");
+                    window.location.href = "petFood.html";
+                    
+                    
+                }
+            }
+        var garden = ["Garden" , "garden" , "Gardening" , "gardening"  , "gardening tools" , "Gardening tools" , "tools" , "seeds" , "Seeds" , ];
+        var k;
+            for (k=0;k<=garden.length ; k++){
+                if(input===(garden[k])){
+                    //console.log("working");
+                    window.location.href = "shoppingList.html";
+                    
+                    
+                }
+            } 
+            
+            }
+        </script>
     </body>
     
 </html>
