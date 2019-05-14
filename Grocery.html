@@ -39,7 +39,7 @@ body, html {
 
     /* The image used */
 
-  background-image: url("bg.jpg");
+  background-image: url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
 
 
 
@@ -73,6 +73,9 @@ body, html {
 
 } 
 
+    .logo >img:hover{
+        cursor: pointer;
+    }
   
 
 /* for search bar */    
@@ -91,9 +94,11 @@ input[type=text] {
 
   background-color: white;
 
-  background-image: url("searchicon.png");
+  background-image: url("http://i47.tinypic.com/r02vbq.png");
 
-  background-position: 10px 10px; 
+  background-position: left center; 
+    
+  outline: 0;
 
   background-repeat: no-repeat;
 
@@ -181,7 +186,9 @@ input[type=text]:focus {
 
 }    
 
-    
+    #rightDirection:hover{
+        cursor: pointer;
+    }   
 
 /* media queries for responsive mobile-friendly page*/    
 
@@ -245,7 +252,7 @@ input[type=text]:focus {
 
      <div class="logo" style="float: left;">
 
-        <img src="Images%20for%20Shopping%20List/logo%20(2).png"/>
+        <img src="Images%20for%20Shopping%20List/logo%20(2).png" onclick="redirectHomePage()"/>
 
         </div> 
 
@@ -260,6 +267,10 @@ input[type=text]:focus {
         </form>  
 
         <!-- Cart & Checkout button-->
+        <a class="pure-button" href="123.html">
+                <i class="fa fa-arrow-right"></i>
+                Login/Sign up
+            </a>
 
     <a class="pure-button" href="#">
 
@@ -271,7 +282,7 @@ input[type=text]:focus {
 
                  
 
-    <a class="pure-button" href="#">
+    <a class="pure-button" href="CheckOutPage.html">
 
         <i class="fa fa-arrow-right"></i>
 
@@ -285,15 +296,15 @@ input[type=text]:focus {
 
             <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
 
-                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;"></a>
+                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
 
             
 
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px;">
 
-            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Gardening</a></li>
+            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
 
-            <li style="padding-bottom: 10px;"><a href="#" style="text-decoration: none; color: beige;">Pet Food</a></li>
+            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
 
             <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
 
@@ -536,6 +547,9 @@ input[type=text]:focus {
                   
 
         <script>
+             function redirectHomePage() {
+                window.location.href= "index.html";
+            }
 
          function myFunction() {
 

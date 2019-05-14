@@ -1,4 +1,4 @@
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) { 
   if (user) {
       doocument.getElementById("pella").style.display = "none";
        doocument.getElementById("dooja").style.display = "block";
@@ -14,14 +14,16 @@ firebase.auth().onAuthStateChanged(function(user) {
        doocument.getElementById("dooja").style.display = "none";
   }
 });
+
 function login(){
+    window.alert("working");
     var useremail = document.getElementById("emailfield").value;
-     var userpassword = document.getElementById("passwordfield").value;
+    var userpassword = document.getElementById("passwordfield").value;
     firebase.auth().createUserWithEmailAndPassword(useremail, userpassword).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  // ...
+
 });
     window.alert("errormessage"+errorMessage);
     
