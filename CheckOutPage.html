@@ -42,12 +42,12 @@
             }
             
             #top {
-                border:solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
                 padding-bottom: 35px;
                 width: 72%;
-                height: 27%;
+                height: 230px;
                 
             }
             
@@ -79,7 +79,7 @@
             
             #rightSide{
                 position: absolute;
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 padding: 25px;
                 background: #E5E5E5;
                 opacity: 0.91;
@@ -140,7 +140,7 @@
                 padding: 0;
             }
             #products{
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 width: 72%;
                 background: #E5E5E5;
                 opacity: 0.91;
@@ -148,12 +148,12 @@
             }
             #shipping{
                 position: absolute;
-                left: 730px;
+                left: 780px;
                 top: 390px;
             }
             
             #bottomButton{
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
                 padding: 25px;
@@ -173,7 +173,7 @@
                 position: absolute;
                 top: 25%;
                 left: 25%;
-                border: solid #C4C4C4;
+                border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
                 opacity: 0.91;
                 padding: 25px;
@@ -340,7 +340,7 @@
                  #greenShippingChosen {
                      position: absolute;
                      top: 1670px;
-                     border: solid #C4C4C4;
+                     border: solid 0.5px #C4C4C4;
                      padding: 25px;
                      padding-left: 0;
                      background: #E5E5E5;
@@ -451,6 +451,10 @@
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
+        
+        <!-- the magic line -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+        
         <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#config-web-app -->
 
@@ -471,7 +475,7 @@
         
         
        
-        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+        
 
 
         
@@ -496,7 +500,7 @@
                         <input type="text" name="phone" placeholder="Phone number" id="phone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="restoreShippingAddress()"  value="Submit"/>
+                    <input type="submit" class="change" onclick="submitShippingAddress()"  value="Submit"/>
                 </div>
                 
                 </div>
@@ -525,7 +529,7 @@
                         <input type="text" name="phone" placeholder="Phone number" id="Bphone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="restoreBillingAddress()" value="Submit" />
+                    <input type="submit" class="change" onclick="submitBillingAddress()" value="Submit" />
                 </div>
             
             
@@ -800,80 +804,94 @@
             }
             
            
-            /*change billing address content*/
-            function changeBillingAddressContent(){
-                document.getElementById("billingAddressP").contentEditable ="true";
-                document.getElementById("billingAddressP").style.backgroundColor="white";
-            }
             
-            /*restore/save billing address content*/
-            function restoreBillingAddress(data){
-                document.getElementById("billingAddressP").style.backgroundColor="#E5E5E5";
-                document.getElementById("billingAddressP").contentEditable ="false";
-                document.getElementById("billingAddressP").style.color = "black";
+            
+            
+            
+            
+            /*databse script============================================================*/
+            var user = firebase.auth().currentUser;
+            
+            var dbRef = firebase.database().ref().child("users");
+            
+            
+            if (user) {
+                // User is signed in.
+                 var uid = user.uid;
+            } else {
+                // No user is signed in
+                 console.log("not sign in");
+            }
+           
+            //============================================================================
+            
+            
+            
+            /*submit billing address content*/
+            function submitBillingAddress(data){
+                
                 
                 /*update billing address on database*/
-                var AddressRef = firebase.database().ref("users/");
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                    firebase.database().ref('users/' + uid + '/BillingAddress').set({
+                        Bname: document.getElementById("Bname").value,
+                        Baddress: document.getElementById("Baddress").value,
+                        Bphone: document.getElementById("Bphone").value
+                });
                 
-                AddressRef.update({
-                    user1:{
-                        ShippingAddress: {
-                            name: document.getElementById("name").value,
-                            address: document.getElementById("address").value,
-                            phone: document.getElementById("phone").value
-                        },
-                        BillingAddress: {
-                            Bname: document.getElementById("Bname").value,
-                            Baddress: document.getElementById("Baddress").value,
-                            Bphone: document.getElementById("Bphone").value
-                        }
-                    } 
-                })
-                 
+               
             }
             
             
             
-            /*restore/save shipping address content*/
-            function restoreShippingAddress(data){
-                document.getElementById("shippingAddressP").style.backgroundColor="#E5E5E5";
+            /*submit shipping address content*/
+            
+            function submitShippingAddress(data){
                 
-                document.getElementById("shippingAddressP").contentEditable ="false";
-                document.getElementById("shippingAddressP").style.color = "black";
-                
-                 
             
                 /*update shipping address on database*/
-                var AddressRef = firebase.database().ref("users/");
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
                 
-                AddressRef.set({
-                    user1:{
-                        ShippingAddress: {
-                            name: document.getElementById("name").value,
-                            address: document.getElementById("address").value,
-                            phone: document.getElementById("phone").value
-                        },
-                        BillingAddress: {
-                            name: document.getElementById("Bname").value,
-                            address:document.getElementById("Baddress").value,
-                            phone: document.getElementById("Bphone").value
-                        }
-                    }
-                })
-       
+                firebase.database().ref('users/' + uid + '/ShippingAddress').set({
+                        Bname: document.getElementById("name").value,
+                        Baddress: document.getElementById("address").value,
+                        Bphone: document.getElementById("phone").value
+                });
             }
             
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //======================================================================================================
             
              
             
             
             /*change shipping address content*/
-            function changeShippingAddressContent(){
-                document.getElementById("shippingAddressP").contentEditable ="true";
-                document.getElementById("shippingAddressP").style.backgroundColor="white";
-                
-            }
+            
             
             
             
