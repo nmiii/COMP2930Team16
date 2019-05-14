@@ -126,6 +126,29 @@ input[type=text]:focus {
 } 
 
 </style>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
+        </script>
+        <!-- the magic line -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+            authDomain: "ship-green-ec2e6.firebaseapp.com",
+            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+            projectId: "ship-green-ec2e6",
+            storageBucket: "ship-green-ec2e6.appspot.com",
+            messagingSenderId: "98708125955",
+            appId: "1:98708125955:web:abb3048244ea3bca"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+</script>
         
 </head>
     <body>
@@ -187,16 +210,16 @@ input[type=text]:focus {
       <div class="item active">
              <div class="container2">
 
-             <img src="Images%20for%20Shopping%20List/bestseller3.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="003"><button class="btn" style="transform: translate(-310%,300%)" onclick="AddToCart('003')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller3.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="003"><button id="s1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="002"><button class="btn" style="transform: translate(-135%,300%)" onclick="AddToCart('b002')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="002"><button id="s2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="001"><button class="btn" style="transform: translate(45%,300%)" onclick="AddToCart('001')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="001"><button id="s3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller8.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="008"><button class="btn" style="transform: translate(220%,300%)" onclick="AddToCart('008')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller8.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="008"><button id="s4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
 
          
       </div>
@@ -204,16 +227,16 @@ input[type=text]:focus {
       <div class="item">
         <div class="container2">
 
-             <img src="Images%20for%20Shopping%20List/bestseller4.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="004"><button class="btn" style="transform: translate(-310%,300%)" onclick="AddToCart('004')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller4.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="004"><button id="s5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller5.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="005"><button class="btn" style="transform: translate(-135%,300%)" onclick="AddToCart('005')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller5.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="005"><button id="s6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="006"><button class="btn" style="transform: translate(45%,300%)" onclick="AddToCart('006')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="006"><button id="s7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="007"><button class="btn" style="transform: translate(220%,300%)" onclick="AddToCart('007')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="007"><button id="s8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
 
       </div>
     </div>
@@ -246,16 +269,16 @@ input[type=text]:focus {
       <div class="item active">
              <div class="container2">
 
-             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="009"><button class="btn" style="transform: translate(-310%,300%)" onclick="AddToCart('009')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="009"><button id="gt1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="010"><button class="btn" style="transform: translate(-135%,300%)" onclick="AddToCart('010')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="010"><button id="gt2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool3.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="011"><button class="btn" style="transform: translate(45%,300%)" onclick="AddToCart('011')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool3.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="011"><button id="gt3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool4.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="012"><button class="btn" style="transform: translate(220%,300%)" onclick="AddToCart('012')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool4.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="012"><button id="gt4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
 
          
       </div>
@@ -263,16 +286,16 @@ input[type=text]:focus {
       <div class="item">
         <div class="container2">
 
-             <img src="Images%20for%20Shopping%20List/tool5.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="tool5"><button class="btn" style="transform: translate(-310%,300%)" onclick="AddToCart('tool5')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool5.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="tool5"><button id="gt5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="tool6"><button class="btn" style="transform: translate(-135%,300%)" onclick="AddToCart('tool6')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="tool6"><button id="gt6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool7"><button class="btn" style="transform: translate(45%,300%)" onclick="AddToCart('tool7')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool7"><button id="gt7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool1"><button class="btn" style="transform: translate(220%,300%)" onclick="AddToCart('tool1')">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool1"><button id="gt8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
 
       </div>
     </div>
@@ -322,14 +345,56 @@ input[type=text]:focus {
             
             
         </div>
+            <script> // cart things
+            // variable changes for the database paths based on the clicked item
+            var item;
+            var s1 = document.getElementById("s1").addEventListener("click", function(){item = "s1";});
+            var s2 = document.getElementById("s2").addEventListener("click", function(){item = "s2";});
+            var s3 = document.getElementById("s3").addEventListener("click", function(){item = "s3";});
+            var s4 = document.getElementById("s4").addEventListener("click", function(){item = "s4";});
+            var s5 = document.getElementById("s5").addEventListener("click", function(){item = "s5";});
+            var s6 = document.getElementById("s6").addEventListener("click", function(){item = "s6";});
+            var s7 = document.getElementById("s7").addEventListener("click", function(){item = "s7";});
+            var s8 = document.getElementById("s8").addEventListener("click", function(){item = "s8";});
+            var gt1 = document.getElementById("gt1").addEventListener("click", function(){item = "gt1";});
+            var gt2 = document.getElementById("gt2").addEventListener("click", function(){item = "gt2";});
+            var gt3 = document.getElementById("gt3").addEventListener("click", function(){item = "gt3";});
+            var gt4 = document.getElementById("gt4").addEventListener("click", function(){item = "gt4";});
+            var gt5 = document.getElementById("gt5").addEventListener("click", function(){item = "gt5";});
+            var gt6 = document.getElementById("gt6").addEventListener("click", function(){item = "gt6";});
+            var gt7 = document.getElementById("gt7").addEventListener("click", function(){item = "gt7";});
+            var gt8 = document.getElementById("gt8").addEventListener("click", function(){item = "gt8";});
             
-        
-        
-        
-        
-        
-        
-
+            // add to cart stuff
+            var database = firebase.database();
+            function cartFunction() { // if user clicks on add to cart button
+                var user = firebase.auth().currentUser;
+                if (user) { // if user is signed in
+                    var user = firebase.auth().currentUser;
+                    var uid = user.uid;
+                    
+                    var dbRef = firebase.database().ref().child("users");
+                    dbRef.once('value', function(snapshot) {
+                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
+                          dbRef.child(uid).child("cart").child(item).set({
+                                status: "true",
+                                quantity: "1"
+                            });
+                          console.log("item added");
+                          
+                      } else { // if the uid node does NOT exist
+                            dbRef.child(uid).child("cart").child(item).set({
+                                status: "true",
+                                quantity: "1"
+                            });       
+                          console.log("item added and user created");
+                      }
+                    });
+                } else { // if user is not signed in
+                  window.location.href = "123.html";
+                }
+            }
+        </script>
         <script>
              function redirectHomePage() {
                 window.location.href= "index.html";
@@ -350,29 +415,6 @@ input[type=text]:focus {
                 document.getElementById("TheCart").style.visibility ="hidden";
             }
             
-            
-            function AddToCart(itemToAdd) {
-                var TheCartItemImages = document.getElementById("cartItemImages");
-                var FoundNodeCount = FindIfIdExists(TheCartItemImages, "CartItem" + itemToAdd);
-                if( FoundNodeCount==0 ){
-                    var TheCartItemToAdd = document.getElementById(itemToAdd).cloneNode(true);
-                    TheCartItemToAdd.id = "CartItem" + itemToAdd;
-                    TheCartItemToAdd.childNodes[1].style.height = 100;
-                    TheCartItemImages.appendChild(TheCartItemToAdd);
-                    
-                }
-                
-                document.getElementById("main").style.visibility = "hidden";
-                document.getElementById("TheCart").style.visibility ="visible";
-                
-            }
-            
-            
-            
-         
-            
-            
-        
          function myFunction() {
   var x = document.getElementById("list");
   if (x.style.display === "none") {

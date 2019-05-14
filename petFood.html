@@ -258,7 +258,7 @@ input[type=text]:focus {
       <div class="item active">
           
              <div class="container2">
-             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="df1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div><!-- A;LDSJF;ASDJFOIEANFOAISNFPOEAISNFPAOISENFPOIANSF -->
+             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="df1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
              <img src="./images/dogFood2.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button id="df2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
@@ -331,13 +331,17 @@ input[type=text]:focus {
                     dbRef.once('value', function(snapshot) {
                       if (snapshot.hasChild(uid)) { // if the uid node DOES exist
                           dbRef.child(uid).child("cart").child(item).set({
-                                status: "true"
+                                status: "true",
+                                quantity: "1"
                             });
+                          console.log("item added");
                           
                       } else { // if the uid node does NOT exist
                             dbRef.child(uid).child("cart").child(item).set({
-                                status: "true"
-                            });                          
+                                status: "true",
+                                quantity: "1"
+                            });         
+                          console.log("item added and user created");
                       }
                     });
                 } else { // if user is not signed in
