@@ -11,13 +11,13 @@ PAYPAL_OAUTH_API = 'https://api.sandbox.paypal.com/v1/oauth2/token/';
 PAYPAL_ORDER_API = 'https://api.sandbox.paypal.com/v2/checkout/orders/';
 
 // 1c. Get an access token from the PayPal API
-basicAuth = base64encode('${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }');
+basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
 auth = http.post(PAYPAL_OAUTH_API {
   headers: {
-    Accept:        'application/json',
-    Authorization: 'Basic ${ basicAuth }'
+    Accept:        `application/json`,
+    Authorization: `Basic ${ basicAuth }`
   },
-  data: 'grant_type=client_credentials'
+  data: `grant_type=client_credentials`
 });
 
 // 2. Set up your server to receive a call from the client
@@ -29,8 +29,8 @@ function handleRequest(request, response) {
   // 3. Call PayPal to get the transaction details
   details = http.get(PAYPAL_ORDER_API + orderID, {
     headers: {
-      Accept:        'application/json',
-      Authorization: 'Bearer ${ auth.access_token }'
+      Accept:        `application/json`,
+      Authorization: `Bearer ${ auth.access_token }`
     }
   });
 
