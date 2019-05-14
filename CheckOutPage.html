@@ -832,7 +832,8 @@
                 
                 
                 /*update billing address on database*/
-                
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
                     firebase.database().ref('users/' + uid + '/BillingAddress').set({
                         Bname: document.getElementById("Bname").value,
                         Baddress: document.getElementById("Baddress").value,
