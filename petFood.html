@@ -256,8 +256,9 @@ input[type=text]:focus {
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
+          
              <div class="container2">
-             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="df1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div><!-- A;LDSJF;ASDJFOIEANFOAISNFPOEAISNFPAOISENFPOIANSF -->
              
              <div class="container2">
              <img src="./images/dogFood2.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button class="btn" style="transform: translate(-135%,300%)">Add to Cart</button></div>
@@ -299,8 +300,12 @@ input[type=text]:focus {
         </div>
         
         <script> // cart things
-            var database = firebase.database();
+            // variable changes for the database paths based on the clicked item
+            var item;
+            var df1 = document.getElementById("df1").addEventListener("click", function(){item = "df1";});
             
+            // add to cart stuff
+            var database = firebase.database();
             function cartFunction() { // if user clicks on add to cart button
                 var user = firebase.auth().currentUser;
                 if (user) { // if user is signed in
@@ -309,25 +314,27 @@ input[type=text]:focus {
                     
                     var dbRef = firebase.database().ref().child("users");
                     dbRef.once('value', function(snapshot) {
-                      if (snapshot.hasChild(uid)) { // if the uid node does exist
+                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
                           
+                          var cartRef = firebase.database().ref().child("users").child(uid).child("cart");
                           
-                          
-                          var cartRef = firebase.database().ref().child("users").child("cart");
-                          console.log("the node exists");
-                          
+                          console.log("the uid node does exist")
                           
                       } else { // if the uid node does NOT exist
-                          // create a node with the uid as the name with a cart under it here.
-                          
-                          
-                          
-                          var newUser = dbRef.child(uid).set({
-                              title: "dog food", // change these to the item values.
-                              placeholder: "."
+                          var name;
+                          var price;
+                          var nameRef = firebase.database().ref().child("items").child(item).child("name").on("value", function(snap){
+                              name = (snap.val());
+                              console.log(name);
                           });
-                          console.log(uid);
-                          
+                          var priceRef = firebase.database().ref().child("items").child(item).child("price").on("value", function(snap){
+                              price = (snap.val());
+                          });
+                                                    
+                          var newUser = dbRef.child(uid).child("cart").child(item).set({
+                              name: "the name of the thing",
+                              price: "the price of the thing"
+                          });                          
                           
                           
                       }
