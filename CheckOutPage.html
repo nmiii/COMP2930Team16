@@ -3,7 +3,6 @@
         <meta charset="utf-8" />
         <title>Check out</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-       
         <style>
             body{
                 background-image:url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");  
@@ -337,7 +336,7 @@
                      margin-left: 30px;
                  }
                  
-                 #greenShippingChosen {
+                 #output {
                      position: absolute;
                      top: 1670px;
                      border: solid 0.5px #C4C4C4;
@@ -438,13 +437,13 @@
                      width: 100%;
                  }
             }
-            
-            
-            
-            
-            
-            
-            
+                /*map*/
+                #googleMap {
+                    width: 100%;
+                    height: 200px;
+                    margin: 10px auto;
+                }
+
             
         </style>
         
@@ -496,11 +495,14 @@
                     <div id="shippingAddressP"  >
                         <br>
                         <input type="text" name="name" placeholder="Name" id="name"><br>
-                        <input type="text" name="address" placeholder="Address" id="address" ><br>
+                        <input type="text" id="to" name="address" placeholder="Address" id="address" ><br>
                         <input type="text" name="phone" placeholder="Phone number" id="phone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="submitShippingAddress()"  value="Submit"/>
+                    <input type="submit" class="change" onclick="both();" value="Submit"/>
+                    <br/><br/>
+                    <label>Shipping from: </label>
+                    <input type="text" id="from" name="Shipping Products From: " value="BCIT,Burnaby"/>
                 </div>
                 
                 </div>
@@ -611,7 +613,7 @@
             
             <span style="color: #61C98E">Order Total: <b>CDN$</b><b id="total">27.91</b></span><br>
                 <hr>
-                <div id="greenShippingChosen" style="display: none">
+                <div id="output" style="display: none">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
                     you have saved <span style="color: #61C98E">0.01%</span> carbon emmision <br>
                     that is released to the environment,<br>
@@ -621,7 +623,12 @@
                 </div>
                 <div class="textCenter">THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
                 <br>
-            
+             <div class="container-fluid">
+            <div id="googleMap">
+
+            </div>
+
+        </div>
             
                 
             
@@ -807,13 +814,13 @@
             
             /*hide the green div content*/
             function showNone(){
-                document.getElementById("greenShippingChosen").style.display = "none"; 
+                document.getElementById("output").style.display = "none"; 
                 document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
             }
             
             /*show the green div content*/
             function showGreenSaving(){
-                document.getElementById("greenShippingChosen").style.display = "block"; 
+                document.getElementById("output").style.display = "block"; 
                 document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
                 }
             
@@ -841,6 +848,13 @@
                 
                
             }
+            
+            /* for submit button to call both functions*/
+            function both(){
+                calcRoute();
+                submitShippingAddress();
+                
+            }
                  
             /*submit shipping address content*/
             
@@ -861,5 +875,12 @@
             
             
         </script>
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4vXoSVzNyanjxKR54IM_UH2X4qrfzxeM&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Main.js"></script>
   </body>
 </html>
