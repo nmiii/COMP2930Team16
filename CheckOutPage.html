@@ -497,12 +497,12 @@
                 <div id="shippingAddressContent">
                     <div id="shippingAddressP"  >
                         <br>
-                        <input type="text" name="name" placeholder="Name" id="name"><br>
-                        <input type="text" id="to" name="address" placeholder="Address" id="address" ><br>
-                        <input type="text" name="phone" placeholder="Phone number" id="phone" ><br>
+                        <input type="text" name="name" placeholder="Name" id="Sname"><br>
+                        <input type="text" id="to" name="address" placeholder="Address"  ><br>
+                        <input type="text" name="phone" placeholder="Phone number" id="Sphone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="both();" value="Submit"/>
+                    <input type="submit" class="change" onclick="both()" value="Submit"/>
                     <br/><br/>
                     <label>Shipping from: </label>
                     <input type="text" id="from" name="Shipping Products From: " value="BCIT,Burnaby"/>
@@ -771,7 +771,7 @@
         <!-- General script -->
         <script>
             
-                        /*price*/
+            /*price*/
             
             window.onload = getTotal();
             
@@ -1044,10 +1044,14 @@
                 var user = firebase.auth().currentUser;
                 var uid = user.uid;
                 
+                var name = document.getElementById("Sname").value;
+                var address = document.getElementById("to").value;
+                var phone = document.getElementById("Sphone").value;
+                
                 firebase.database().ref('users/' + uid + '/ShippingAddress').set({
-                        Bname: document.getElementById("name").value,
-                        Baddress: document.getElementById("address").value,
-                        Bphone: document.getElementById("phone").value
+                        Sname: name,
+                        Saddress: address,
+                        Sphone: phone
                 });
             }
             
