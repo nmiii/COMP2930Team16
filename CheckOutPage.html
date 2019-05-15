@@ -539,7 +539,7 @@
             <div id="product001" data-price="11.49" class="product">
                 <img src="images/groot.jpg" height="129" width="129" class="productImage">
                 <div id="Content001" class="content">
-                    <h3 class="name">Baby Groot Flower Pot Containers Guardians of The Galaxy<br>
+                    <h3 class="name" id="name1">Baby Groot Flower Pot Containers Guardians of The Galaxy<br>
                         Succulent Pen Pot Desk Organizer Creative Decoration Gifts)</h3>
                     <p class="price">CDN$<span id="price1">13.99</span></p>
                     <p class="inStock">In Stock</p>
@@ -559,7 +559,7 @@
             <div id="product002" data-price="7.25" class="product">
                 <img src="images/morningGlory.jpg" height="129" width="129" class="productImage">
                 <div id="Content002" class="content">
-                    <h3 class="name">Morning Glory- Grandpa Ott- 100 Seeds</h3>
+                    <h3 class="name" id="name2">Morning Glory- Grandpa Ott- 100 Seeds</h3>
                     <p class="price">CDN$<span id="price2">5.04</span></p>
                     <p class="inStock">In Stock</p>
                     <p style="display: inline">Quantity:</p>
@@ -579,7 +579,7 @@
                 <img src="images/mint.jpg" height="129" width="129" class="productImage" id="img3">
 
                 <div id="Content003" class="content">
-                    <h3 class="name">Golden autumn farm -spearmint Mint spearmint<br>
+                    <h3 class="name" id="name3">Golden autumn farm -spearmint Mint spearmint<br>
                         Mint 200 perennial root flower seeds ...</h3>
                     <p class="price">CDN$<span id="price3">8.88</span></p>
                     <p class="inStock">In Stock</p>
@@ -759,7 +759,7 @@
         <!-- General script -->
         <script>
             
-            /*change total price*/
+            /*price*/
             
             window.onload = getTotal();
             
@@ -825,10 +825,24 @@
                         document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
                         document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
                     });
-                })               
+                })
+                
+                
+                
+        
+                
+                
             }
             
-     
+            
+            
+           
+            
+            
+            
+            
+            
+            
             
             
             /*change shipping price*/
@@ -861,7 +875,7 @@
             })
             
             
-            /*link to index.html*/
+            /*link tp index.html*/
             function redirectHomePage() {
                 window.location.href= "index.html";
             }
@@ -890,12 +904,41 @@
                 document.getElementById("logo").style.visibility="visible";
             }
             function placeOrder(){
+                
+                
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                    
+                var radioValue = $("input[type='radio']:checked").attr('id');
+                    
+                    
+                firebase.database().ref('users/' + uid + '/OrderTotal').set({
+                        Items:{
+                            Item1:{
+                                Name: document.getElementById("name1").innerHTML,
+                                Price: document.getElementById("price1").innerHTML,
+                                Quantity: document.getElementById("quantity1").value
+                            },
+                            Item2:{
+                                Name: document.getElementById("name2").innerHTML,
+                                Price: document.getElementById("price2").innerHTML,
+                                Quantity: document.getElementById("quantity2").value
+                            },
+                            Item3:{
+                                Name: document.getElementById("name3").innerHTML,
+                                Price: document.getElementById("price3").innerHTML,
+                                Quantity: document.getElementById("quantity3").value
+                            }
+                        },
+                        Shipping: radioValue,
+                        Total: document.getElementById("total")
+                });
+                
                 document.getElementById("checkOutDiv").style.visibility="hidden";
                 document.getElementById("thankYouDiv").style.visibility="visible";
-                document.getElementById("logo").style.visibility ="hidden";
-            }
+                document.getElementById("logo").style.visibility ="hidden";                                                      
             
-           
+            }
             
             /*hide the green div content*/
             function showNone(){
@@ -949,6 +992,9 @@
                         Bphone: document.getElementById("phone").value
                 });
             }
+            
+            
+            
             
             
             
