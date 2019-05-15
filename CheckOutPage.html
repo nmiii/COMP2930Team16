@@ -46,7 +46,7 @@
                 opacity: 0.91;
                 padding-bottom: 35px;
                 width: 72%;
-                height: 230px;
+                height: 250px;
                 
             }
             
@@ -120,19 +120,19 @@
             #Content001{
                 position: absolute;
                 left: 15%;
-                top: 370px;
+                top: 400px;
             }
             
             #Content002{
                 position: absolute;
                 left: 15%;
-                top: 620px;
+                top: 670px;
             }
             
             #Content003{
                 position: absolute;
                 left: 15%;
-                top: 880px;
+                top: 920px;
             }
             .product p{
                 margin: 5px;
@@ -282,7 +282,7 @@
                      float: none;
                      position: absolute;
                      left: auto;
-                     top:2000px;
+                     top:2250px;
                      width: auto;
                      margin-left: 30px;
                  }
@@ -292,7 +292,7 @@
                      margin-left: 30px;
                      padding-left: 30px;
                      position: relative;
-                     top: 230px;
+                     top: 470px;
                      width:300px;
                      height: 500px;
                  }
@@ -338,10 +338,10 @@
                  
                  #output {
                      position: absolute;
-                     top: 1670px;
+                     top: 1930px;
                      border: solid 0.5px #C4C4C4;
                      padding: 25px;
-                     padding-left: 0;
+                     padding-left: 30px;
                      background: #E5E5E5;
                      opacity: 0.91;
                      width: 280px;
@@ -350,7 +350,7 @@
                  }
                  #products{
                      position: relative;
-                     top: 230px;
+                     top: 480px;
                      margin-left: 30px;
                      width: 330px;
                      
@@ -380,7 +380,7 @@
                  #Content002{
                      position: absolute;
                      left: 120px;
-                     top: 180px;
+                     top: 190px;
                  }
                  #Content003{
                      position: absolute;
@@ -435,6 +435,9 @@
                  }
                  .desktopExtent{
                      width: 100%;
+                 }
+                 .giftButton{
+                     visibility: hidden;
                  }
             }
                 /*map*/
@@ -541,12 +544,18 @@
             <div id="product001" data-price="11.49" class="product">
                 <img src="images/groot.jpg" height="129" width="129" class="productImage">
                 <div id="Content001" class="content">
-                    <h3 class="name">Baby Groot Flower Pot Containers Guardians of The Galaxy<br>
+                    <h3 class="name" id="name1">Baby Groot Flower Pot Containers Guardians of The Galaxy<br>
                         Succulent Pen Pot Desk Organizer Creative Decoration Gifts)</h3>
-                    <p class="price">CDN$13.99</p>
+                    <p class="price">CDN$<span id="price1">13.99</span></p>
                     <p class="inStock">In Stock</p>
 
-                    <p style="display: inline">Quantity: 1</p><span class="change">Change</span><br>
+                    <p style="display: inline">Quantity:</p>
+                    <select name="quantity" id="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <br>
 
                     
                     <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
@@ -557,10 +566,16 @@
             <div id="product002" data-price="7.25" class="product">
                 <img src="images/morningGlory.jpg" height="129" width="129" class="productImage">
                 <div id="Content002" class="content">
-                    <h3 class="name">Morning Glory- Grandpa Ott- 100 Seeds</h3>
-                    <p class="price">CDN$5.04</p>
+                    <h3 class="name" id="name2">Morning Glory- Grandpa Ott- 100 Seeds</h3>
+                    <p class="price">CDN$<span id="price2">5.04</span></p>
                     <p class="inStock">In Stock</p>
-                    <p style="display: inline">Quantity: 1</p><span clas="change">Change</span> <br>
+                    <p style="display: inline">Quantity:</p>
+                    <select name="quantity" id="quantity2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <br>
                     <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
                 </div>
                 <div class="buy-now"></div>
@@ -571,11 +586,17 @@
                 <img src="images/mint.jpg" height="129" width="129" class="productImage" id="img3">
 
                 <div id="Content003" class="content">
-                    <h3 class="name">Golden autumn farm -spearmint Mint spearmint<br>
+                    <h3 class="name" id="name3">Golden autumn farm -spearmint Mint spearmint<br>
                         Mint 200 perennial root flower seeds ...</h3>
-                    <p class="price">CDN$8.88</p>
+                    <p class="price">CDN$<span id="price3">8.88</span></p>
                     <p class="inStock">In Stock</p>
-                    <p style="display: inline">Quantity: 1</p><span clas="change">Change</span><br>
+                    <p style="display: inline">Quantity:</p>
+                    <select name="quantity" id="quantity3">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <br>
                     <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
                 </div>
                 <div class="buy-now"></div>
@@ -584,10 +605,10 @@
             <hr id="hiddenHr">
              <div id="shipping">
                 <h3>Choose your delivery options:</h3>
-                <input type="radio" name="shipping" value="CDN$11.97" onclick="showNone()" onclick ="check()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
-                <input type="radio" name="shipping" value="CDN$00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeTwoDayShipping">FREE Two-Day Shipping<br>
-                <input type="radio" name="shipping" value="CDN$00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeStandardShipping">FREE Standard Shipping<br>
-                 <input type="radio" name="shipping" value="CDN$00.00" onclick="showGreenSaving()" onclick="check()" class="radioButton" required="required" id="freeGreenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
+                <input type="radio" name="shipping" value="11.97" onclick="showNone()" onclick ="check()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
+                <input type="radio" name="shipping" value="00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeTwoDayShipping">FREE Two-Day Shipping<br>
+                <input type="radio" name="shipping" value="00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeStandardShipping">FREE Standard Shipping<br>
+                 <input type="radio" name="shipping" value="00.00" onclick="showGreenSaving()" onclick="check()" class="radioButton" required="required" id="freeGreenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
             </div>
             
         </div>
@@ -600,18 +621,18 @@
             <button type="button" class="placeYourOrder" onclick="placeOrder()" id="placeYourOrderTop">Place your order</button>
                 <br>
                 Order summary:<br>
-                Items:(3) CDN$27.91 <br>
-                Shipping: <span id="shippingPrice">CDN$00.00</span>
+                Items:(3) CDN$<span id="totalItems">00.00</span><br>
+                Shipping: CDN$<span id="shippingPrice">00.00</span>
                 
                 <hr>
                 
-                Total before tax: CDN$27.91<br>
+                Total before tax: CDN$<span id="totalBeforeTax">00.00</span><br>
                 Estimate GST/HST: CDN$00.00<br>
                 Estimate PST/RST/QST: CDN$00.00<br>
                 
                 <hr>
             
-            <span style="color: #61C98E">Order Total: <b>CDN$</b><b id="total">27.91</b></span><br>
+            <span style="color: #61C98E">Order Total: <b>CDN$</b><b id="total">00.00</b></span><br>
                 <hr>
                 <div id="output" style="display: none">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
@@ -637,7 +658,7 @@
             
         </div>
         
-        <div id="bottomButton" class="thanosClass">
+        <div id="bottomButton">
             <button type="button" class="placeYourOrder" id="placeYourOrderBottom" onclick="placeOrder()">Place your order</button>
         </div>
         
@@ -664,10 +685,10 @@
                 <div id="thankYouSummary">
                     Order summary:<br>
                     Items:(3) CDN$27.91 <br>
-                    Shipping: <span id="tyshippingPrice">CDN$00.00</span>
+                    Shipping: CND$<span id="tyshippingPrice">00.00</span>
                     <hr>
                 
-                    Total before tax: CDN$27.91<br>
+                    Total before tax: CDN$<span id="tytotalBeforeTax"></span><br>
                     Estimate GST/HST: CDN$00.00<br>
                     Estimate PST/RST/QST: CDN$00.00<br>
                     <hr>
@@ -750,33 +771,124 @@
         <!-- General script -->
         <script>
             
-            /*change shipping price*/
+                        /*price*/
+            
+            window.onload = getTotal();
+            
+            
+            
+            function getTotal(){
+                var price1 = parseFloat(document.getElementById("price1").innerHTML);
+                var price2 = parseFloat(document.getElementById("price2").innerHTML);
+                var price3 = parseFloat(document.getElementById("price3").innerHTML);
+            
+                var quantity1 = document.getElementById("quantity1");
+                var quantity2 = document.getElementById("quantity2");
+                var quantity3 = document.getElementById("quantity3");
+                
+                quantity1.addEventListener("change", calc);
+                quantity2.addEventListener("change", calc);
+                quantity3.addEventListener("change", calc);
+                
+                var totalItems = price1*quantity1.value + price2*quantity2.value + price3*quantity3.value;
+                document.getElementById("totalItems").innerHTML = Math.round(totalItems*100)/100;  
+                
+            
+                function calc(){
+                    var totalItems = price1*quantity1.value + price2*quantity2.value + price3*quantity3.value;
+                    document.getElementById("totalItems").innerHTML = Math.round(totalItems*100)/100;  
+                }
+                
+            
+                var totalBeforeTax = Math.round(totalItems*100)/100; 
+                document.getElementById("totalBeforeTax").innerHTML = totalBeforeTax;
+                
+                
+                
+                $(document).ready(function(){
+                    $(oneDayShipping).click(function(){
+                        totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("oneDayShipping").value);
+                        document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
+                    });
+                    
+                    $(freeTwoDayShipping).click(function(){
+                        totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeTwoDayShipping").value);
+                        document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
+                    });
+                    
+                    $(freeStandardShipping).click(function(){
+                        totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeStandardShipping").value);
+                        document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
+                    });
+                    
+                    $(freeGreenShipping).click(function(){
+                        totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeGreenShipping").value);
+                        document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
+                    });
+                })
+                
+                
+                
+        
+                
+                
+            }
+            
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             /*change shipping price*/
             $(document).ready(function(){
                 
                 //when button is clicked
                 $(oneDayShipping).click(function(){
                     document.getElementById("shippingPrice").innerHTML=document.getElementById("oneDayShipping").value;
-                    document.getElementById("total").innerHTML="39.88";
+                    
                     
                     document.getElementById("tyshippingPrice").innerHTML=document.getElementById("oneDayShipping").value;
-                    document.getElementById("tytotal").innerHTML="39.88";
+                    
                 });
                 $(freeTwoDayShipping).click(function(){
                     document.getElementById("shippingPrice").innerHTML=document.getElementById("freeTwoDayShipping").value;
-                    document.getElementById("total").innerHTML="27.91";
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("freeTwoDayShipping").value;
+                    
+                    
                 });
                 $(freeStandardShipping).click(function(){
                     document.getElementById("shippingPrice").innerHTML=document.getElementById("freeStandardShipping").value;
-                     document.getElementById("total").innerHTML="27.91";
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("freeStandardShipping").value;
+                     
                 });
                 $(freeGreenShipping).click(function(){
                     document.getElementById("shippingPrice").innerHTML=document.getElementById("freeGreenShipping").value;
-                     document.getElementById("total").innerHTML="27.91";
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("freeGreenShipping").value;
+                    
                 });
             })
             
             
-            /*link tp index.html*/
+            /*link to index.html*/
             function redirectHomePage() {
                 window.location.href= "index.html";
             }
@@ -805,6 +917,34 @@
                 document.getElementById("logo").style.visibility="visible";
             }
             function placeOrder(){
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                    
+                var radioValue = $("input[type='radio']:checked").attr('id');
+                    
+                    
+                firebase.database().ref('users/' + uid + '/OrderTotal').set({
+                        Items:{
+                            Item1:{
+                                Name: document.getElementById("name1").innerHTML,
+                                Price: document.getElementById("price1").innerHTML,
+                                Quantity: document.getElementById("quantity1").value
+                            },
+                            Item2:{
+                                Name: document.getElementById("name2").innerHTML,
+                                Price: document.getElementById("price2").innerHTML,
+                                Quantity: document.getElementById("quantity2").value
+                            },
+                            Item3:{
+                                Name: document.getElementById("name3").innerHTML,
+                                Price: document.getElementById("price3").innerHTML,
+                                Quantity: document.getElementById("quantity3").value
+                            }
+                        },
+                        Shipping: radioValue,
+                        Total: document.getElementById("total")
+                });
+                
                 document.getElementById("checkOutDiv").style.visibility="hidden";
                 document.getElementById("thankYouDiv").style.visibility="visible";
                 document.getElementById("logo").style.visibility ="hidden";
