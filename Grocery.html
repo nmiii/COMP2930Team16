@@ -589,17 +589,31 @@ input[type=text]:focus {
                     var dbRef = firebase.database().ref().child("users");
                     dbRef.once('value', function(snapshot) {
                       if (snapshot.hasChild(uid)) { // if the uid node DOES exist
-                          dbRef.child(uid).child("cart").child(item).set({
-                                status: "true",
-                                quantity: "1"
-                            });
-                          console.log("item added");
+                          var itemRef = firebase.database().ref().child("users").child(uid).child("cart");
+                          itemRef.once('value', function(snapshot) {
+                              if (snapshot.hasChild(item)){
+                                  var quantityRef = firebase.database().ref().child("users").child(uid).child("cart").child(item).child("quantity");
+                                  quantityRef.transaction(function(quantity){
+                                      if (quantity){
+                                          quantity = quantity + 1;
+                                      }
+                                      return quantity;
+                                  });
+                                  console.log("item incremented");
+                              } else {
+                                  dbRef.child(uid).child("cart").child(item).set({
+                                        status: "true",
+                                        quantity: 1
+                                  });
+                                  console.log("item added");
+                              }
+                          });
                           
                       } else { // if the uid node does NOT exist
                             dbRef.child(uid).child("cart").child(item).set({
                                 status: "true",
-                                quantity: "1"
-                            });
+                                quantity: 1
+                            });         
                           console.log("item added and user created");
                       }
                     });
