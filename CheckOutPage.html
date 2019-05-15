@@ -3,7 +3,6 @@
         <meta charset="utf-8" />
         <title>Check out</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-       
         <style>
             body{
                 background-image:url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");  
@@ -47,7 +46,7 @@
                 opacity: 0.91;
                 padding-bottom: 35px;
                 width: 72%;
-                height: 230px;
+                height: 250px;
                 
             }
             
@@ -121,19 +120,19 @@
             #Content001{
                 position: absolute;
                 left: 15%;
-                top: 370px;
+                top: 400px;
             }
             
             #Content002{
                 position: absolute;
                 left: 15%;
-                top: 620px;
+                top: 670px;
             }
             
             #Content003{
                 position: absolute;
                 left: 15%;
-                top: 880px;
+                top: 920px;
             }
             .product p{
                 margin: 5px;
@@ -283,7 +282,7 @@
                      float: none;
                      position: absolute;
                      left: auto;
-                     top:2000px;
+                     top:2250px;
                      width: auto;
                      margin-left: 30px;
                  }
@@ -293,7 +292,7 @@
                      margin-left: 30px;
                      padding-left: 30px;
                      position: relative;
-                     top: 230px;
+                     top: 470px;
                      width:300px;
                      height: 500px;
                  }
@@ -337,12 +336,12 @@
                      margin-left: 30px;
                  }
                  
-                 #greenShippingChosen {
+                 #output {
                      position: absolute;
-                     top: 1670px;
+                     top: 1930px;
                      border: solid 0.5px #C4C4C4;
                      padding: 25px;
-                     padding-left: 0;
+                     padding-left: 30px;
                      background: #E5E5E5;
                      opacity: 0.91;
                      width: 280px;
@@ -351,7 +350,7 @@
                  }
                  #products{
                      position: relative;
-                     top: 230px;
+                     top: 480px;
                      margin-left: 30px;
                      width: 330px;
                      
@@ -381,7 +380,7 @@
                  #Content002{
                      position: absolute;
                      left: 120px;
-                     top: 180px;
+                     top: 190px;
                  }
                  #Content003{
                      position: absolute;
@@ -437,14 +436,17 @@
                  .desktopExtent{
                      width: 100%;
                  }
+                 .giftButton{
+                     visibility: hidden;
+                 }
             }
-            
-            
-            
-            
-            
-            
-            
+                /*map*/
+                #googleMap {
+                    width: 100%;
+                    height: 200px;
+                    margin: 10px auto;
+                }
+
             
         </style>
         
@@ -496,11 +498,14 @@
                     <div id="shippingAddressP"  >
                         <br>
                         <input type="text" name="name" placeholder="Name" id="name"><br>
-                        <input type="text" name="address" placeholder="Address" id="address" ><br>
+                        <input type="text" id="to" name="address" placeholder="Address" id="address" ><br>
                         <input type="text" name="phone" placeholder="Phone number" id="phone" ><br>
                         
                     </div>
-                    <input type="submit" class="change" onclick="submitShippingAddress()"  value="Submit"/>
+                    <input type="submit" class="change" onclick="both();" value="Submit"/>
+                    <br/><br/>
+                    <label>Shipping from: </label>
+                    <input type="text" id="from" name="Shipping Products From: " value="BCIT,Burnaby"/>
                 </div>
                 
                 </div>
@@ -551,6 +556,8 @@
                         <option value="3">3</option>
                     </select>
                     <br>
+
+                    
                     <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
                 </div>
                 <div class="buy-now"></div>
@@ -584,7 +591,7 @@
                     <p class="price">CDN$<span id="price3">8.88</span></p>
                     <p class="inStock">In Stock</p>
                     <p style="display: inline">Quantity:</p>
-                    <select name="quantity" id="quantity3" onKeyUp="">
+                    <select name="quantity" id="quantity3">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -598,10 +605,10 @@
             <hr id="hiddenHr">
              <div id="shipping">
                 <h3>Choose your delivery options:</h3>
-                <input type="radio" name="shipping" value="11.97" onclick="showNone()"  class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
-                <input type="radio" name="shipping" value="00.00" onclick="showNone()"   class="radioButton" required id="freeTwoDayShipping">FREE Two-Day Shipping<br>
-                <input type="radio" name="shipping" value="00.00" onclick="showNone()"  class="radioButton" required id="freeStandardShipping">FREE Standard Shipping<br>
-                 <input type="radio" name="shipping" value="00.00" onclick="showGreenSaving()"  class="radioButton" required="required" id="freeGreenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
+                <input type="radio" name="shipping" value="11.97" onclick="showNone()" onclick ="check()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
+                <input type="radio" name="shipping" value="00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeTwoDayShipping">FREE Two-Day Shipping<br>
+                <input type="radio" name="shipping" value="00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeStandardShipping">FREE Standard Shipping<br>
+                 <input type="radio" name="shipping" value="00.00" onclick="showGreenSaving()" onclick="check()" class="radioButton" required="required" id="freeGreenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
             </div>
             
         </div>
@@ -614,8 +621,8 @@
             <button type="button" class="placeYourOrder" onclick="placeOrder()" id="placeYourOrderTop">Place your order</button>
                 <br>
                 Order summary:<br>
-                Items:(3) CDN$<span id="totalItems">00.00</span> <br>
-                Shipping: CDN$<span id="shippingPrice" value="00.00">00.00</span>
+                Items:(3) CDN$<span id="totalItems">00.00</span><br>
+                Shipping: CDN$<span id="shippingPrice">00.00</span>
                 
                 <hr>
                 
@@ -625,9 +632,9 @@
                 
                 <hr>
             
-            <span style="color: #61C98E">Order Total: <b>CDN$</b><b id="total">27.91</b></span><br>
+            <span style="color: #61C98E">Order Total: <b>CDN$</b><b id="total">00.00</b></span><br>
                 <hr>
-                <div id="greenShippingChosen" style="display: none">
+                <div id="output" style="display: none">
                     By choosing <span style="color: #61C98E">GREEN</span> Shipping,<br>
                     you have saved <span style="color: #61C98E">0.01%</span> carbon emmision <br>
                     that is released to the environment,<br>
@@ -637,7 +644,12 @@
                 </div>
                 <div class="textCenter">THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
                 <br>
-            
+             <div class="container-fluid">
+            <div id="googleMap">
+
+            </div>
+
+        </div>
             
                 
             
@@ -646,7 +658,7 @@
             
         </div>
         
-        <div id="bottomButton" class="thanosClass">
+        <div id="bottomButton">
             <button type="button" class="placeYourOrder" id="placeYourOrderBottom" onclick="placeOrder()">Place your order</button>
         </div>
         
@@ -673,10 +685,10 @@
                 <div id="thankYouSummary">
                     Order summary:<br>
                     Items:(3) CDN$27.91 <br>
-                    Shipping: <span id="tyshippingPrice">CDN$00.00</span>
+                    Shipping: CND$<span id="tyshippingPrice">00.00</span>
                     <hr>
                 
-                    Total before tax: CDN$<span id="tytotalBeforeTax">27.91</span><br>
+                    Total before tax: CDN$<span id="tytotalBeforeTax"></span><br>
                     Estimate GST/HST: CDN$00.00<br>
                     Estimate PST/RST/QST: CDN$00.00<br>
                     <hr>
@@ -759,7 +771,7 @@
         <!-- General script -->
         <script>
             
-            /*price*/
+                        /*price*/
             
             window.onload = getTotal();
             
@@ -845,7 +857,8 @@
             
             
             
-            /*change shipping price*/
+            
+             /*change shipping price*/
             $(document).ready(function(){
                 
                 //when button is clicked
@@ -875,7 +888,7 @@
             })
             
             
-            /*link tp index.html*/
+            /*link to index.html*/
             function redirectHomePage() {
                 window.location.href= "index.html";
             }
@@ -904,8 +917,6 @@
                 document.getElementById("logo").style.visibility="visible";
             }
             function placeOrder(){
-                
-                
                 var user = firebase.auth().currentUser;
                 var uid = user.uid;
                     
@@ -936,19 +947,20 @@
                 
                 document.getElementById("checkOutDiv").style.visibility="hidden";
                 document.getElementById("thankYouDiv").style.visibility="visible";
-                document.getElementById("logo").style.visibility ="hidden";                                                      
-            
+                document.getElementById("logo").style.visibility ="hidden";
             }
+            
+           
             
             /*hide the green div content*/
             function showNone(){
-                document.getElementById("greenShippingChosen").style.display = "none"; 
+                document.getElementById("output").style.display = "none"; 
                 document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
             }
             
             /*show the green div content*/
             function showGreenSaving(){
-                document.getElementById("greenShippingChosen").style.display = "block"; 
+                document.getElementById("output").style.display = "block"; 
                 document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
                 }
             
@@ -976,6 +988,13 @@
                 
                
             }
+            
+            /* for submit button to call both functions*/
+            function both(){
+                calcRoute();
+                submitShippingAddress();
+                
+            }
                  
             /*submit shipping address content*/
             
@@ -995,9 +1014,13 @@
             
             
             
-            
-            
-            
         </script>
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4vXoSVzNyanjxKR54IM_UH2X4qrfzxeM&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Main.js"></script>
   </body>
 </html>
