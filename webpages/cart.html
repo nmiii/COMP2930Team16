@@ -14,6 +14,7 @@
                 margin-top: 20px;
                 position: relative;
                 margin-left: 30px;
+                top: 100px;
             }
             /* cart display styling */
             .theDiv {
@@ -95,6 +96,9 @@
           firebase.initializeApp(firebaseConfig);
         </script>
     </head>
+    <!-- clear cart button -->
+    <a class="pure-button" id='clearCart'><i class="fa fa-shopping-cart fa-lg"></i>Clear Cart</a>
+    
     <!-- Cart & Checkout buttons -->
         <a class="pure-button" href="123.html">
                 <i class="fa fa-arrow-right"></i>
@@ -111,9 +115,30 @@
             </a>
     <div id="products"></div>
     <body>
+        <script> /* Clear Cart Functions */
+            function clearCart(){
+                var user = firebase.auth().currentUser;
+                user.once('value')
+                    .then(function(snapshot){
+//                        var uid = user.uid;
+//                        var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
+//                        cartPath.remove();
+                        console.log('success');
+                });
+                
+            }
+        </script>
         <script> /* Display Cart Data */
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) { // if a user is logged in
+                    var button = document.getElementById('clearCart');
+                    button.addEventListener('click', function(){
+                         var cartPath = firebase.database().ref().child("users").child(user.uid).child("cart");
+                         cartPath.remove();
+                         window.setTimeout(function(){
+                             window.open('cart.html','_self');
+                         }, 500)
+                    });
                     var uid = user.uid;
                     var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
                     // DOG FOOD
