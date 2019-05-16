@@ -448,7 +448,44 @@
                     margin: 10px auto;
                 }
 
-            
+            /* cart display styling */
+            .theDiv {
+                background-color: lightslategray;
+                height: 100px;
+                width: 400px;
+                margin-bottom: 10px;
+            }
+            .dImg {
+                background-size: cover;
+                height: 80px;
+                width: 80px;
+                margin: 10px;
+                display: inline-block;
+            }
+            .dName {
+                background-color: grey;
+                vertical-align: top;
+                padding: 3px;  
+                position: relative;
+                top: 13px;
+            }
+            .dPrice {
+                vertical-align: bottom;
+                background-color: grey;
+                padding: 3px;
+                position: relative;
+                bottom: 15px;
+                left: 96px;
+            }
+            .dQuantity {
+                font-weight: bold;
+                float: right;
+                margin-top: 10px;
+                margin-right: 10px;
+                padding: 3px;
+                
+                background-color: grey;
+            } 
         </style>
         
         <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -542,75 +579,6 @@
             </div>
         
         <div id="products">
-            <div id="product001" data-price="11.49" class="product">
-                <img src="images/groot.jpg" height="129" width="129" class="productImage">
-                <div id="Content001" class="content">
-                    <h3 class="name" id="name1">Baby Groot Flower Pot Containers Guardians of The Galaxy<br>
-                        Succulent Pen Pot Desk Organizer Creative Decoration Gifts)</h3>
-                    <p class="price">CDN$<span id="price1">13.99</span></p>
-                    <p class="inStock">In Stock</p>
-
-                    <p style="display: inline">Quantity:</p>
-                    <select name="quantity" id="quantity1">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <br>
-
-                    
-                    <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
-                </div>
-                <div class="buy-now"></div>
-            </div>
-            
-            <div id="product002" data-price="7.25" class="product">
-                <img src="images/morningGlory.jpg" height="129" width="129" class="productImage">
-                <div id="Content002" class="content">
-                    <h3 class="name" id="name2">Morning Glory- Grandpa Ott- 100 Seeds</h3>
-                    <p class="price">CDN$<span id="price2">5.04</span></p>
-                    <p class="inStock">In Stock</p>
-                    <p style="display: inline">Quantity:</p>
-                    <select name="quantity" id="quantity2">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <br>
-                    <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
-                </div>
-                <div class="buy-now"></div>
-            </div>
-            
-            <div id="product003" data-price="21.99" class="product" class="thanosClass">
-
-                <img src="images/mint.jpg" height="129" width="129" class="productImage" id="img3">
-
-                <div id="Content003" class="content">
-                    <h3 class="name" id="name3">Golden autumn farm -spearmint Mint spearmint<br>
-                        Mint 200 perennial root flower seeds ...</h3>
-                    <p class="price">CDN$<span id="price3">8.88</span></p>
-                    <p class="inStock">In Stock</p>
-                    <p style="display: inline">Quantity:</p>
-                    <select name="quantity" id="quantity3">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <br>
-                    <button type="button" class="giftButton"><img src="https://cdn2.iconfinder.com/data/icons/celebration-party/48/64-512.png" width="18" height="18"> Add gift options</button>
-                </div>
-                <div class="buy-now"></div>
-            </div>
-            
-            <hr id="hiddenHr">
-             <div id="shipping">
-                <h3>Choose your delivery options:</h3>
-                <input type="radio" name="shipping" value="11.97" onclick="showNone()" onclick ="check()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
-                <input type="radio" name="shipping" value="00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeTwoDayShipping">FREE Two-Day Shipping<br>
-                <input type="radio" name="shipping" value="00.00" onclick="showNone()" onclick="check()" class="radioButton" required id="freeStandardShipping">FREE Standard Shipping<br>
-                 <input type="radio" name="shipping" value="00.00" onclick="showGreenSaving()" onclick="check()" class="radioButton" required="required" id="freeGreenShipping">FREE <span style="color: #61C98E">GREEN</span> Shipping<br>
-            </div>
             
         </div>
         
@@ -1058,6 +1026,434 @@
             
             
             
+        </script>
+        
+        <script> /* Display Cart Data */
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) { // if a user is logged in
+                    var uid = user.uid;
+                    var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
+
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df1")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df1").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df1");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df2")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df2").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df2");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df3")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df3").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df3");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df4")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df4").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df4");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df5")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df5").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df5");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df6")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df6").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df6");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df7")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df7").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df7");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df8")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df8").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df8");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                } else {
+                    // link to login page here
+                }
+            });
         </script>
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
