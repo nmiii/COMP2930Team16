@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
         </script>
@@ -23,18 +24,20 @@
           };
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
-</script>
-        <p id="j"></p>
+        </script>
     </head>
     <body>
+        <button id="myButton" onclick="myFunction()"></button>
         <script>
-            
-            var w = document.getElementById("j");
-                    var dbRef2 = firebase.database().ref().child("test").child("placeholder");
-                    dbRef2.on ('value', function (snap) {
-                        w.innerText = snap.val();
-                    });
-            
+            function myFunction() {
+                     var dbRef = firebase.database().ref().child("nooforders").child("nooforderscounter");
+                     dbRef.transaction(function(tally) {
+                         if (tally){
+                             tally = tally + 1;
+                         }
+                         return tally;
+                     });
+            }
         </script>
     </body>
 </html>

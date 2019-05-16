@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "ship-green"
+    "default": "ship-green",
+    "ship-green-ec2e6": "ship-green-ec2e6"
   }
 }

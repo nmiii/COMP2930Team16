@@ -530,7 +530,7 @@
 
         
         
-    </head> 
+    </head>
     
     <body>
         <img src="images/logo%20(2).png" onclick="redirectHomePage()" alt="logo" width="80px" height="80px" style="float: left" id="logo">
@@ -587,6 +587,8 @@
             
             
             </div>
+           <!-- clear cart button -->
+    <a class="pure-button" id='clearCart'><i class="fa fa-shopping-cart fa-lg"></i>Clear Cart</a>
         
         <div id="products">
             
@@ -692,7 +694,7 @@
             </div>
             <div class="textCenter" id="thinkGreen" >THINK <span style="color: #61C98E">GREEN</span>, CHOOSE WISELY.</div>
             <br>
-            <a href="index.html" style="color: #61C98E;" id="continueShopping">Continue Shopping</a>
+            <a href="./index.html" style="color: #61C98E;" id="continueShopping">Continue Shopping</a>
         </div>
         
         
@@ -953,6 +955,214 @@
                             })
                         }
                     });
+<<<<<<< HEAD:CheckOutPage.html
+=======
+                    
+                    $(freeGreenShipping).click(function(){
+                        totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeGreenShipping").value);
+                        document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
+                        document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
+                    });
+                });
+                
+                
+                
+                }
+                
+                
+            }
+            
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             /*change shipping price*/
+            $(document).ready(function(){
+                
+                //when button is clicked
+                $(oneDayShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("oneDayShipping").value;
+                    
+                    
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("oneDayShipping").value;
+                    
+                });
+                $(freeTwoDayShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("freeTwoDayShipping").value;
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("freeTwoDayShipping").value;
+                    
+                    
+                });
+                $(freeStandardShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("freeStandardShipping").value;
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("freeStandardShipping").value;
+                     
+                });
+                $(freeGreenShipping).click(function(){
+                    document.getElementById("shippingPrice").innerHTML=document.getElementById("freeGreenShipping").value;
+                    document.getElementById("tyshippingPrice").innerHTML=document.getElementById("freeGreenShipping").value;
+                    
+                });
+            })
+            
+            
+            /*link to index.html*/
+            function redirectHomePage() {
+                window.location.href= "../index.html";
+            }
+            
+            
+            
+            /*add Easter egg*/
+            function promoCodeApply(){
+                var easterEgg = document.getElementById("promoCode").value;
+                if ( easterEgg == "shipGREEN") {
+                    document.body.style.animationDuration = "4s";
+                    document.body.style.animationIterationCount = "1";
+                    document.body.style.animationName = "roll";
+                    console.log("barrelroll success");
+                    
+                }
+            }
+            
+            
+            
+            
+            /*hide/show thank you div*/
+            function manageOrder() {
+                document.getElementById("checkOutDiv").style.visibility="visible";
+                document.getElementById("thankYouDiv").style.visibility="hidden";
+                document.getElementById("logo").style.visibility="visible";
+            }
+            function placeOrder(){
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                    
+                var radioValue = $("input[type='radio']:checked").attr('id');
+                    
+                    
+                firebase.database().ref('users/' + uid + '/OrderTotal').set({
+                        Items:{
+                            Item1:{
+                                Name: document.getElementById("name1").innerHTML,
+                                Price: document.getElementById("price1").innerHTML,
+                                Quantity: document.getElementById("quantity1").value
+                            },
+                            Item2:{
+                                Name: document.getElementById("name2").innerHTML,
+                                Price: document.getElementById("price2").innerHTML,
+                                Quantity: document.getElementById("quantity2").value
+                            },
+                            Item3:{
+                                Name: document.getElementById("name3").innerHTML,
+                                Price: document.getElementById("price3").innerHTML,
+                                Quantity: document.getElementById("quantity3").value
+                            }
+                        },
+                        Shipping: radioValue,
+                        Total: document.getElementById("total").innerHTML
+                });
+                
+                document.getElementById("checkOutDiv").style.visibility="hidden";
+                document.getElementById("thankYouDiv").style.visibility="visible";
+                document.getElementById("logo").style.visibility ="hidden";
+            }
+            
+           
+            
+            /*hide the green div content*/
+            function showNone(){
+                document.getElementById("output").style.display = "none"; 
+                document.getElementById("greenShippingChosenThankYouDiv").style.display="none";
+            }
+            
+            /*show the green div content*/
+            function showGreenSaving(){
+                document.getElementById("output").style.display = "block"; 
+                document.getElementById("greenShippingChosenThankYouDiv").style.display="block";
+                }
+            
+       
+            
+            /*databse script============================================================*/
+            var user = firebase.auth().currentUser;
+            
+            var dbRef = firebase.database().ref().child("users");
+            
+            
+            
+            /*submit billing address content*/
+            function submitBillingAddress(data){
+                
+                
+                /*update billing address on database*/
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                    firebase.database().ref('users/' + uid + '/BillingAddress').set({
+                        Bname: document.getElementById("Bname").value,
+                        Baddress: document.getElementById("Baddress").value,
+                        Bphone: document.getElementById("Bphone").value
+                });
+                
+               
+            }
+            
+            /* for submit button to call both functions*/
+            function both(){
+                calcRoute();
+                submitShippingAddress();
+                
+            }
+                 
+            /*submit shipping address content*/
+            
+            function submitShippingAddress(data){
+                
+            
+                /*update shipping address on database*/
+                var user = firebase.auth().currentUser;
+                var uid = user.uid;
+                
+                var name = document.getElementById("Sname").value;
+                var address = document.getElementById("to").value;
+                var phone = document.getElementById("Sphone").value;
+                
+                firebase.database().ref('users/' + uid + '/ShippingAddress').set({
+                        Sname: name,
+                        Saddress: address,
+                        Sphone: phone
+                });
+            }
+            
+            
+            
+        </script>
+        
+        <script> /* Display Cart Data */
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) { // if a user is logged in
+                    var button = document.getElementById('clearCart');
+                    button.addEventListener('click', function(){
+                         var cartPath = firebase.database().ref().child("users").child(user.uid).child("cart");
+                         cartPath.remove();
+                         window.setTimeout(function(){
+                             window.open('CheckOutPage.html','_self');
+                         }, 500)
+                    });
+                    var uid = user.uid;
+                    var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
+                    // DOG FOOD
+>>>>>>> a366243805190c5583c53ca70e496ce70fde144b:webpages/CheckOutPage.html
                     cartPath.once('value', function(snapshot){
                         var products = document.getElementById("products");
                             var checkOutDiv = document.getElementById("checkOutDiv");                         checkOutDiv.appendChild(products);
@@ -3164,6 +3374,579 @@
                                 var q = snap.val();
                                 spanQuantity.innerHTML = q;
                                 divQuantity.innerHTML = "Quantity: " + "<span class='spanQuantity'>" + q + "</span>";
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("og6")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("og6").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("og6");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("og7")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("og7").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("og7");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("og8")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("og8").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("og8");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    // tools
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt1")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt1").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt1");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt2")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt2").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt2");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt3")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt3").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt3");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt4")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt4").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt4");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt5")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt5").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt5");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt6")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt6").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt6");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt7")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt7").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt7");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            document.body.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("gt8")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("span");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("span");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("span");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("gt8").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("gt8");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                divPrice.innerHTML = "Price: " + price;
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                divQuantity.innerHTML = "Quantity: " + q;
                             })
                         }
                     });

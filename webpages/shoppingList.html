@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head><title>Pet Food</title>
+    <head><title>Shopping Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <!-- Latest compiled and minified CSS -->
@@ -34,6 +34,7 @@ body, html {
     height: 150px;
     float: left;
 } 
+  
     .logo >img:hover{
         cursor: pointer;
     }
@@ -81,7 +82,7 @@ input[type=text]:focus {
     
 }  
     
-.main{
+#main{
     width: 1170px;
     height: 600px;
     float: left;
@@ -93,6 +94,10 @@ input[type=text]:focus {
 }    
     #rightDirection:hover{
         cursor: pointer;
+    }
+/*the cart*/
+    #TheCart{
+        visibility: hidden;
     }
     
 /* media queries for responsive mobile-friendly page*/    
@@ -121,7 +126,7 @@ input[type=text]:focus {
 } 
 
 </style>
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
         </script>
         <!-- the magic line -->
@@ -144,13 +149,12 @@ input[type=text]:focus {
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
 </script>
- 
         
 </head>
     <body>
     <!-- logo -->    
      <div class="logo" style="float: left;">
-        <img src="./images/transparent_logo.png"/ onclick="redirectHomePage()">
+        <img src="Images%20for%20Shopping%20List/logo%20(2).png" onclick="redirectHomePage()"/>
         </div> 
     
         <!-- Search bar -->
@@ -162,12 +166,12 @@ input[type=text]:focus {
                 <i class="fa fa-arrow-right"></i>
                 Login/Sign up
             </a>
-    <a class="pure-button" href="#">
+    <a class="pure-button" href="cart.html">
         <i class="fa fa-shopping-cart fa-lg"></i>
         Cart
     </a>
                  
-    <a class="pure-button" href="./CheckOutPage.html">
+    <a class="pure-button" href="CheckOutPage.html">
         <i class="fa fa-arrow-right"></i>
         Checkout
     </a>
@@ -177,15 +181,18 @@ input[type=text]:focus {
                 <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
             
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px;">
+
             <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
             <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
             <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
+
+           
             </div>    
                 
         </div>
-        <div class="main">
-            <h1><b> &nbsp;Bestseller</b></h1> 
-            <h3>&nbsp;&nbsp;&nbsp;Cat Food</h3>
+        <div id="main">
+            <h1><b> &nbsp;Bestseller</b></h1>
+            <h3>&nbsp;&nbsp;&nbsp;Seeds</h3>
   
        
 <div class="container">
@@ -202,31 +209,35 @@ input[type=text]:focus {
     <div class="carousel-inner">
       <div class="item active">
              <div class="container2">
-             <img src="./images/catFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="cf1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
+             <img src="Images%20for%20Shopping%20List/bestseller3.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="003"><button id="s1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="./images/catFood2.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button id="cf2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="002"><button id="s2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="./images/catFood3.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="cf3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="001"><button id="s3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="./images/catFood4.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="cf4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller8.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="008"><button id="s4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
          
       </div>
     
       <div class="item">
         <div class="container2">
-             <img src="./images/catFood5.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="cf5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
+             <img src="Images%20for%20Shopping%20List/bestseller4.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="004"><button id="s5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="./images/catFood6.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button id="cf6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller5.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="005"><button id="s6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="./images/catFood7.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="cf7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="006"><button id="s7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="./images/catFood8.jpg" alt="f" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="cf8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/bestseller7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="007"><button id="s8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
       </div>
     </div>
 
@@ -241,7 +252,7 @@ input[type=text]:focus {
     </a>
   </div>
 </div>
-            <h3>&nbsp;&nbsp;&nbsp;Dog Food</h3>
+            <h3>&nbsp;&nbsp;&nbsp;Gardening Tools</h3>
                    
 <div class="container">
 
@@ -256,33 +267,36 @@ input[type=text]:focus {
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-          
              <div class="container2">
-             <img src="./images/dogFood1.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="df1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
+             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="009"><button id="gt1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="./images/dogFood2.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button id="df2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="010"><button id="gt2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="./images/dogFood3.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="df3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool3.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="011"><button id="gt3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="./images/dogFood4.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="df4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool4.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="012"><button id="gt4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
          
       </div>
     
       <div class="item">
         <div class="container2">
-             <img src="./images/dogFood5.jpg" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;"><button id="df5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
+             <img src="Images%20for%20Shopping%20List/tool5.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="tool5"><button id="gt5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
              
              <div class="container2">
-             <img src="./images/dogFood6.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;"><button id="df6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="tool6"><button id="gt6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
           
              <div class="container2">
-             <img src="./images/dogFood7.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="df7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool7"><button id="gt7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
            
              <div class="container2">
-             <img src="./images/dogFood8.jpg" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;"><button id="df8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool1"><button id="gt8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
+
       </div>
     </div>
 
@@ -295,29 +309,61 @@ input[type=text]:focus {
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
+
+  </div>
+            </div>
+    
+    
+      
   </div>
             </div>
         </div>
         
-        <script> // cart things
+        
+        <!--The Shopping Cart src"https://www.youtube.com/watch?v=q271lk0G6YQ" -->
+        
+        <div id="TheCart" >
+            <div style="position: absolute; align: right; font-size: 44pt; left: 350px; top: 5px">
+                The Cart
+            </div> 
+            
+            <div style="position: absolute; left: 775px; top: 50px">
+                <button type="button" onclick="ContinueShopping()" style="background-color: #3A7855; border-radius: 4px; color:white; text-shadow: 0 1px 1px rgba(0,0,0,0.2);">Continue Shopping</button>
+            </div>
+            
+            <div id="cartItemImages" style="position: absolute; left: 375px; top: 150px">
+            </div>
+            <div id="cartItemRemove" style="position: absolute; left: 500px; top: 150px">
+            </div>
+            <div id="cartItemQuantity" style="position: absolute; left: 600px; top: 150px">
+            </div>
+            <div id="cartItemTotal" style="position: absolute; left: 650px; top: 150px">
+            </div>
+            <div id="cartTotal" style="position: absolute; left: 650px; top: 125px">
+                Order Total
+            </div>
+            
+            
+        </div>
+            <script> // cart things
             // variable changes for the database paths based on the clicked item
             var item;
-            var cf1 = document.getElementById("cf1").addEventListener("click", function(){item = "cf1";});
-            var cf2 = document.getElementById("cf2").addEventListener("click", function(){item = "cf2";});
-            var cf3 = document.getElementById("cf3").addEventListener("click", function(){item = "cf3";});
-            var cf4 = document.getElementById("cf4").addEventListener("click", function(){item = "cf4";});
-            var cf5 = document.getElementById("cf5").addEventListener("click", function(){item = "cf5";});
-            var cf6 = document.getElementById("cf6").addEventListener("click", function(){item = "cf6";});
-            var cf7 = document.getElementById("cf7").addEventListener("click", function(){item = "cf7";});
-            var cf8 = document.getElementById("cf8").addEventListener("click", function(){item = "cf8";});
-            var df1 = document.getElementById("df1").addEventListener("click", function(){item = "df1";});
-            var df2 = document.getElementById("df2").addEventListener("click", function(){item = "df2";});
-            var df3 = document.getElementById("df3").addEventListener("click", function(){item = "df3";});
-            var df4 = document.getElementById("df4").addEventListener("click", function(){item = "df4";});
-            var df5 = document.getElementById("df5").addEventListener("click", function(){item = "df5";});
-            var df6 = document.getElementById("df6").addEventListener("click", function(){item = "df6";});
-            var df7 = document.getElementById("df7").addEventListener("click", function(){item = "df7";});
-            var df8 = document.getElementById("df8").addEventListener("click", function(){item = "df8";});
+            var s1 = document.getElementById("s1").addEventListener("click", function(){item = "s1";});
+            var s2 = document.getElementById("s2").addEventListener("click", function(){item = "s2";});
+            var s3 = document.getElementById("s3").addEventListener("click", function(){item = "s3";});
+            var s4 = document.getElementById("s4").addEventListener("click", function(){item = "s4";});
+            var s5 = document.getElementById("s5").addEventListener("click", function(){item = "s5";});
+            var s6 = document.getElementById("s6").addEventListener("click", function(){item = "s6";});
+            var s7 = document.getElementById("s7").addEventListener("click", function(){item = "s7";});
+            var s8 = document.getElementById("s8").addEventListener("click", function(){item = "s8";});
+            var gt1 = document.getElementById("gt1").addEventListener("click", function(){item = "gt1";});
+            var gt2 = document.getElementById("gt2").addEventListener("click", function(){item = "gt2";});
+            var gt3 = document.getElementById("gt3").addEventListener("click", function(){item = "gt3";});
+            var gt4 = document.getElementById("gt4").addEventListener("click", function(){item = "gt4";});
+            var gt5 = document.getElementById("gt5").addEventListener("click", function(){item = "gt5";});
+            var gt6 = document.getElementById("gt6").addEventListener("click", function(){item = "gt6";});
+            var gt7 = document.getElementById("gt7").addEventListener("click", function(){item = "gt7";});
+            var gt8 = document.getElementById("gt8").addEventListener("click", function(){item = "gt8";});
             
             // add to cart stuff
             var database = firebase.database();
@@ -363,19 +409,34 @@ input[type=text]:focus {
                 }
             }
         </script>
-
         <script>
              function redirectHomePage() {
-                                window.location.href= "index.html";
-                            }
-                         function myFunction() {
-                  var x = document.getElementById("list");
-                  if (x.style.display === "none") {
-                    x.style.display = "block";
-                  } else {
-                    x.style.display = "none";
-                  }
+                window.location.href= "../index.html";
+            }
+            
+            function FindIfIdExists(obj, id) {
+                var TheNodeList = obj.getElementsByTagName('div');
+                for (NodeNumber = 0; NodeNumber< TheNodeList.length; NodeNumber++) {
+                    if(TheNodeList[NodeNumber].id == id){
+                        return NodeNumber +1;
+                    }
                 }
+                return 0;
+            }
+            
+            function ContinueShopping(){
+                document.getElementById("main").style.visibility ="visible";
+                document.getElementById("TheCart").style.visibility ="hidden";
+            }
+            
+         function myFunction() {
+              var x = document.getElementById("list");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
         </script>
     </body>
 </html>
