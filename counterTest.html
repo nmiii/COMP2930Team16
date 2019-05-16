@@ -27,16 +27,27 @@
         </script>
     </head>
     <body>
+        <select>
+            <option>hhh</option>
+        </select>
+        <input id="checkbox" type="checkbox">
+        
         <button id="myButton" onclick="myFunction()"></button>
         <script>
             function myFunction() {
-                     var dbRef = firebase.database().ref().child("nooforders").child("nooforderscounter");
-                     dbRef.transaction(function(tally) {
+                var dbRef = firebase.database().ref().child("nooforders").child("nooforderscounter");
+                if(document.getElementById("checkbox").checked === true){
+                    dbRef.transaction(function(tally) {
                          if (tally){
                              tally = tally + 1;
                          }
+                        console.log("yes");
                          return tally;
                      });
+                } else {
+                    console.log("no");
+                }
+                     
             }
         </script>
     </body>
