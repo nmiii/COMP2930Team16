@@ -23,17 +23,16 @@
           };
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
-</script>
-        <p id="j"></p>
+        </script>
+        <style>
+            #j {
+                background-color: #006699;
+            }
+        </style>
+        <p id="j">...</p>
     </head>
     <body>
         <script>
-            
-            var w = document.getElementById("j");
-                    var dbRef2 = firebase.database().ref().child("test").child("placeholder");
-                    dbRef2.on ('value', function (snap) {
-                        w.innerText = snap.val();
-                    });
             
         </script>
     </body>
