@@ -3,6 +3,8 @@
     <head>
         <title>Cart</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
         <style>
             #products{
                 border: solid 0.5px #C4C4C4;
@@ -51,6 +53,23 @@
                 
                 background-color: grey;
             } 
+            /* buttons */
+            .pure-button{
+                background-color: #3A7855;
+                float: right;
+                margin-right: 5px;
+                margin-top: 5px;
+                text-align: center;
+                color: white;
+                border-radius: 4px;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            }  
+            /* media queries for responsive mobile-friendly page*/    
+            @media screen and (max-width: 480px){
+                .pure-button{
+                    display:flex;
+                }    
+            }
         </style>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
@@ -76,6 +95,20 @@
           firebase.initializeApp(firebaseConfig);
         </script>
     </head>
+    <!-- Cart & Checkout buttons -->
+        <a class="pure-button" href="123.html">
+                <i class="fa fa-arrow-right"></i>
+                Login/Sign up
+            </a>
+            <a class="pure-button" href="cart.html">
+                <i class="fa fa-shopping-cart fa-lg"></i>
+                Cart
+            </a>
+
+            <a class="pure-button" href="CheckOutPage.html">
+                <i class="fa fa-arrow-right"></i>
+                Checkout
+            </a>
     <div id="products"></div>
     <body>
         <script> /* Display Cart Data */
