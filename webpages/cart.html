@@ -54,6 +54,19 @@
                 
                 background-color: grey;
             } 
+            /* logo */
+            #logo {
+                width: 100px;
+                height: 100px;
+                float: left;
+                margin-top: 5px;
+                margin-left: 5px;
+                background-image: url(../images/transparent_logo.png);
+                background-size: cover;
+            } 
+            #logo:hover{
+                cursor: pointer;
+            }
             /* buttons */
             .pure-button{
                 background-color: #3A7855;
@@ -96,6 +109,8 @@
           firebase.initializeApp(firebaseConfig);
         </script>
     </head>
+    <!-- logo -->    
+        <div id="logo" onclick="redirectHomepage()"></div>
     <!-- clear cart button -->
     <a class="pure-button" id='clearCart'><i class="fa fa-shopping-cart fa-lg"></i>Clear Cart</a>
     
@@ -115,17 +130,9 @@
             </a>
     <div id="products"></div>
     <body>
-        <script> /* Clear Cart Functions */
-            function clearCart(){
-                var user = firebase.auth().currentUser;
-                user.once('value')
-                    .then(function(snapshot){
-//                        var uid = user.uid;
-//                        var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
-//                        cartPath.remove();
-                        console.log('success');
-                });
-                
+        <script>
+            function redirectHomepage() {
+                window.location.href = "../index.html";
             }
         </script>
         <script> /* Display Cart Data */
