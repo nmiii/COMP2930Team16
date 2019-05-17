@@ -2,6 +2,30 @@
 <html>
     <head><title>Demo Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+        
+        <!-- the magic line -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+            authDomain: "ship-green-ec2e6.firebaseapp.com",
+            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+            projectId: "ship-green-ec2e6",
+            storageBucket: "ship-green-ec2e6.appspot.com",
+            messagingSenderId: "98708125955",
+            appId: "1:98708125955:web:abb3048244ea3bca"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        </script>
     </head>
     
     <style>
@@ -121,6 +145,11 @@
         margin-right: 20px; 
         display: none;
     }
+        .shift{
+            transform: translate(-400px , -150px);
+            font-size: 30pt;
+            width: 100%;
+        }
         
     /* for responsive mobile-friendly page*/    
         
@@ -243,7 +272,8 @@
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
                    
              </div>
-        
+        <div class="shift"
+         id="change">Ship Green Has shipped n orders using the greener option !!</div>
         <!-- Image Banner -->
         
         <div class="w3-content w3-section" style=" max-width:70%; float: right; margin-right: 20px;">  
@@ -335,6 +365,18 @@
             
             }
             
+            
+        </script>
+        <script>
+            var db = firebase.database();
+                var dbRef = firebase.database().ref("nooforders/");
+                var refcount = dbRef.child("nooforderscounter");
+                refcount.on("value", function(snapshot) {
+              var some = snapshot.val();
+                    console.log(some);
+                    $("#change").html("<i>Ship Green</i> has shipped " + some + " Orders in a<b> Greener Way</b> till date!!");
+                    
+                });
         </script>
         
     </body>
