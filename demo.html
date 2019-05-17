@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Demo Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <style>
+        @use postcss-color-function;
+        @use postcss-nested;
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+        
+        body{
+            background-color: #f7f7f7;
+        }
+    /*Searchbar styling*/            
+    
+    .search__input {
+        width: 80%;
+        padding: 12px 24px;
+
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+        
+        color: #575756;
+        background-color: transparent;
+         background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #575756;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        }
+        .search__input ::placeholder {
+            color: color(#575756 a(0.8));
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .search__input:hover,
+        .search__input:focus {
+            padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #575756;
+            border-radius: 0;
+            background-position: 100% center;
+        }
+        
+    /* LogIn button styling*/
+    .logIn{
+        float: right;
+        width: 80px;
+        line-height: 18px;
+        margin-right: 50px;
+        }
+        .logIn:hover{
+            border-bottom: 1px solid #575756;
+        }
+        
+    /* ShipGreen Logo styling*/    
+    .logo > img{
+        width: 170px; 
+        height: 150px;
+        
+    }    
+        
+    /* side navigation bar*/    
+    #sideNav{
+     width: 70%;
+     float: left;
+     color: #575756;
+     padding: 10px 30px 30px 30px;
+     font-size: 20px;
+     clear: both;
+    }
+    
+    /*Images in the Featuring collection*/    
+    .cards{
+        width: 70%;
+        margin-right: 20px;
+        float: right;
+        clear: both;
+        }
+    .card#card{
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+        background-image: url("tool1.PNG");
+    }
+    
+    /*Hamburger Menu*/    
+    .sideNav2{
+        display: none;  
+        margin-left: 150px;
+    } 
+    .w3-content,.w3-auto{
+        margin-left:auto;            
+        margin-right:auto;
+    }
+    .w3-content{
+        max-width:980px;      
+    }
+    .w3-auto{max-width:1140px;}
+    .w3-section,.w3-code{
+        margin-top:16px!important;margin-bottom:16px!important;
+    }
+    .w3-animate-fading{
+        animation:fading 10s infinite;
+    }
+    @keyframes fading{
+        0%{opacity:0}
+        50%{opacity:1}
+        100%{opacity:0}
+    }
+    .w3-content w3-section{
+        max-width:70%; 
+        float: right; 
+        margin-right: 20px; 
+        display: none;
+    }
+        
+    /* for responsive mobile-friendly page*/    
+        
+    @media only screen and (min-width: 320px) and (max-width: 479px){
+        #sideNav{
+            display: none;
+            margin-left: 150px;
+        }    
+        .sideNav2{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 200px;
+            
+        }
+        hr{
+            float: none;
+            clear: none;
+        }
+        .w3-content,.w3-section{
+           display: none;
+        }
+        .cards{
+            margin: -20px;
+        }
+        .cards > img{
+            margin: 3px;
+            column-count: 1;
+            
+        }
+        
+    }
+        
+    @media only screen and (min-width: 480px) and (max-width: 767px){  
+        #sideNav{
+            display: none;
+            margin-left: 150px;
+        }    
+        .sideNav2{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 200px;
+            
+        }
+        hr{
+            float: none;
+            clear: none;
+        }
+        .w3-content,.w3-section{
+           display: none;
+        }
+        .cards{
+            margin-left: -30px;
+        }
+        .cards > img{
+            margin: 3px;
+            column-count: 1;
+            
+        }
+        
+    }
+        
+    @media only screen and (min-width: 992px){
+        .sideNav{
+            display: block;
+        }
+        .cards > img{
+            margin: 5px;
+        }
+    }
+     @media only screen and (min-width: 768px) and (max-width: 991px){
+         .cards > img{
+             margin: 5px;
+             }  
+        
+    }
+
+    </style>
+    
+    <body>
+        <!-- Search Bar -->
+        <div class="search__container">
+
+        <input class="search__input" type="text" placeholder="Search">
+            <button type="submit" onclick="functionsearch()" style="background-color: transparent; border: 0px; "><i class="fa fa-search"></i></button>
+        <!-- LogIn Button -->
+        <div class="logIn"><center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png" style="width:20px; float: left; clear: both; line-height: 18px; transform: translate(7px,0px);">  <p>LogIn</p></button> </center>
+            </div>
+            <br/><br/>
+            
+            <hr style="background-color: #d7d8d2;">
+            <!-- Company Logo -->
+            <div class="logo">
+                <img src="logo.png"/>
+            </div> 
+            <hr style="background-color: #d7d8d2; width: 70%; float: right; margin-right: 20px; clear: right;"/>
+            <hr style="background-color: #d7d8d2; width: 20%; float: left; margin-left: 20px; clear: right; margin-top:-10px;"/>
+        </div>    
+               
+             <!-- Menu -->
+                <!-- Hamburger menu -->
+            <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
+              <!-- Side navigation Bar -->
+             <div id="sideNav">
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="demo.html"><b>Home</b></a>
+                 <br style="float: left; clear: both;"/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
+                 <br/><br/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html">Catalog</a>
+                 <br/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
+                <br/><br/>
+              <a style="float: left; clear: both;">About Us</a>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
+                   
+             </div>
+        
+        <!-- Image Banner -->
+        
+        <div class="w3-content w3-section" style=" max-width:70%; float: right; margin-right: 20px;">  
+          <img class="mySlides w3-animate-fading" src="banner1.png" style="width:100%; height: 370px; margin-top: -200px;"/>
+          <img class="mySlides w3-animate-fading" src="banner2.png" style="width:100%; height: 370px; margin-top: -200px;"/>
+        </div>
+        
+            <!-- Featuring collection Images -->
+            <div class="cards">
+                <b style="font-size: 25px;">Featured Collections</b><br/>
+                    <img src="tool1.PNG" style=" width: 300px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+                    
+                    <button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
+                    
+                    <img src="tool7.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
+                
+                    <img src="pet_food.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px; display: inline-block; width: 170px;"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
+                
+                    <img src="home1.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top: 3px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
+                    
+                    <img src="bestseller4.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
+                    <img src="bestseller6.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
+            </div>
+
+        
+        
+        <!-- JavaScript Code-->
+        <script>
+            //For Banner animation
+           var myIndex = 0;
+            carousel();
+
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 9000);    
+            }
+            
+            //for Hamburger Menu
+            function openNav(){
+                  var x = document.getElementById("sideNav");
+                  if (x.style.display == "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            }
+            
+            <!--Search Directory-->
+                function functionsearch(){
+                var input = document.getElementById("searchinput").value;
+            console.log(input);
+                var groceries = ["Groceries","groceries" , "Milk" ,"milk" , "food" , "bread" , "Bread","Oil","mustard oil" , "oliveoil" ,"Oliveoil" , "Cooking" , "Cooking oil" , "cooking oil" ];
+            var i;
+            for (i=0;i<=groceries.length ; i++){
+                if(input===(groceries[i])){
+                    //console.log("working");
+                    window.location.href = "Grocery.html";
+                    
+                    
+                }
+            }
+             var petfood = ["Pet","pet","Pet Food","pet food","animals","Animal","Dog","dog","Cat", "Catfood", "cat" , "Pedigree" , "pedigree" , "Friskies" , "cesar" , "friskies" ];
+            var j;
+            for (j=0;j<=petfood.length ; j++){
+                 if(input===(petfood[j])){
+                    //console.log("working");
+                    window.location.href = "petFood.html";
+                    
+                    
+                }
+            }
+        var garden = ["Garden" , "garden" , "Gardening" , "gardening"  , "gardening tools" , "Gardening tools" , "tools" , "seeds" , "Seeds" , ];
+        var k;
+            for (k=0;k<=garden.length ; k++){
+                if(input===(garden[k])){
+                    //console.log("working");
+                    window.location.href = "shoppingList.html";
+                    
+                    
+                }
+            } 
+            
+            }
+            
+        </script>
+        
+    </body>
+    
+</html>
