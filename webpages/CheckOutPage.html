@@ -750,6 +750,10 @@
         
       
         <script> /* Display Cart Data */
+            
+            
+            
+            
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) { // if a user is logged in
                     var button = document.getElementById('clearCart');
@@ -881,6 +885,8 @@
                                 var name = snap.val();
                                 divName.innerHTML = name;
                             });
+                            
+                            
                             pricePath.on('value', function (snap) {
                                 var price = snap.val();
                                 spanPrice.innerHTML = price;
@@ -3555,7 +3561,7 @@
                     window.location.href = "123.html";
                 }
             });
-        </script>
+        
         
         
         
@@ -3563,8 +3569,7 @@
         
         
           <!-- General script -->
-        <script>
-            
+        
             /*price*/
             
             window.onload = getTotal();
@@ -3572,10 +3577,10 @@
             
             
             function getTotal(){
-                console.log(document.getElementsByClassName("dPrice.spanPrice"));
-                var price1 = parseFloat($('.dPrice.spanPrice')[0].html());
-                var price2 = parseFloat(document.getElementsByClassName("spanPrice")[1].innerHTML);
-                var price3 = parseFloat(document.getElementsByClassName("spanPrice")[2].innerHTML);
+                console.log(document.getElementsByClassName("spanPrice").item(0));
+                var price1 = parseFloat(document.getElementsByClassName("spanPrice").item(0).innerHTML);
+                var price2 = parseFloat(document.getElementsByClassName("spanPrice").item(1).innerHTML);
+                var price3 = parseFloat(document.getElementsByClassName("spanPrice").item(2).innerHTML);
                 
             
                 var quantity1 = document.getElementsByClassName("spanQuantity").item(0).innerHTML;
