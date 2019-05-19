@@ -48,7 +48,7 @@
                 var easterEgg = document.getElementById("promoCode").value;
                 var total  = parseFloat(document.getElementById("total").innerHTML);
                 
-                if ( easterEgg == "shipGREEN") {
+                if ( easterEgg == "shipGREEN" && $("#freeGreenShipping:checked").attr('id')) {
                     document.body.style.animationDuration = "4s";
                     document.body.style.animationIterationCount = "1";
                     document.body.style.animationName = "roll";
