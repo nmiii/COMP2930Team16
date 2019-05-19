@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                              var cartPath = firebase.database().ref().child("users").child(user.uid).child("cart");
                              cartPath.remove();
                              window.setTimeout(function(){
-                                 window.open('CheckOutPage.html','_self');
+                                 window.open('cart.html','_self');
                              }, 500)
                         });
                         console.log("on cart page");
