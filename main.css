@@ -2,6 +2,7 @@ body, html{
     background-image: url("pls.jpg");
     background-size: cover;
     background-position: left center;
+    background-repeat: no-repeat;
 
     height: 100%;
 
@@ -231,4 +232,15 @@ ul .active:hover{
         font-weight: bolder;
         font-size: 22pt
     }
+@media only screen and (max-width: 600px)   {
+   
+    .active{
+        transform: translate(-100px,-30px);
+        font-size: 70px;
+    }
+    .hh{
+        transform: translate(40px,-10px);
+    }
+    
+}
     
