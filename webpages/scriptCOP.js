@@ -39,17 +39,27 @@
             
             
             /*add Easter egg*/
-            function promoCodeApply(){
+            
+
+            
+
+
+            $('#promoButton').one('click', function(){  
                 var easterEgg = document.getElementById("promoCode").value;
+                var total  = parseFloat(document.getElementById("total").innerHTML);
+                
                 if ( easterEgg == "shipGREEN") {
                     document.body.style.animationDuration = "4s";
                     document.body.style.animationIterationCount = "1";
                     document.body.style.animationName = "roll";
                     console.log("barrelroll success");
-                    
+                    total -= 5;
+                    document.getElementById("total").innerHTML = total;
+                    document.getElementById("tyreward").innerHTML = 5.00;
+                    document.getElementById("reward").innerHTML = 5.00;
                 }
-            }
-            
+              
+            })
             
             
             
