@@ -526,7 +526,7 @@
                     <h2>Gift card and promotional code</h2>
                     
                         <input type="text" pattern="[a-zA-Z]{1,15}" name="promo" placeholder="Enter code" id="promoCode">
-                        <button type="button" onclick="promoCodeApply()">Apply</button><br><br>
+                        <button type="button" onclick="promoCodeApply()" id="promoButton">Apply</button><br><br>
                     
                     <h2 class="h2Inline" >Billing Address </h2>
                     <div id="billingAddressP"  >
@@ -578,6 +578,7 @@
                 Total before tax: CDN$<span id="totalBeforeTax">00.00</span><br>
                 Estimate GST/HST: CDN$00.00<br>
                 Estimate PST/RST/QST: CDN$00.00<br>
+                Reward: CDN$<span id="tyreward">00.00</span>
                 
                 <hr>
             
@@ -638,6 +639,7 @@
                     
                     Estimate GST/HST: CDN$00.00<br>
                     Estimate PST/RST/QST: CDN$00.00<br>
+                    Reward: CDN$<span id="tyreward">00.00</span>
                     <hr>
                 
                     <span style="color: #61C98E">Order Total: <b>CDN$</b><b id="tytotal">00.00</b></span><br>
