@@ -70,6 +70,17 @@
                 document.getElementById("logo").style.visibility="visible";
             }
             
+
+            function foo(){
+                if ($('input[name="shipping"]:checked').length == 0) {
+                    alert("Please choose a shipping method", placeOrder());
+                }
+                else {
+                    placeOrder();
+                }
+            }
+
+
             function placeOrder(){
                 var user = firebase.auth().currentUser;
                 var uid = user.uid;
@@ -214,7 +225,7 @@
                         totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("oneDayShipping").value);
                         tytotalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("oneDayShipping").value);
                         document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
-                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(tytotalBeforeTax*100)/100;
+                        
                         document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
                         document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
                         console.log("onedayshippign");
@@ -224,7 +235,7 @@
                         totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeTwoDayShipping").value);
                         tytotalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeTwoDayShipping").value);
                         document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
-                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(tytotalBeforeTax*100)/100;
+                        
                         document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
                         document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
                     });
@@ -233,7 +244,7 @@
                         totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeStandardShipping").value);
                         tytotalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeStandardShipping").value);
                         document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
-                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(tytotalBeforeTax*100)/100;
+                        
                         document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
                         document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
                     });
@@ -242,7 +253,7 @@
                         totalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeGreenShipping").value);
                         tytotalBeforeTax = parseFloat(totalItems) + parseFloat(document.getElementById("freeGreenShipping").value);
                         document.getElementById("totalBeforeTax").innerHTML = Math.round(totalBeforeTax*100)/100;
-                        document.getElementById("tytotalBeforeTax").innerHTML = Math.round(tytotalBeforeTax*100)/100;
+                       
                         document.getElementById("total").innerHTML = Math.round(totalBeforeTax*100)/100;
                         document.getElementById("tytotal").innerHTML = Math.round(totalBeforeTax*100)/100;
                     });
