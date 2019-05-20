@@ -1205,8 +1205,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                         var products = document.getElementById("products");
                             var checkOutDiv = document.getElementById("checkOutDiv");                         checkOutDiv.appendChild(products);
                         // CHANGE DF1
-                        if (snapshot.hasChild("o6")){
-                            // GENERAL DOM
+                        if (snapshot.hasChild("o6")){ 
+                            // PROBLEM: ASSIGNED CLASS SEEMS TO NOT HAVE ANY EFFECT
+                            // CLASS ASSIGNMENT WORKS, IT'S JUST THAT THE POSITIONAL STYLING HAS NO EFFECT
                             var theDiv = document.createElement("div");
                             theDiv.className = "theDiv";
                             products.appendChild(theDiv);
