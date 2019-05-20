@@ -1,4 +1,4 @@
- body{
+            body{
                 background-image:url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");  
                 background-repeat: no-repeat;
                 width: auto;
@@ -6,6 +6,8 @@
                 font-style: normal;
                 font-weight:normal;
                 font-size: 18px;
+                opacity: 1;
+                
                 
             }
             .change{
@@ -37,10 +39,11 @@
             #top {
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.91;
+                opacity: 0.75;
                 padding-bottom: 35px;
                 width: 72%;
                 height: 250px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
                 
             }
             
@@ -75,9 +78,10 @@
                 border: solid 0.5px #C4C4C4;
                 padding: 25px;
                 background: #E5E5E5;
-                opacity: 0.91;
+                opacity: 0.75;
                 left: 74%;
                 top: 95px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
             }
             h2 {
                 font-size: 24px;
@@ -139,9 +143,10 @@
                 border: solid 0.5px #C4C4C4;
                 width: 22%;
                 background: #E5E5E5;
-                opacity: 0.91;
+                opacity: 0.75;
                 margin-top: 20px;
                 padding: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
             }
             #shipping{
                 position: absolute;
@@ -149,14 +154,15 @@
                 top: 470px;
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.91;
+                opacity: 0.75;
                 padding: 25px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
             }
             
             #bottomButton{
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.91;
+                opacity: 0.75;
                 padding: 25px;
                 width: 15%;
                 float: right;
@@ -176,7 +182,7 @@
                 left: 25%;
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.91;
+                opacity: 0.75;
                 padding: 25px;
                 padding-right: 100px;
                 
@@ -351,7 +357,7 @@
                      padding: 25px;
                      padding-left: 30px;
                      background: #E5E5E5;
-                     opacity: 0.91;
+                     opacity: 0.75;
                      width: 280px;
                      left: 0px;
         
