@@ -1,4 +1,3 @@
-
 /* cart display styling */
             .theDiv {
                 background-color: #C4C4C4;
@@ -41,3 +40,44 @@
                 left: 10px;
         
             } 
+
+body {
+    
+}
+/* cart display styling */
+.theDiv {
+    background-color: #006699;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.dImg {
+    background-size: cover;
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    display: inline-block;
+}
+.dName {
+    padding: 3px;  
+    position: relative;
+    top: -100px;
+    left: 100px;
+}
+.dPrice {
+    padding: 3px;
+    position: relative;
+    top: -90px;
+    left: 100px;
+    display:inline;
+}
+.dQuantity {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 3px;
+    display:inline;
+    position: relative;
+    top: -50px;
+    left: 10px;
+} 
