@@ -1206,8 +1206,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                             var checkOutDiv = document.getElementById("checkOutDiv");                         checkOutDiv.appendChild(products);
                         // CHANGE DF1
                         if (snapshot.hasChild("o6")){ 
-                            // PROBLEM: ASSIGNED CLASS SEEMS TO NOT HAVE ANY EFFECT
-                            // CLASS ASSIGNMENT WORKS, IT'S JUST THAT THE POSITIONAL STYLING HAS NO EFFECT
                             var theDiv = document.createElement("div");
                             theDiv.className = "theDiv";
                             products.appendChild(theDiv);
@@ -2250,7 +2248,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         var products = document.getElementById("products");
                             document.body.appendChild(products);
                         // CHANGE DF1
-                        if (snapshot.hasChild("og6")){
+                        if (snapshot.hasChild("og6")){ // PROBLEM
                             // GENERAL DOM
                             var theDiv = document.createElement("div");
                             theDiv.className = "theDiv";
@@ -2260,15 +2258,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2312,15 +2310,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2364,15 +2362,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2417,15 +2415,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2469,15 +2467,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2521,15 +2519,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2573,15 +2571,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2625,15 +2623,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2677,15 +2675,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2729,15 +2727,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
@@ -2781,15 +2779,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                             imgDiv.className = "dImg";
                             theDiv.appendChild(imgDiv);
 
-                            var divName = document.createElement("span");
+                            var divName = document.createElement("div");
                             divName.className = "dName";
                             theDiv.appendChild(divName);
 
-                            var divPrice = document.createElement("span");
+                            var divPrice = document.createElement("div");
                             divPrice.className = "dPrice";
                             theDiv.appendChild(divPrice);
 
-                            var divQuantity = document.createElement("span");
+                            var divQuantity = document.createElement("div");
                             divQuantity.className = "dQuantity";
                             theDiv.appendChild(divQuantity);
                             
