@@ -237,6 +237,12 @@
                 width: 115%;
             }
             
+/*map*/
+            #googleMap {
+                width: 100%;
+                height: 200px;
+                margin: 10px auto;
+            }
             
             
             @keyframes roll {
@@ -253,13 +259,12 @@
                 to   { -moz-transform: rotate(360deg) }
             }
             
-            
-           
-            
-            
+
+
             
             
-             @media only screen and (min-device-width:320px) and (max-device-width: 500px) and (orientation: portrait) {
+             /* For mobile */
+             @media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
                  body {
                      background-size: 100% ;
                      background-repeat:repeat;
@@ -284,14 +289,14 @@
                      margin-top: 30px;
                      margin-left: 30px;
                      margin-bottom: 30px;
-                     top: 390px;
+                     top: 470px;
                      
                  }
                  #bottomButton{
                      float: none;
                      position: absolute;
                      left: auto;
-                     top:2150px;
+                     top:2250px;
                      width: auto;
                      margin-left: 30px;
                  }
@@ -301,7 +306,7 @@
                      margin-left: 30px;
                      padding-left: 30px;
                      position: relative;
-                     top: 540px;
+                     top: 590px;
                      width:300px;
                      height: 540px;
                  }
@@ -347,7 +352,7 @@
                  
                  #output {
                      position: absolute;
-                     top: 1800px;
+                     top: 1920px;
                      border: solid 0.5px #C4C4C4;
                      padding: 25px;
                      padding-left: 30px;
@@ -359,7 +364,7 @@
                  }
                  #products{
                      position: relative;
-                     top: 400px;
+                     top: 500px;
                      margin-left: 30px;
                      width: 330px;
                      
@@ -450,13 +455,9 @@
                  }
                  #clearCart{
                      position: absolute;
-                     top: 1490px;
+                     top: 1580px;
                      left: 50px;
                  }
             }
-                /*map*/
-                #googleMap {
-                    width: 100%;
-                    height: 200px;
-                    margin: 10px auto;
-                }
+
+                
