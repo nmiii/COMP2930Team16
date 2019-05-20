@@ -1,5 +1,6 @@
 body, html{
    background-image: url("");
+    background-color: lightblue;
     background-size:cover;
     background-position: left center;
     background-repeat: no-repeat;
@@ -12,7 +13,7 @@ body, html{
 
 }
 .card {
-    transform: translate(300px,200px);
+/*    transform: translate(300px,200px);*/
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 350px;
@@ -42,7 +43,18 @@ img {
     box-sizing: border-box;
 
 }
-
+#ca1{
+transform: translate(50px,200px);
+}
+#ca2{
+    transform: translate(450px,-285px);
+}
+#ca3{
+    transform: translate(50px,-200px);
+}
+#ca4{
+    transform: translate(450px,-687px);
+}
 
 
 .bg-image{
@@ -95,10 +107,10 @@ img {
 
 
 .navbar img{
-
+    transform: translate(0px,10px);
     float: left;
-    width: 60px;
-    height: 60px;
+    width: 130px;
+    height: 120px;
 }
 
 
@@ -218,37 +230,39 @@ ul .active:hover{
 /*    margin-left: 00px;*/
 
 }
-.img11{
-    transform: translate(0px,10px);
-}
+ 
  
     #b{
-        padding-top: 150px;
-        height: 680px;
+       
+        
+    }
+
+    #box{
+        margin-top: 200px;
+         padding-top: 350px;
+/*        height: 200%;*/
         background-image: url(../images/t10.jpg);
         z-index: -2;
         font-size: 15pt;
 /*        transform: translate(-350px,0px);*/
         /* Add the blur effect *
         /* Full height */
-       clear: both;
+       
         float: right;
-    height: 100%;
+    width: 40%;
         /* Center and scale the image nicely */
         background-position: center;
         background-repeat: no-repeat;
        
         background-size: 100% 100%;
          background-size: cover;
-    }
-
-    #box{
         background-color: white;
         display: inline-block;
         float: right;
         margin-right: 80px;
         padding: 30px;
         border-radius: 15px;
+        clear: both;
         font-family: 'Source Serif Pro', serif;
     }
     
@@ -257,6 +271,15 @@ ul .active:hover{
         font-weight: bolder;
         font-size: 22pt
     }
+
+    .big{
+        width: 60%;
+        height: 100%;
+        float: left;
+        clear: both;
+        margin-top: -1350px;
+    }
+/*
 @media only screen and (max-width: 600px)   {
    
     .active{
@@ -268,4 +291,31 @@ ul .active:hover{
     }
     
 }
-    
+*/
+    @media only screen and (min-width: 299px) and (max-width: 350px){
+        #b{
+            
+/*            background-color: black;*/
+        }
+        #box{
+            width: 100%;
+/*            display: block;*/
+            margin: 0px auto;
+            margin-top: 200px;
+        }
+        .big{
+            transform: translate(0px,1200px);
+            
+            
+        }
+        #ca2{
+/*            transform: translate(-450px,600px);*/
+        }
+        .list{
+/*            transform: translate(-800px,0px);*/
+        }
+        .navbar{
+            width: 100%;
+        }
+        
+}
