@@ -1,13 +1,30 @@
 firebase.auth().onAuthStateChanged(function(user) {
                 if (user) { // if a user is logged in
-                    var button = document.getElementById('clearCart');
-                    button.addEventListener('click', function(){
-                         var cartPath = firebase.database().ref().child("users").child(user.uid).child("cart");
-                         cartPath.remove();
-                         window.setTimeout(function(){
-                             window.open('CheckOutPage.html','_self');
-                         }, 500)
-                    });
+                    var sPath = window.location.pathname;
+                    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+                    
+                    if (sPage == "CheckOutPage.html") {
+                        var button = document.getElementById('clearCart');
+                        button.addEventListener('click', function(){
+                             var cartPath = firebase.database().ref().child("users").child(user.uid).child("cart");
+                             cartPath.remove();
+                             window.setTimeout(function(){
+                                 window.open('CheckOutPage.html','_self');
+                             }, 500)
+                        });
+                        console.log("works");
+                    } 
+                    if (sPage == "cart.html") {
+                        var button = document.getElementById('clearCart');
+                        button.addEventListener('click', function(){
+                             var cartPath = firebase.database().ref().child("users").child(user.uid).child("cart");
+                             cartPath.remove();
+                             window.setTimeout(function(){
+                                 window.open('cart.html','_self');
+                             }, 500)
+                        });
+                        console.log("on cart page");
+                    }
                     var uid = user.uid;
                     var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
                     // DOG FOOD
