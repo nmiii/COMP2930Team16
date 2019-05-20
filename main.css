@@ -1,6 +1,6 @@
 body, html{
-    background-image: url("pls.jpg");
-    background-size: cover;
+   background-image: url("");
+    background-size:cover;
     background-position: left center;
     background-repeat: no-repeat;
 
@@ -19,6 +19,7 @@ body, html{
     height: 450px;
   border-radius: 5px;
     padding-bottom: 20px;
+    z-index: -1;
 }
 
 .card:hover {
@@ -86,7 +87,8 @@ img {
      padding-left: 16px;
    width: 100%;
     border-bottom: 1px solid grey;
-                background-color: white
+                background-color: white;
+    z-index: 3;
 
 }
 
