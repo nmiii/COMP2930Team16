@@ -5,6 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styling.css">
         <style>
+            /* LogIn button styling*/
+    .logIn{
+        float: right;
+        width: 80px;
+        line-height: 18px;
+        margin-right: 50px;
+        }
+        .logIn:hover{
+            border-bottom: 1px solid #575756;
+        }
+        .logIn img{
+            width:20px; 
+            float: left; 
+            clear: both; 
+            line-height: 18px; 
+            transform: translate(7px,0px);
+        }
+        .logIn p{
+            display: block;
+            margin-left: 3px;
+        }
             .change{
                 color: #61C98E;
             }
@@ -479,6 +500,13 @@
     <body>
         <img src="../images/logo%20(2).png" onclick="redirectHomePage()" alt="logo" width="80px" height="80px" style="float: left" id="logo">
        <div id="checkOutDiv">
+           
+           <!-- checkout link -->
+           <a href="CheckOutPage.html">    
+        <div class="logIn"><center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png"><p>LogIn</p></button> </center>
+            </div>
+            </a>
             
             
            <!-- clear cart button -->
