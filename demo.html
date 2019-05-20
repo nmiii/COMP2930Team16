@@ -1,31 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head><title>Demo Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-
-        
-        <!-- the magic line -->
-        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-        
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#config-web-app -->
-
-        <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
-            authDomain: "ship-green-ec2e6.firebaseapp.com",
-            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
-            projectId: "ship-green-ec2e6",
-            storageBucket: "ship-green-ec2e6.appspot.com",
-            messagingSenderId: "98708125955",
-            appId: "1:98708125955:web:abb3048244ea3bca"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        </script>
     </head>
     
     <style>
@@ -35,7 +12,15 @@
         
         body{
             background-color: #f7f7f7;
+            background-image: url(branch-bright-desktop-backgrounds-1353938.jpg);
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: color-burn;
         }
+        
     /*Searchbar styling*/            
     
     .search__input {
@@ -84,6 +69,17 @@
         .logIn:hover{
             border-bottom: 1px solid #575756;
         }
+        .logIn img{
+            width:20px; 
+            float: left; 
+            clear: both; 
+            line-height: 18px; 
+            transform: translate(7px,0px);
+        }
+        .logIn p{
+            display: block;
+            margin-left: 3px;
+        }
         
     /* ShipGreen Logo styling*/    
     .logo > img{
@@ -94,12 +90,13 @@
         
     /* side navigation bar*/    
     #sideNav{
-     width: 70%;
+     width: 20%;
      float: left;
      color: #575756;
      padding: 10px 30px 30px 30px;
      font-size: 20px;
      clear: both;
+     display: block;
     }
     
     /*Images in the Featuring collection*/    
@@ -109,17 +106,30 @@
         float: right;
         clear: both;
         }
-    .card#card{
-        width: 250px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
-        background-image: url("tool1.PNG");
+    .cards img{
+        width: 300px; 
+        height: 200px; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+        margin-left: 10px;
     }
+    .cards button{
+        float: left; 
+        clear:both; 
+        position: absolute;
+        text-align: center;
+        background-color: #8a9a5b;
+        transform: translate(-120%,220%); 
+        padding: 15px 32px; 
+        font-size: 20px;    
+    }    
     
     /*Hamburger Menu*/    
     .sideNav2{
         display: none;  
         margin-left: 150px;
     } 
+        
+        
     .w3-content,.w3-auto{
         margin-left:auto;            
         margin-right:auto;
@@ -139,17 +149,23 @@
         50%{opacity:1}
         100%{opacity:0}
     }
-    .w3-content w3-section{
+    #banner{
         max-width:70%; 
         float: right; 
         margin-right: 20px; 
-        display: none;
     }
-        .shift{
-            transform: translate(-400px , -150px);
-            font-size: 30pt;
-            width: 100%;
-        }
+    #btn{
+            display: inline;
+            width: 170px;
+    }
+    #right{
+        background-color: #d7d8d2;  
+        width: 70%; 
+        float: right; 
+        margin-right: 20px; 
+        clear: right;
+    }
+    
         
     /* for responsive mobile-friendly page*/    
         
@@ -171,16 +187,31 @@
             float: none;
             clear: none;
         }
-        .w3-content,.w3-section{
-           display: none;
-        }
+
         .cards{
-            margin: -20px;
+            width: 50%;
+            column-count: 2;
         }
         .cards > img{
             margin: 3px;
-            column-count: 1;
+            width: 100%;
+            height: 200px;
             
+            
+        }
+        .cards > button{
+            z-index: 10;
+            
+        }
+        #banner{
+            max-width: 100%;
+            margin: 0px auto;
+        }
+        #left{
+            display: none;
+        }
+        #right{
+            margin-right: 80px;
         }
         
     }
@@ -203,16 +234,38 @@
             float: none;
             clear: none;
         }
-        .w3-content,.w3-section{
-           display: none;
-        }
+    
         .cards{
-            margin-left: -30px;
+            width: 100%;
+            margin: 3px;
         }
         .cards > img{
             margin: 3px;
             column-count: 1;
-            
+            width: 100%;
+            height: 250px;
+        }
+        
+        .logIn img,p{
+            width:30px;
+            transform: translate(60px,5px);
+        }
+        .logIn p{
+            margin-left: -2px;
+        } 
+        .cards > button{
+            z-index: 10;
+            transform: translate(250px,-70px);
+        }
+        #banner{
+            max-width: 100%;
+            margin: 0px auto;
+        }
+        #left{
+            display: none;
+        }
+        #right{
+            margin-right: 80px;
         }
         
     }
@@ -221,7 +274,7 @@
         .sideNav{
             display: block;
         }
-        .cards > img{
+        .cards img{
             margin: 5px;
         }
     }
@@ -238,12 +291,15 @@
         <!-- Search Bar -->
         <div class="search__container">
 
-        <input class="search__input" type="text" placeholder="Search">
-            <button type="submit" onclick="functionsearch()" style="background-color: transparent; border: 0px; "><i class="fa fa-search"></i></button>
+        <input class="search__input" type="text" id="searchinput" placeholder="Search">
+            <button type="submit" style="background-color: transparent; border: 0px; "><i class="fa fa-search" onclick="functionsearch()"></i></button>
+            
         <!-- LogIn Button -->
+        <a href="123.html">    
         <div class="logIn"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png" style="width:20px; float: left; clear: both; line-height: 18px; transform: translate(7px,0px);">  <p>LogIn</p></button> </center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png"><p>LogIn</p></button> </center>
             </div>
+            </a>
             <br/><br/>
             
             <hr style="background-color: #d7d8d2;">
@@ -251,8 +307,10 @@
             <div class="logo">
                 <img src="logo.png"/>
             </div> 
-            <hr style="background-color: #d7d8d2; width: 70%; float: right; margin-right: 20px; clear: right;"/>
-            <hr style="background-color: #d7d8d2; width: 20%; float: left; margin-left: 20px; clear: right; margin-top:-10px;"/>
+            
+            <!-- horizontal lines -->
+            <hr id="right"/>
+            <hr id="left" style="background-color: #d7d8d2; width: 20%; float: left; margin-left: 20px; clear: right; margin-top:-10px;"/>
         </div>    
                
              <!-- Menu -->
@@ -272,30 +330,28 @@
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
                    
              </div>
-        <div class="shift"
-         id="change">Ship Green Has shipped n orders using the greener option !!</div>
+        
         <!-- Image Banner -->
         
-        <div class="w3-content w3-section" style=" max-width:70%; float: right; margin-right: 20px;">  
-          <img class="mySlides w3-animate-fading" src="banner1.png" style="width:100%; height: 370px; margin-top: -200px;"/>
-          <img class="mySlides w3-animate-fading" src="banner2.png" style="width:100%; height: 370px; margin-top: -200px;"/>
+        <div class="w3-content w3-section" id="banner">  
+          <img class="mySlides w3-animate-fading" src="banner1.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="banner2.png" style="width:100%; height: 370px;"/>
         </div>
         
             <!-- Featuring collection Images -->
             <div class="cards">
                 <b style="font-size: 25px;">Featured Collections</b><br/>
-                    <img src="tool1.PNG" style=" width: 300px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+                    <img src="tool1.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
                     
-                    <button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
-                    
-                    <img src="tool7.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
+                    <img src="tool7.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
                 
-                    <img src="pet_food.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px; display: inline-block; width: 170px;"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
+                    <img src="pet_food.jpg"/><button id="btn"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
                 
-                    <img src="home1.jpg" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top: 3px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
+                    <img src="home1.jpg"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
                     
-                    <img src="bestseller4.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
-                    <img src="bestseller6.PNG" style=" width: 300px; height: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 10px;"/><button style="float: left; clear:both; position: absolute;text-align: center;background-color: #d9dfab;transform: translate(-120%,220%); padding: 15px 32px; font-size: 20px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
+                    <img src="bestseller4.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
+                    
+                    <img src="bestseller6.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
             </div>
 
         
@@ -365,18 +421,6 @@
             
             }
             
-            
-        </script>
-        <script>
-            var db = firebase.database();
-                var dbRef = firebase.database().ref("nooforders/");
-                var refcount = dbRef.child("nooforderscounter");
-                refcount.on("value", function(snapshot) {
-              var some = snapshot.val();
-                    console.log(some);
-                    $("#change").html("<i>Ship Green</i> has shipped " + some + " Orders in a<b> Greener Way</b> till date!!");
-                    
-                });
         </script>
         
     </body>
