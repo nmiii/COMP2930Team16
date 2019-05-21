@@ -45,3 +45,26 @@ body {
     top: -50px;
     left: 15px;
 } 
+
+/* For mobile */
+@media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
+    #mainDiv {
+        height: 1100px;
+        position: relative;
+        background-color: #679267;
+        
+    }
+    #sideNavDiv{
+        height: 175px;
+    }
+    
+    .pure-button{
+        transform: translate(190px, 20px);
+        display:flex;
+
+    }    
+    form {
+        transform: translate(70px, 20px);
+    }
+    
+}
