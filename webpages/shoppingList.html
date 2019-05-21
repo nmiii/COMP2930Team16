@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head><title>Shopping Page</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <!-- Latest compiled and minified CSS -->
@@ -14,111 +15,197 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
+        
+        
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
-body, html {
-  height: 100%;
 
-  /* Full height */
-  height: 100%; 
-  
-}
+ @use postcss-color-function;
+        @use postcss-nested;
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+        /*Body styling*/
+        body{
+            background-color: #f7f7f7;
+            background-image: url("branch-bright-desktop-backgrounds-1353938.jpg");
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: color-burn;
+        }
     
-.logo > img{
-    width: 170px; 
-    height: 150px;
-    float: left;
-} 
-  
-    .logo >img:hover{
-        cursor: pointer;
+        /* cart button styling*/
+        .cart{
+            float: right;
+            width: 80px;
+            line-height: 18px;
+            margin-right: 50px;
+            }
+        .cart:hover{
+            border-bottom: 1px solid #575756;
+        }
+        .cart img{
+            width: 30px; 
+            float: left; 
+            clear: both; 
+            line-height: 18px; 
+            transform: translate(7px,0px);
+        }
+        .cart p{
+            display: block;
+            margin-left: 10px;
+        }
+    
+    /* Checkout button styling*/
+        .checkout{
+            float: right;
+            width: 80px;
+            line-height: 18px;
+            }
+        .checkout:hover{
+            border-bottom: 1px solid #575756;
+        }
+        .checkout img{
+            width: 30px; 
+            float: left; 
+            clear: both; 
+            line-height: 18px; 
+            transform: translate(17px,0px);
+        }
+        .checkout p{
+            display: block;
+            margin-left: 3px;
+        }
+    
+        .logo > img{
+            width: 130px; 
+            height: 120px;
+            float: left;
+        } 
+
+        .logo >img:hover{
+            cursor: pointer;
+        }
+    
+        /* side navigation bar*/    
+        #sideNav{
+         width: 20%;
+         float: left;
+         color: #575756;
+         padding: 10px 30px 30px 30px;
+         font-size: 20px;
+         clear: both;
+         display: block;
+        }
+    
+        /*Hamburger Menu*/    
+        .sideNav2{
+            display: none;  
+            margin-left: 150px;
+        } 
+        /* for the products*/
+        #main{
+            width: 70%;
+            height: 100%;
+            float: right;
+            background-color:#679267;
+            margin: 10px 10px 10px 10px;
+            opacity: 0.7;
+            color: beige;
+            margin-right: 30px;
+
+        }    
+            #rightDirection:hover{
+                cursor: pointer;
+            }
+        /*the cart*/
+            #TheCart{
+                visibility: hidden;
+            }
+
+    
+    .container{
+        width: 100%;
     }
-/* for search bar */    
-input[type=text] {
-  width: 130px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url("http://i47.tinypic.com/r02vbq.png");
-  background-position: left center;
-  outline: 0;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
 
-input[type=text]:focus {
-  width: 100%;
-}
-    .pure-button{
-        background-color: #3A7855;
-        float: right;
-        margin-right: 20px;
-        margin-top: 2px;
-        padding: 12px 10px 12px 40px;
-        text-align: center;
-        color: white;
-        border-radius: 4px;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    }  
-     
-.sideNav{
-    width: 200px;
-    height: 350px;
-    float: left;
-    clear: both;
-    background-color:#679267;
-    margin: 10px 10px 10px 10px;
-    opacity: 0.7;
-    color: beige;
+          .container2 .btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background-color: black;
+          color: white;
+          font-size: 16px;
+          padding: 12px 24px;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+          text-align: center;
+        }
+
+        .container2 .btn:hover {
+          background-color: #3A7855;
+        } 
     
-}  
+        .carousel-inner img {
+            margin: auto;
+        }
     
-#main{
-    width: 1170px;
-    height: 600px;
-    float: left;
-    background-color:#679267;
-    margin: 10px 10px 10px 10px;
-    opacity: 0.7;
-    color: beige;
+        
     
-}    
-    #rightDirection:hover{
-        cursor: pointer;
+    /* for responsive mobile-friendly page*/    
+        
+    @media only screen and (min-width: 300px) and (max-width: 479px){
+        #sideNav{
+            display: none;
+            margin-left: 50%;
+            color: #575756;
+            width: 50%;
+        }    
+        .sideNav2{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 200px;
+            
+        } 
+         .cart,.checkout{
+            margin-top: 10px;
+             width: 20%;
+        }
+        .logo img{
+            width: 50%;
+        }
+        
+      
     }
-/*the cart*/
-    #TheCart{
-        visibility: hidden;
+         
+    @media only screen and (min-width: 480px) and (max-width: 767px){  
+        #sideNav{
+            display: none;
+            margin-left: 50#;
+            color: #575756;
+            width: 170px;
+        }    
+        .sideNav2{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 50%;
+            
+        }
+        .cart,.checkout{
+            margin-top: 10px;
+        }
+        .container2{
+            max-width: 100%;
+        }
+       
     }
-    
-/* media queries for responsive mobile-friendly page*/    
-@media screen and (max-width: 480px){
-    .pure-button{
-        display:flex;
-    }    
-}
-
-  .container2 .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: #679267;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.container2 .btn:hover {
-  background-color: #3A7855;
-} 
 
 </style>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -134,7 +221,7 @@ input[type=text]:focus {
           // Your web app's Firebase configuration
           var firebaseConfig = {
             apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
-            authDomain: "ship-green-ec2e6.firebaseapp.com",
+            authDomain: "ship-green-ec2e6.firebaseapp.com"
             databaseURL: "https://ship-green-ec2e6.firebaseio.com",
             projectId: "ship-green-ec2e6",
             storageBucket: "ship-green-ec2e6.appspot.com",
@@ -147,167 +234,145 @@ input[type=text]:focus {
         
 </head>
     <body>
-    <!-- logo -->    
-     <div class="logo" style="float: left;">
-        <img src="Images%20for%20Shopping%20List/logo%20(2).png" onclick="redirectHomePage()"/>
-        </div> 
+        <!-- logo -->    
+         <div class="logo" style="float: left;">
+            <img src="../images/logo%20(2).png" onclick="redirectHomePage()"/>
+            </div> 
     
-        <!-- Search bar -->
-        <form style="float: left;">
-         <input type="text" name="search" placeholder="Search..">
-        </form>  
-        <!-- Cart & Checkout button-->
-        <a class="pure-button" href="123.html">
-                <i class="fa fa-arrow-right"></i>
-                Login/Sign up
+        <!-- Cart Button -->
+        <a href="cart.html">    
+        <div class="cart"><center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="cart.png"><p>Cart</p></button>
+            </center>
+            </div>
             </a>
-    <a class="pure-button" href="cart.html">
-        <i class="fa fa-shopping-cart fa-lg"></i>
-        Cart
-    </a>
-                 
-    <a class="pure-button" href="CheckOutPage.html">
-        <i class="fa fa-arrow-right"></i>
-        Checkout
-    </a>
-        <div class="sideNav">
-            <br/>
-            <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
-            
-            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px;">
-
-            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
-            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
-            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
-
-           
-            </div>    
+        
+        <!-- Checkout Button -->
+        <a href="CheckOutPage.html">    
+        <div class="checkout"><center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="checkout.png"><p>Checkout</p></button>
+            </center>
+            </div>
+            </a>
+            <br/><br/><br/><br/><br/><br/>
+        <hr style="background-color: black;">
+        
+        <!-- Menu -->
                 
-        </div>
+        
+            <!-- Hamburger menu -->
+            <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
+                <!-- Side navigation Bar -->
+             <div id="sideNav">
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../demo.html">Home</a>
+                 <br style="float: left; clear: both;"/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
+                 <br/><br/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html"><b>Catalog</b>&nbsp;&nbsp;&nbsp;</a>
+                <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
+                 
+            
+            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
+                <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black; font-size: 17px;">Gardening</a></li>
+                <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
+                <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>  
+            </div>
+                 <br/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
+                <br/><br/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;">About Us</a>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
+                   
+             </div>
+        
         <div id="main">
             <h1><b> &nbsp;Bestseller</b></h1>
             <h3>&nbsp;&nbsp;&nbsp;Seeds</h3>
-  
-       
-<div class="container">
+              
+            
+            
+            <section class ="jumbotron text-center"></section>
+                    <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                             <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" data-src ="bestseller.jpg" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-             <div class="container2">
-
-             <img src="Images%20for%20Shopping%20List/bestseller3.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="003"><button id="s1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="002"><button id="s2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="001"><button id="s3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller8.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="008"><button id="s4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-         
-      </div>
-    
-      <div class="item">
-        <div class="container2">
-
-             <img src="Images%20for%20Shopping%20List/bestseller4.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="004"><button id="s5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller5.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="005"><button id="s6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="006"><button id="s7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/bestseller7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="007"><button id="s8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
             <h3>&nbsp;&nbsp;&nbsp;Gardening Tools</h3>
-                   
-<div class="container">
+                   <section class ="jumbotron text-center"></section>
+                    <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
 
-  <div id="myCarousel2" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-             <div class="container2">
-
-             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="009"><button id="gt1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="010"><button id="gt2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool3.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="011"><button id="gt3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool4.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="012"><button id="gt4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-         
-      </div>
-    
-      <div class="item">
-        <div class="container2">
-
-             <img src="Images%20for%20Shopping%20List/tool5.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="tool5"><button id="gt5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="tool6"><button id="gt6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool7"><button id="gt7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="Images%20for%20Shopping%20List/tool1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool1"><button id="gt8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel2" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
-  </div>
-            </div>
-    
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                             <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" data-src ="bestseller.jpg" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
     
       
   </div>
@@ -429,6 +494,16 @@ input[type=text]:focus {
               } else {
                 x.style.display = "none";
               }
+            }
+            
+           //for Hamburger Menu
+            function openNav(){
+                  var x = document.getElementById("sideNav");
+                  if (x.style.display == "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
             }
         </script>
     </body>
