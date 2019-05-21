@@ -40,7 +40,9 @@
             
             <h1 id="reviewYourOrder">Review Your Order</h1>
             <br>
+           <!-- top div -->
             <div id="top">
+                <!-- shipping address block -->
                 <div id="shippingAddress">
                     <h2 style="display: inline-block">Shipping Address  </h2>
                     
@@ -57,20 +59,16 @@
                     <label>Shipping from: </label>
                     <input type="text" id="from" name="Shipping Products From: " value="BCIT,Burnaby"/>
                 </div>
-                
                 </div>
-            
+                
+                <!-- payment -->
                 <div class="right" id="payment" class="thanosClass">
                     <h2 class="h2Inline" >Payment</h2>
                     <br>
-                    <!-- Paypal API -->
                     <div id="paypal-button-container" style="width: 50%"></div>
-                    
-                    
                     <br>
-                    
                 </div>
-            
+                <!-- promo and address -->
                 <div class="right" id="promoDiv">
                     <h2 id="giftCard">Gift card and promotional code</h2>
                     
@@ -101,6 +99,7 @@
         </div>
         
             <hr id="hiddenHr">
+             <!-- shipping choice -->
              <div id="shipping">
                 <h3>Choose your delivery options:</h3>
                 <input type="radio" name="shipping" value="11.97" onclick="showNone()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
