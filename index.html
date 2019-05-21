@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head><title>Ship Green</title>
+    <head><title>Demo Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="webpages/styling.css">
     </head>
     
     <style>
@@ -11,11 +10,18 @@
         @use postcss-nested;
         @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
         
-    /*Searchbar styling*/   
-        
-        #searchinput{
-            background-color: white;
+        body{
+            background-color: #f7f7f7;
+            background-image: url(branch-bright-desktop-backgrounds-1353938.jpg);
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: color-burn;
         }
+        
+    /*Searchbar styling*/            
     
     .search__input {
         width: 80%;
@@ -163,10 +169,10 @@
         
     /* for responsive mobile-friendly page*/    
         
-    @media only screen and (min-width: 320px) and (max-width: 500px){
+    @media only screen and (min-width: 300px) and (max-width: 479px){
         #sideNav{
             display: none;
-            margin-left: 150px;
+            margin-left: 170px;
         }    
         .sideNav2{
             display: block;
@@ -184,7 +190,7 @@
 
         .cards{
             width: 50%;
-            column-count: 1;
+            column-count: 2;
         }
         .cards > img{
             margin: 3px;
@@ -210,10 +216,10 @@
         
     }
         
-    @media only screen and (max-width: 767px){  
+    @media only screen and (min-width: 480px) and (max-width: 767px){  
         #sideNav{
             display: none;
-            margin-left: 150px;
+            margin-left: 170px;
         }    
         .sideNav2{
             display: block;
@@ -278,11 +284,6 @@
              }  
         
     }
-        @media only screen and (max-width: 500px){
-            .cards > img{
-            column-count: 1;
-            }
-        }
 
     </style>
     
@@ -294,17 +295,18 @@
             <button type="submit" style="background-color: transparent; border: 0px; "><i class="fa fa-search" onclick="functionsearch()"></i></button>
             
         <!-- LogIn Button -->
-        <a href="/webpages/123.html">    
+        <a href="123.html">    
         <div class="logIn"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="/images/user.png"><p>LogIn</p></button> </center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png"><p>LogIn</p></button> </center>
             </div>
             </a>
             <br/><br/>
             
             <hr style="background-color: #d7d8d2;">
+            
             <!-- Company Logo -->
             <div class="logo">
-                <img src="./images/logo%20(2).png"/>
+                <img src="logo.png"/>
             </div> 
             
             <!-- horizontal lines -->
@@ -317,7 +319,7 @@
             <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
               <!-- Side navigation Bar -->
              <div id="sideNav">
-              <a style="float: left; clear: both; text-decoration: none; color: black;" href="index.html"><b>Home</b></a>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="demo.html"><b>Home</b></a>
                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
                  <br/><br/>
@@ -325,7 +327,7 @@
                  <br/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
                 <br/><br/>
-              <a style="float: left; clear: both;">About Us</a>
+              <a style="float: left; clear: both;" href="About.html">About Us</a>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
                    
              </div>
@@ -333,24 +335,24 @@
         <!-- Image Banner -->
         
         <div class="w3-content w3-section" id="banner">  
-          <img class="mySlides w3-animate-fading" src="/images/banner1.png" style="width:100%; height: 370px;"/>
-          <img class="mySlides w3-animate-fading" src="/images/banner2.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="banner1.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="banner2.png" style="width:100%; height: 370px;"/>
         </div>
         
             <!-- Featuring collection Images -->
             <div class="cards">
                 <b style="font-size: 25px;">Featured Collections</b><br/>
-                    <img src="/images/tool1.PNG"/><button><a href="/webpages/shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
+                    <img src="tool1.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
                     
-                    <img src="/images/tool7.PNG"/><button><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
+                    <img src="tool7.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
                 
-                    <img src="/images/dogFood1.jpg"/><button id="btn"><a href="/webpages/petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
+                    <img src="pet_food.jpg"/><button id="btn"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
                 
-                    <img src="/images/home1.jpg"/><button><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
+                    <img src="home1.jpg"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
                     
-                    <img src="/images/bestseller4.PNG"/><button><a href="/webpages/shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
+                    <img src="bestseller4.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
                     
-                    <img src="/images/bestseller6.PNG"/><button><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
+                    <img src="bestseller6.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
             </div>
 
         
