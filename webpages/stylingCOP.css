@@ -1,5 +1,5 @@
             body{
-                background-image:url("../images/newBackground.jpg");  
+                background-image:url("../screenbg.jpg");  
                 background-repeat: no-repeat;
                 width: auto;
                 font-family: Roboto;
@@ -39,7 +39,7 @@
             #top {
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.75;
+                opacity: 0.91;
                 padding-bottom: 35px;
                 width: 72%;
                 height: 250px;
@@ -78,7 +78,7 @@
                 border: solid 0.5px #C4C4C4;
                 padding: 25px;
                 background: #E5E5E5;
-                opacity: 0.75;
+                opacity: 0.91;
                 left: 74%;
                 top: 95px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -143,7 +143,7 @@
                 border: solid 0.5px #C4C4C4;
                 width: 22%;
                 background: #E5E5E5;
-                opacity: 0.75;
+                opacity: 0.91;
                 margin-top: 20px;
                 padding: 10px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -154,7 +154,7 @@
                 top: 470px;
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.75;
+                opacity: 0.91;
                 padding: 25px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
             }
@@ -162,7 +162,7 @@
             #bottomButton{
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.75;
+                opacity: 0.91;
                 padding: 25px;
                 width: 15%;
                 float: right;
@@ -182,7 +182,7 @@
                 left: 25%;
                 border: solid 0.5px #C4C4C4;
                 background: #E5E5E5;
-                opacity: 0.75;
+                opacity: 0.91;
                 padding: 25px;
                 padding-right: 100px;
                 
@@ -356,7 +356,7 @@
                      padding: 25px;
                      padding-left: 30px;
                      background: #E5E5E5;
-                     opacity: 0.75;
+                     opacity: 0.91;
                      width: 280px;
                      left: 0px;
         
