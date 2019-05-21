@@ -298,7 +298,7 @@ ul .active:hover{
 /*            background-color: black;*/
         }
         #box{
-            width: 300px;
+            width: 100%;
 /*            display: block;*/
             float: left;
             margin: 0px auto;
@@ -317,7 +317,7 @@ ul .active:hover{
 /*            transform: translate(-800px,0px);*/
         }
         .navbar{
-            width: 460px;
+            width: 320px;
         }
         
 }
