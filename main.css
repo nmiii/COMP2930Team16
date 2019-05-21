@@ -315,33 +315,35 @@ ul .active:hover{
 /*            transform: translate(-800px,0px);*/
         }
         .navbar{
-            width: 320px;
+            width: 340px;
+            height: 150px;
+            
         }
         #ca1{
             width: 300px;
-            transform: translate(0px,200px);
+            transform: translate(10px,200px);
             
         }
          #ca2{
             width: 300px;
-             transform: translate(0px,660px);
+             transform: translate(10px,660px);
         }
          #ca3{
             width: 300px;
-             transform: translate(0px,-300px);
+             transform: translate(10px,-300px);
         }
          #ca4{
             width: 300px;
-             transform: translate(0px,160px);
+             transform: translate(10px,160px);
         }
         #li1{
-            transform: translate(0px,65px);
+            transform: translate(-19px,48px);
         }
         #li2{
-            transform: translate(-70px,-20px);
+            transform: translate(-80px,-38px);
         }
         #li3{
-            transform: translate(-100px,10px);
+            transform: translate(-110px,-10px);
         }
         #move{
             transform: translate(50px,0px);
