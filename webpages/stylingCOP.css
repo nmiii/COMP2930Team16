@@ -1,5 +1,5 @@
             body{
-                background-image:url("/images/newBackground.jpg");  
+                background-image:url("../images/newBackground.jpg");  
                 background-repeat: no-repeat;
                 width: auto;
                 font-family: Roboto;
@@ -412,7 +412,7 @@
                  
                  #hiddenHr{
                      margin-top: 80px;
-                     visibility: visible;
+                     visibility: hidden;
                  }
                  
                  #shippingAddress{
@@ -454,7 +454,7 @@
                  }
                  #clearCart{
                      position: absolute;
-                     top: 1580px;
+                     top: 1660px;
                      left: 50px;
                  }
             }
