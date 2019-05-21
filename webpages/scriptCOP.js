@@ -31,9 +31,9 @@
             
             
             
-            /*link to index.html*/
+            /*link to demo.html*/
             function redirectHomePage() {
-                window.location.href= "../index.html";
+                window.location.href= "../demo.html";
             }
             
             
