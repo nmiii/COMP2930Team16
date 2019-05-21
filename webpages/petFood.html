@@ -66,10 +66,15 @@ input[type=text]:focus {
     height: 350px;
     float: left;
     clear: both;
-    background-color:#679267;
+    background-color:#E5E5E5;
+    border: solid 0.5px #C4C4C4;
+                
+    opacity: 0.05;
+                
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     margin: 10px 10px 10px 10px;
     opacity: 0.7;
-    color: beige;
+    color: black;
     
 }  
     
@@ -83,10 +88,13 @@ input[type=text]:focus {
     width: 1170px;
     height: 600px;
     float: left;
-    background-color:#679267;
+    background-color:#E5E5E5;
+    opacity: 0.1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    border: solid 0.5px #C4C4C4;
     margin: 10px 10px 10px 10px;
     opacity: 0.7;
-    color: beige;
+    color: black;
     
 }    
     #rightDirection:hover{
@@ -117,6 +125,7 @@ input[type=text]:focus {
 .container2 .btn:hover {
   background-color: #3A7855;
 } 
+    
 
 </style>
      <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -170,6 +179,7 @@ input[type=text]:focus {
         <i class="fa fa-arrow-right"></i>
         Checkout
     </a>
+
         <!-- Hamburger menu -->
             <div class="sideNav2" id="sideNav2Div"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
         
@@ -180,11 +190,12 @@ input[type=text]:focus {
             
             <b>&nbsp;&nbsp;Catalog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
                 <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
+
             
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px;">
-            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
-            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
-            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
+            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></li>
+            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></li>
+            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></li>
             </div>    
             <a style="float: left; clear: both; text-decoration: none; color: beige;">&nbsp;&nbsp;<b>About Us</b></a> 
         </div>
