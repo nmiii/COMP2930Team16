@@ -1,5 +1,5 @@
             body{
-                background-image:url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");  
+                background-image:url("/images/newBackground.jpg");  
                 background-repeat: no-repeat;
                 width: auto;
                 font-family: Roboto;
@@ -267,7 +267,6 @@
              @media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
                  body {
                      background-size: 100% ;
-                     background-repeat:repeat;
                      transform: translateY(40px);
                  }
                  .right {
