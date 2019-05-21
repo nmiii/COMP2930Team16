@@ -423,6 +423,27 @@
             }
             
         </script>
+        <script>
+
+            var db = firebase.database();
+
+                var dbRef = firebase.database().ref("nooforders/");
+
+                var refcount = dbRef.child("nooforderscounter");
+
+                refcount.on("value", function(snapshot) {
+
+              var some = snapshot.val();
+
+                    console.log(some);
+
+                    $("#change").html("<i>Ship Green</i> has shipped " + some + " Orders in a<b> Greener Way</b> till date!!");
+
+                    
+
+                });
+
+        </script>
         
     </body>
     
