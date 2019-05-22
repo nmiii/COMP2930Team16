@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Shopping Page</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!--        <link rel="stylesheet" type="text/css" href="styling.css">-->
+        <link rel="stylesheet" href="stylingSHOP.css"/>
+        <link rel="stylesheet" type="text/css" href="styling.css">
+        
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+       
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
+        </script>
+        <!-- the magic line -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+            authDomain: "ship-green-ec2e6.firebaseapp.com",
+            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+            projectId: "ship-green-ec2e6",
+            storageBucket: "ship-green-ec2e6.appspot.com",
+            messagingSenderId: "98708125955",
+            appId: "1:98708125955:web:abb3048244ea3bca"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+</script>
+        
+</head>
+    <body>
+        <!-- logo -->    
+         <div class="logo" style="float: left;">
+            <img src="../images/logo%20(2).png" onclick="redirectHomePage()"/>
+            </div> 
+    
+        <!-- Cart Button -->
+        <a href="cart.html">    
+        <div class="cart"><center>
+           <button><img src ="cart.png"><p>Cart</p></button>
+            </center>
+            </div>
+            </a>
+        
+        <!-- Checkout Button -->
+        <a href="CheckOutPage.html">    
+        <div class="checkout"><center>
+           <button><img src ="checkout.png"><p>Checkout</p></button>
+            </center>
+            </div>
+            </a>
+            <br style="float: left; clear: both;"/>
+            <hr>
+        
+        <!-- Menu -->
+                
+        
+            <!-- Hamburger menu -->
+            <div class="sideNav2"><span onclick="openNav()">&#9776; </span></div>
+                <!-- Side navigation Bar -->
+             <div id="sideNav">
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../index.html">Home</a>
+
+                 <br style="float: left; clear: both;"/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
+                  <br style="float: left; clear: both;"/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html"><b>Catalog</b>&nbsp;&nbsp;&nbsp;</a>
+                <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
+                 
+            
+            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
+                <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black; font-size: 17px;">Gardening</a></li>
+                <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
+                <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>  
+            </div>
+                  <br style="float: left; clear: both;"/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
+                  <br style="float: left; clear: both;"/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;">About Us</a>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
+                   
+             </div>
+        
+        <div id="main">
+            <h1><b> &nbsp;Bestseller</b></h1>
+            <h3>&nbsp;&nbsp;&nbsp;Dog Food</h3>
+              
+        
+                    <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/dogFood1.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="df1" class="btn" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                 <center>
+                                     <p class="card-text" style="margin-top: -15px;">WestCoast Cucumber Seeds</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 0.99</p>
+                                
+                                </center>
+                            
+                            </div>
+                            </div>
+
+                            <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/dogFood2.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="df2" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                 <center>   
+                                     <p class="card-text" style="margin-top: -15px;">Manitoba Harvest Hemp Hearts</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 1.99</p>
+                                
+                                
+                                </center>
+                                </div>    
+                            
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/dogFood3.jpg"><div class="btn-group">
+                                <button type="button" id="df3" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                 <center>   
+                                      <p class="card-text" style="margin-top: -15px;">Lavender Seeds</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 2.49</p>
+                                
+                                
+                                </center>
+                                </div>    
+                            
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/dogFood4.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="df4" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                 <center>   
+                                    <p class="card-text" style="margin-top: -15px;">Rose Seeds</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 4.99</p>
+                                </center>
+                                </div>    
+                            
+                            </div>
+                            </div>
+                            
+                              <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/dogFood5.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="df5" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                 <center>   
+                                     <p class="card-text" style="margin-top: -15px;">Orange Seeds</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 0.99</p>
+                                
+                                
+                                </center>
+                                </div>    
+                            
+                            </div>
+                            </div>
+                            
+                              <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/dogFood6.jpg">
+                                 <div class="btn-group">
+                                <button type="button" id="df6" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                 <center>   
+                                     <p class="card-text" style="margin-top: -15px;">YuPik Chia Seeds</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 1.49</p>
+                                </center>
+                                </div>    
+                            
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+            <h3>&nbsp;&nbsp;&nbsp;Cat Food</h3>
+                    <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/catFood1.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="cf1" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                                
+                            </div>
+                             <center>   
+                                     <p class="card-text" style="margin-top: -15px;">Flower Pot Stand</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 3.99</p>
+                                </center>
+                            </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/catFood2.jpg">
+                                 <div class="btn-group">
+                                <button type="button" id="cf2" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                              <center>   
+                                     <p class="card-text" style="margin-top: -15px;">Plucker</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 5.99</p>
+                                </center>
+                            </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/catFood3.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="cf3" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                              <center>   
+                                    <p class="card-text" style="margin-top: -15px;">Gardening tools Set</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 4.99</p>
+                                
+                                </center>
+                            </div>
+                            
+                             <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/catFood4.jpg">
+                                <div class="btn-group">
+                                <button type="button" id="cf4" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                                
+                            </div>
+                              <center>   
+                                     <p class="card-text" style="margin-top: -15px;">Gardening tools Set with Stand</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 6.99</p>
+                                
+                                </center>
+                            </div>
+                                     <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/catFood5.jpg">
+                                 <div class="btn-group">
+                                <button type="button" id="cf5" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                                
+                            </div>
+                              <center>   
+                                   <p class="card-text" style="margin-top: -15px;">Hoe</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 7.99</p>
+                                </center>
+
+
+                            </div>
+                                                        
+                                <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/catFood6.jpg">
+                                  <div class="btn-group">
+                                <button type="button" id="cf6" onclick="cartFunction()">Add to Cart</button>
+                                </div>
+                            </div>
+                              <center>   
+                                     <p class="card-text" style="margin-top: -15px;">Tool Set</p>
+                                    <p class="card-text" style="margin-top: -15px;">Price: CAD 7.99</p>
+                                </center>
+
+                            </div>
+                            </div>
+                             
+                       
+                        </div>
+                        </div>
+                    </div>
+ 
+        
+        <!--The Shopping Cart src"https://www.youtube.com/watch?v=q271lk0G6YQ" -->
+        
+        <div id="TheCart" >
+            <div style="position: absolute; align: right; font-size: 44pt; left: 350px; top: 5px">
+                The Cart
+            </div> 
+            
+            <div style="position: absolute; left: 775px; top: 50px">
+                <button type="button" onclick="ContinueShopping()" style="background-color: #3A7855; border-radius: 4px; color:white; text-shadow: 0 1px 1px rgba(0,0,0,0.2);">Continue Shopping</button>
+            </div>
+            
+            <div id="cartItemImages" style="position: absolute; left: 375px; top: 150px">
+            </div>
+            <div id="cartItemRemove" style="position: absolute; left: 500px; top: 150px">
+            </div>
+            <div id="cartItemQuantity" style="position: absolute; left: 600px; top: 150px">
+            </div>
+            <div id="cartItemTotal" style="position: absolute; left: 650px; top: 150px">
+            </div>
+            <div id="cartTotal" style="position: absolute; left: 650px; top: 125px">
+                Order Total
+            </div>
+            
+            
+        </div>
+            <script> // cart things
+            // variable changes for the database paths based on the clicked item
+            var item;
+            var s1 = document.getElementById("df1").addEventListener("click", function(){item = "df1";});
+            var s2 = document.getElementById("df2").addEventListener("click", function(){item = "df2";});
+            var s3 = document.getElementById("df3").addEventListener("click", function(){item = "df3";});
+            var s4 = document.getElementById("df4").addEventListener("click", function(){item = "df4";});
+            var s5 = document.getElementById("df5").addEventListener("click", function(){item = "df5";});
+            var s6 = document.getElementById("df6").addEventListener("click", function(){item = "df6";});
+            var s7 = document.getElementById("df7").addEventListener("click", function(){item = "df7";});
+            var s8 = document.getElementById("df8").addEventListener("click", function(){item = "df8";});
+            var gt1 = document.getElementById("cf1").addEventListener("click", function(){item = "cf1";});
+            var gt2 = document.getElementById("cf2").addEventListener("click", function(){item = "cf2";});
+            var gt3 = document.getElementById("cf3").addEventListener("click", function(){item = "cf3";});
+            var gt4 = document.getElementById("cf4").addEventListener("click", function(){item = "cf4";});
+            var gt5 = document.getElementById("cf5").addEventListener("click", function(){item = "cf5";});
+            var gt6 = document.getElementById("cf6").addEventListener("click", function(){item = "cf6";});
+            var gt7 = document.getElementById("cf7").addEventListener("click", function(){item = "cf7";});
+            var gt8 = document.getElementById("cf8").addEventListener("click", function(){item = "cf8";});
+            
+            // add to cart stuff
+            var database = firebase.database();
+            function cartFunction() { // if user clicks on add to cart button
+                var user = firebase.auth().currentUser;
+                if (user) { // if user is signed in
+                    var user = firebase.auth().currentUser;
+                    var uid = user.uid;
+                    
+                    var dbRef = firebase.database().ref().child("users");
+                    dbRef.once('value', function(snapshot) {
+                      if (snapshot.hasChild(uid)) { // if the uid node DOES exist
+                          var itemRef = firebase.database().ref().child("users").child(uid).child("cart");
+                          itemRef.once('value', function(snapshot) {
+                              if (snapshot.hasChild(item)){
+                                  var quantityRef = firebase.database().ref().child("users").child(uid).child("cart").child(item).child("quantity");
+                                  quantityRef.transaction(function(quantity){
+                                      if (quantity){
+                                          quantity = quantity + 1;
+                                      }
+                                      return quantity;
+                                  });
+                                  console.log("item incremented");
+                              } else {
+                                  dbRef.child(uid).child("cart").child(item).set({
+                                        status: "true",
+                                        quantity: 1
+                                    });
+                                  console.log("item added");
+                              }
+                          });
+                          
+                      } else { // if the uid node does NOT exist
+                            dbRef.child(uid).child("cart").child(item).set({
+                                status: "true",
+                                quantity: 1
+                            });         
+                          console.log("item added and user created");
+                      }
+                    });
+                } else { // if user is not signed in
+                  window.location.href = "123.html";
+                }
+            }
+        </script>
+        <script>
+             function redirectHomePage() {
+                window.location.href= "../index.html";
+            }
+            
+            function FindIfIdExists(obj, id) {
+                var TheNodeList = obj.getElementsByTagName('div');
+                for (NodeNumber = 0; NodeNumber< TheNodeList.length; NodeNumber++) {
+                    if(TheNodeList[NodeNumber].id == id){
+                        return NodeNumber +1;
+                    }
+                }
+                return 0;
+            }
+            
+            function ContinueShopping(){
+                document.getElementById("main").style.visibility ="visible";
+                document.getElementById("TheCart").style.visibility ="hidden";
+            }
+            
+         function myFunction() {
+              var x = document.getElementById("list");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
+            
+           //for Hamburger Menu
+            function openNav(){
+                  var x = document.getElementById("sideNav");
+                  if (x.style.display == "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            }
+        </script>
+    </body>
+</html>
