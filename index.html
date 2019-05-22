@@ -7,7 +7,7 @@
         @use postcss-color-function;
         @use postcss-nested;
         @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
-        
+        /** Styling not on different page because it was smaller*/
         body{
             background-color: #f7f7f7;
             background-image: url(/images/newBackground.jpg);
@@ -174,7 +174,7 @@
         }
     
         
-    /* for responsive mobile-friendly page*/
+    /*  Responsive Media Queries for smaller Laptops  */
     @media only screen and (max-width: 992px){
         .sideNav{
             display: block;
@@ -186,6 +186,7 @@
              margin: 5px;
              } 
     }
+            /* Responsive media Queries for the Tablets */
     @media only screen and (max-width: 767px){  
         #sideNav{
             display: none;
@@ -238,7 +239,7 @@
             margin-right: 80px;
         }
     }
-    
+    /*  responsive for Mobile Devices*/
     @media only screen and (max-width: 479px){
         #sideNav{
             display: none;
@@ -395,7 +396,7 @@
                   }
             }
             
-            <!--Search Directory-->
+            <!--Search Directory made working -->
                 function functionsearch(){
                 var input = document.getElementById("searchinput").value;
             console.log(input);
@@ -404,7 +405,7 @@
             for (i=0;i<=groceries.length ; i++){
                 if(input===(groceries[i])){
                     //console.log("working");
-                    window.location.href = "Grocery.html";
+                    window.location.href = "Grocery2.html";
                     
                     
                 }
@@ -414,7 +415,7 @@
             for (j=0;j<=petfood.length ; j++){
                  if(input===(petfood[j])){
                     //console.log("working");
-                    window.location.href = "petFood.html";
+                    window.location.href = "petFood2.html";
                     
                     
                 }
