@@ -301,6 +301,7 @@
                      
                  }
                  #bottomButton{
+                     visibility: hidden;
                      float: none;
                      position: absolute;
                      left: 0;
