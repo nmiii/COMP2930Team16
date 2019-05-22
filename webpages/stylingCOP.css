@@ -268,10 +268,13 @@
                  html, body {
                      background-size: 100% ;
                      max-width: 100%;
-                     transform: translateY(40px);
+                    
                      background-repeat: repeat-y;
                      overflow-x: hidden;
                      overflow-y: scroll;
+                 }
+                 body{
+                      transform: translateY(40px);
                  }
                  .right {
                      float:none;
