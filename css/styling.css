@@ -51,6 +51,9 @@ body {
     left: 15px;
 } 
 
+.card-body{
+    text-align: center;
+}
 /* For mobile */
 @media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
     #mainDiv {
