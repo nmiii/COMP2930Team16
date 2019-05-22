@@ -298,7 +298,7 @@
                      margin-top: 30px;
                      margin-left: 30px;
                      margin-bottom: 30px;
-                     top: 1360px;
+                     top: 1420px;
                      
                  }
                  #bottomButton{
@@ -320,7 +320,7 @@
                      position: relative;
                      top: -160px;
                      width:300px;
-                     height: 540px;
+                     height: 580px;
                  }
                  #payment {
                      position: relative;
@@ -357,7 +357,7 @@
                  }
                  
                  #rightSide{
-                     top: 700px;
+                     top: 750px;
                      position: absolute;
                      margin-left: 30px;
                      left: 10px;
@@ -377,7 +377,7 @@
                  }
                  #products{
                      position: absolute;
-                     top: 1630px;
+                     top: 1690px;
                      margin-left: 30px;
                      width: 280px;
                      left: 0;
@@ -473,7 +473,7 @@
                  }
                  #clearCart{
                      position: absolute;
-                     top: 1600px;
+                     top: 1660px;
                      left: 50px;
                  }
             }
