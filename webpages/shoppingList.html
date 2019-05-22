@@ -40,24 +40,23 @@
     <body>
         <!-- logo -->    
          <div class="logo" style="float: left;">
-            <img src="../images/logo%20(2).png" onclick="redirectHomePage()"/>
+            <img src="../images/logo%20(2).png" onclick="redirectHomePage()" alt="logo"/>
             </div>
     
         <!-- Cart Button -->
-        <a href="cart.html">    
-        <div class="cart"><center>
-           <button><img src ="../images/cart.png"><p>Cart</p></button>
-            </center>
-            </div>
-            </a>
-        
-        <!-- Checkout Button -->
-        <a href="CheckOutPage.html">    
-        <div class="checkout"><center>
-           <button><img src ="../images/checkout.png"><p>Checkout</p></button>
-            </center>
-            </div>
-            </a>
+      <form style="display: inline" action="cart.html" method="get">
+         <div class="cart">
+            <button><img src ="../images/cart.png" alt="cart"><br> Cart</button>
+         </div>
+      </form>
+      <!-- Checkout Button -->
+      <form style="display: inline" action="CheckOutPage.html" method="get">
+         <div class="checkout">
+            <button><img src ="../images/checkout.png" alt="checkout">Checkout</button>
+         </div>
+      </form>
+      <br style="float: left; clear: both;"/>
+      <hr>
 
         <!-- Menu -->
         
@@ -69,12 +68,12 @@
             <span></span>
             <span></span>
 
-            <ul id="menu">
-              <a href="../index.html"><li>Home</li></a>
-              <a href="../About.html"><li>About Us</li></a>
-              <a href="../webpages/shoppingList.html"><li>Gardening</li></a>
-              <a href="../webpages/Grocery.html"><li>Grocery</li></a>
-                <a href="../webpages/petFood.html"><li>PetFood</li></a>
+            <ul id="menu" style="list-style-type:none;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../About.html">About Us</a></li>
+                <li><a href="../webpages/shoppingList.html">Gardening</a></li>
+                <li><a href="../webpages/Grocery.html">Grocery</a></li>
+                <li><a href="../webpages/petFood.html">PetFood</a></li>
             </ul>
           </div>
 
@@ -88,10 +87,12 @@
                 <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
                  
             
-            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
+            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none; ">
+                <ul style="list-style-type:none;">
                 <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black; font-size: 17px;">Gardening</a></li>
                 <li style="padding-bottom: 10px;"><a href="petFood2.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
                 <li style="padding-bottom: 10px;"><a href="Grocery2.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>  
+                </ul>
             </div>
                   <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
@@ -111,71 +112,71 @@
                         <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller1.png">
+                            <img class="card-img-top" src ="../images/bestseller1.png" alt="bs1">
                                 <div class="btn-group">
                                 <button type="button" id="s1" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
-                                 <center>
+                                  
                                      <p class="card-text" style="margin-top: -15px;">WestCoast Cucumber Seeds</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 0.99</p>
                                 
-                                </center>
+                                 
                             
                             </div>
                             </div>
 
                             <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller2.png">
+                            <img class="card-img-top" src ="../images/bestseller2.png" alt="bs2">
                                 <div class="btn-group">
                                 <button type="button" id="s2" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                 <center>   
+                                     
                                      <p class="card-text" style="margin-top: -15px;">Manitoba Harvest Hemp Hearts</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 1.99</p>
                                 
                                 
-                                </center>
+                                 
                                 </div>    
                             
                             </div>
                             </div>
                             <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller4.png"><div class="btn-group">
+                            <img class="card-img-top" src ="../images/bestseller4.png" alt="bs4"><div class="btn-group">
                                 <button type="button" id="s3" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                 <center>   
+                                     
                                       <p class="card-text" style="margin-top: -15px;">Lavender Seeds</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 2.49</p>
                                 
                                 
-                                </center>
+                                 
                                 </div>    
                             
                             </div>
                             </div>
                             <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller5.png">
+                            <img class="card-img-top" src ="../images/bestseller5.png" alt="bs5">
                                 <div class="btn-group">
                                 <button type="button" id="s4" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                 <center>   
+                                     
                                     <p class="card-text" style="margin-top: -15px;">Rose Seeds</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 4.99</p>
-                                </center>
+                                 
                                 </div>    
                             
                             </div>
@@ -183,19 +184,19 @@
                             
                               <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller7.png">
+                            <img class="card-img-top" src ="../images/bestseller7.png" alt="bs7">
                                 <div class="btn-group">
                                 <button type="button" id="s5" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                 <center>   
+                                     
                                      <p class="card-text" style="margin-top: -15px;">Orange Seeds</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 0.99</p>
                                 
                                 
-                                </center>
+                                 
                                 </div>    
                             
                             </div>
@@ -203,17 +204,17 @@
                             
                               <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller8.png">
+                            <img class="card-img-top" src ="../images/bestseller8.png" alt="bs8">
                                  <div class="btn-group">
                                 <button type="button" id="s6" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                 <center>   
+                                     
                                      <p class="card-text" style="margin-top: -15px;">YuPik Chia Seeds</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 1.49</p>
-                                </center>
+                                 
                                 </div>    
                             
                             </div>
@@ -228,85 +229,85 @@
                         <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool7.PNG">
+                            <img class="card-img-top" src ="../images/tool7.PNG" alt="t7">
                                 <div class="btn-group">
                                 <button type="button" id="gt1"  class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
-                             <center>   
+                                 
                                      <p class="card-text" style="margin-top: -15px;">Flower Pot Stand</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 3.99</p>
-                                </center>
+                                 
                             </div>
 
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool1.PNG">
+                            <img class="card-img-top" src ="../images/tool1.PNG" alt="t1">
                                  <div class="btn-group">
                                 <button type="button" id="gt2" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
-                              <center>   
+                                  
                                      <p class="card-text" style="margin-top: -15px;">Plucker</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 5.99</p>
-                                </center>
+                                 
                             </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool2.PNG">
+                            <img class="card-img-top" src ="../images/tool2.PNG" alt="t2">
                                 <div class="btn-group">
                                 <button type="button" id="gt3" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
-                              <center>   
+                                  
                                     <p class="card-text" style="margin-top: -15px;">Gardening tools Set</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 4.99</p>
                                 
-                                </center>
+                                 
                             </div>
                             
                              <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool3.PNG">
+                            <img class="card-img-top" src ="../images/tool3.PNG" alt="t3">
                                 <div class="btn-group">
                                 <button type="button" id="gt4" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
-                              <center>   
+                                  
                                      <p class="card-text" style="margin-top: -15px;">Gardening tools Set with Stand</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 6.99</p>
                                 
-                                </center>
+                                 
                             </div>
                                      <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool8.jpg">
+                            <img class="card-img-top" src ="../images/tool8.jpg" alt="t8">
                                  <div class="btn-group">
                                 <button type="button" id="gt5" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
-                              <center>   
+                                  
                                    <p class="card-text" style="margin-top: -15px;">Hoe</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 7.99</p>
-                                </center>
+                                 
 
 
                             </div>
                                                         
                                 <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool5.PNG">
+                            <img class="card-img-top" src ="../images/tool5.PNG" alt="t5">
                                   <div class="btn-group">
                                 <button type="button" id="gt6" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
-                              <center>   
+                                  
                                      <p class="card-text" style="margin-top: -15px;">Tool Set</p>
                                     <p class="card-text" style="margin-top: -15px;">Price: CAD 7.99</p>
-                                </center>
+                                 
 
                             </div>
                             </div>
@@ -320,7 +321,7 @@
         <!--The Shopping Cart src"https://www.youtube.com/watch?v=q271lk0G6YQ" -->
         
         <div id="TheCart" >
-            <div style="position: absolute; align: right; font-size: 44pt; left: 350px; top: 5px">
+            <div style="position: absolute; font-size: 44pt; left: 350px; top: 5px">
                 The Cart
             </div> 
             
