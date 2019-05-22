@@ -4,12 +4,16 @@
         
         body{
             background-color: white;
-            background-image: url(../images/404img.jpg);
+            background-image: url(../images/404img.jpg); 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             height: 100%;
             /* Center and scale the image nicely */
-            background-position: center;
+            background-position:top;
             background-repeat: no-repeat;
-            background-size: cover;
+         
             font-family: "Arial", sans-serif;
            
         }
@@ -40,4 +44,10 @@
     }
     
     @media only screen and (max-width: 479px){
+         body{
+            background-size: 300%;
         }
+        #center {
+            left: 02%;
+        }
+    }
