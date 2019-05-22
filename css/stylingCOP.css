@@ -240,6 +240,7 @@
             }
             .desktopExtent{
                 width: 115%;
+                
             }
             
 /*map*/
@@ -383,7 +384,7 @@
                      
                      
                  }
-                 #willBeHidden {
+                 .willBeHidden {
                      visibility: hidden;
                  }
                  
