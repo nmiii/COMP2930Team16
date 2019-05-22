@@ -1,12 +1,17 @@
             body{
                 background-image:url("../screenbg.jpg");  
-                background-repeat: no-repeat;
+               
                 width: auto;
                 font-family: Roboto;
                 font-style: normal;
                 font-weight:normal;
                 font-size: 18px;
                 opacity: 1;
+                height: 100%;
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 
                 
             }
@@ -264,11 +269,17 @@
             
             
              /* For mobile */
-             @media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
-                 body {
-                     background-size: 100% ;
-                     transform: translateY(40px);
-                     background-repeat: repeat-y;
+             @media only screen and (min-device-width:320px) and (max-device-width: 667px) and (orientation: portrait) {
+                 html, body {
+                     
+                     max-width: 100%;
+                    
+                     
+                     overflow-x: hidden;
+                     overflow-y: scroll;
+                 }
+                 body{
+                      transform: translateY(40px);
                  }
                  .right {
                      float:none;
@@ -277,36 +288,35 @@
                  h2 {
                      font-size: 18px;
                  }
-                 #rightSide {
-                     position: relative;
-                     left: auto;
-                 }
+                 
             
                  #shipping {
                      float:none;
-                     position: relative;
+                     position: absolute;
                      left: auto;
                      margin-top: 30px;
                      margin-left: 30px;
                      margin-bottom: 30px;
-                     top: 470px;
+                     top: 1360px;
                      
                  }
                  #bottomButton{
                      float: none;
                      position: absolute;
-                     left: auto;
-                     top:2250px;
-                     width: auto;
+                     left: 0;
+                     top:2370px;
+                     
                      margin-left: 30px;
+                     width: 280px;
                  }
                 
                  #top {
+                     position: absolute;
                      margin-top:60px;
                      margin-left: 30px;
                      padding-left: 30px;
                      position: relative;
-                     top: 590px;
+                     top: -160px;
                      width:300px;
                      height: 540px;
                  }
@@ -345,9 +355,10 @@
                  }
                  
                  #rightSide{
-                     top: 80px;
+                     top: 700px;
                      position: absolute;
                      margin-left: 30px;
+                     left: 0px;
                  }
                  
                  #output {
@@ -363,10 +374,12 @@
         
                  }
                  #products{
-                     position: relative;
-                     top: 500px;
+                     position: absolute;
+                     top: 1630px;
                      margin-left: 30px;
-                     width: 330px;
+                     width: 280px;
+                     left: 0;
+                     
                      
                  }
                  #willBeHidden {
@@ -434,9 +447,12 @@
                  #thankYouDiv{
                      margin-left: 0;
                      padding-left: 20px;
-                     padding-right: 40px;
-                     width: 75%;
+                     padding-right: 20px;
+                     width: 280px;
                      transform: translateX(-60px);
+                     position: absolute;
+                     left: 80px;
+                     top: 100px;
                  }
                  #thinkGreen{
                      padding-left: 20px;
@@ -445,7 +461,7 @@
                      width: 120px;
                      height: 120px;
                      display: block;
-                     transform: translate(0px,-40px);
+                     transform: translate(0px,-20px);
                  }
                  .desktopExtent{
                      width: 100%;
@@ -455,7 +471,7 @@
                  }
                  #clearCart{
                      position: absolute;
-                     top: 1660px;
+                     top: 1600px;
                      left: 50px;
                  }
             }

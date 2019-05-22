@@ -291,7 +291,10 @@ ul .active:hover{
     
 }
 */
-    @media only screen and (min-width: 320px) and (max-width: 481px){
+@media only screen and (max-width: 1300px) {
+    
+}
+    @media only screen and (max-width: 481px){
         #box{
             
             

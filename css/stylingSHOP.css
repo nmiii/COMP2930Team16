@@ -1,7 +1,12 @@
-      /*Body styling*/
+      html {
+    height: 100%;
+          width: 100%;
+}
+/*Body styling*/
         body{
             background-image: url("../screenbg.jpg");
             height: 100%;
+            width: 100%;
             /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
