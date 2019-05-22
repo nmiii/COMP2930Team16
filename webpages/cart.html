@@ -1,344 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Cart</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../css/styling.css">
-        <style>
-            /* LogIn button styling*/
-    .logIn{
-        float: right;
-        width: 80px;
-        line-height: 18px;
-        margin-right: 50px;
-        }
-        .logIn:hover{
-            border-bottom: 1px solid #575756;
-        }
-        .logIn img{
-            width:20px; 
-            float: left; 
-            clear: both; 
-            line-height: 18px; 
-            transform: translate(7px,0px);
-        }
-        .logIn p{
-            display: block;
-            margin-left: 3px;
-        }
-            .change{
-                color: #61C98E;
-            }
-            
-            .change:hover{
-                cursor: pointer;
-            }
-            .giftButton:hover{
-                cursor: pointer;
-            }
-            .radioButton:hover{
-                cursor: pointer;
-            }
-            .price {
-                color: red;
-                font-weight: bold;
-            }
-            .inStock{
-                color: #949494;
-            }
-            
-            
-            .right {
-                float:right;
-            }
-            
-            #top {
-                border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.91;
-                padding-bottom: 35px;
-                width: 72%;
-                height: 250px;
-                
-            }
-            
-            #shippingAddress {
-                padding-left: 20px;
-            }
-            
-            #shippingAddessP {
-                width: 27%;
-            }
-            #shippingAddressChange {
-              
-            }
-            #payment {
-                position:absolute;
-                left: 26%;
-                top: 110px;   
-                
-            }
-            .h2Inline {
-                display:inline;
-            }
-            
-            #promoDiv {
-                position: absolute;
-                left: 45%;
-                top: 90px;
-            }
-            
-            #rightSide{
-                position: absolute;
-                border: solid 0.5px #C4C4C4;
-                padding: 25px;
-                background: #E5E5E5;
-                opacity: 0.91;
-                left: 74%;
-                top: 95px;
-            }
-            h2 {
-                font-size: 24px;
-            }
-            
-            h3{
-                font-size: 18px;
-            }
-            .placeYourOrder {
-                background-color: #61C98E;
-                padding-left: 85px;
-                padding-right: 85px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                border-color: #3A7855;
-            }
-            .placeYourOrder:hover{
-                cursor: pointer;
-            }
-            #calcYourOrderTop{
-                padding-left: 0px;
-                padding-right: 0px;
-                width: 98%;
-            }
-            .content{
-                float: right;
-            }
-            
-            
-            
-            .productImage {
-                padding-bottom: 100px;
-                padding-top: 30px;
-                padding-left: 20px;
-            }
-            
-            #Content001{
-                position: absolute;
-                left: 15%;
-                top: 400px;
-            }
-            
-            #Content002{
-                position: absolute;
-                left: 15%;
-                top: 670px;
-            }
-            
-            #Content003{
-                position: absolute;
-                left: 15%;
-                top: 920px;
-            }
-            .product p{
-                margin: 5px;
-                padding: 0;
-            }
-            #products{
-                border: solid 0.5px #C4C4C4;
-                width: 264px;
-                background: #E5E5E5;
-                opacity: 0.91;
-                margin-top: 20px;
-                padding: 10px;
-            }
-            #shipping{
-                position: absolute;
-                left: 25%;
-                top: 440px;
-                border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.91;
-                padding: 25px;
-            }
-            
-            #bottomButton{
-                border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.91;
-                padding: 25px;
-                width: 15%;
-                float: right;
-                position: absolute;
-                top: 950px;
-                left: 74%;
-            }
-            #shippingAddressContent{
-                transform: translateY(-20px);
-            }
-            #hiddenHr{
-                visibility: hidden;
-            }
-            #thankYouDiv {
-                position: absolute;
-                top: 25%;
-                left: 25%;
-                border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.91;
-                padding: 25px;
-                padding-right: 100px;
-                
-                
-            }
-            
-            #greenShippingChosenThankYouDiv{
-                text-align: center;
-                
-            }
-            
-            .textCenter{
-                
-                display: block;
-                width: 100%;
-            }
-            #thankYouSummary{
-                float: right;
-                position:absolute;
-                top: 165px;
-                left: 400px;
-                font-size: 10px;
-                border-left: 0.5px solid #C4C4C4; 
-                padding-left: 30px;
-                
-            }
-            #thankYouEstimate{
-                font-size: 18px;
-               
-                padding-right: -50px;
-            }
-            #thankYouHeader{
-                padding-left: 50px;
-                font-size: 36px;
-            }
-            #logo:hover{
-                cursor: pointer;
-            }
-            #shippingAddressP{
-                width: 25%;
-            }
-            #billingAddressP{
-                width: 70%;
-            }
-            #continueShopping{
-                padding-left: 220px;
-            }
-            #thinkGreen{
-                padding-left: 150px;
-            }
-            .desktopExtent{
-                width: 115%;
-            }
-            
-            
-            
-            @keyframes roll {
-                from { transform: rotate(0deg) }
-                to   { transform: rotate(360deg) }
-            }
-            @-webkit-keyframes roll {
-                from { -webkit-transform: rotate(0deg) }
-                to   { -webkit-transform: rotate(360deg) }
-            }
-
-            @-moz-keyframes roll {
-                from { -moz-transform: rotate(0deg) }
-                to   { -moz-transform: rotate(360deg) }
-            }
-            
-            @media only screen and (max-device-width: 600px) {
-                #products {
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                #clearCart {
-                    margin-left: auto;
-                    margin-right: auto;
-                    position: relative;
-                    float: none;
-                    top: 40px;
-                }
-                #logo {
-                    float: left;
-                    margin-left: 0px;
-                }
-            }
-                 
-
-        </style>
-        
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-
-        
-        <!-- the magic line -->
-        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-        
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#config-web-app -->
-
-        <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
-            authDomain: "ship-green-ec2e6.firebaseapp.com",
-            databaseURL: "https://ship-green-ec2e6.firebaseio.com",
-            projectId: "ship-green-ec2e6",
-            storageBucket: "ship-green-ec2e6.appspot.com",
-            messagingSenderId: "98708125955",
-            appId: "1:98708125955:web:abb3048244ea3bca"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        </script>
-
-    </head>
-    
-    <body>
-        <img src="../images/logo%20(2).png" onclick="redirectHomePage()" alt="logo" width="80px" height="80px" style="float: left" id="logo">
-       <div id="checkOutDiv">
-           
-           <!-- checkout link -->
-           <a href="CheckOutPage.html">    
-        <div class="logIn"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="../images/sign_in.jpg"><p>CheckOut</p></button> </center>
+   <head>
+      <meta charset="utf-8" />
+      <title>Cart</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="../css/styling.css">
+      <style>
+         /* LogIn button styling*/
+         .logIn{
+         float: right;
+         width: 80px;
+         line-height: 18px;
+         margin-right: 50px;
+         text-align: center;
+         }
+         .logIn:hover{
+         border-bottom: 1px solid #575756;
+         }
+         .logIn img{
+         width:20px; 
+         float: left; 
+         clear: both; 
+         line-height: 18px; 
+         transform: translate(7px,0px);
+         }
+         .logIn p{
+         display: block;
+         margin-left: 3px;
+         }
+         .change{
+         color: #61C98E;
+         }
+         .change:hover{
+         cursor: pointer;
+         }
+         .giftButton:hover{
+         cursor: pointer;
+         }
+         .radioButton:hover{
+         cursor: pointer;
+         }
+         .price {
+         color: red;
+         font-weight: bold;
+         }
+         .inStock{
+         color: #949494;
+         }
+         .right {
+         float:right;
+         }
+         #top {
+         border: solid 0.5px #C4C4C4;
+         background: #E5E5E5;
+         opacity: 0.91;
+         padding-bottom: 35px;
+         width: 72%;
+         height: 250px;
+         }
+         #shippingAddress {
+         padding-left: 20px;
+         }
+         #shippingAddessP {
+         width: 27%;
+         }
+         #shippingAddressChange {
+         }
+         #payment {
+         position:absolute;
+         left: 26%;
+         top: 110px;   
+         }
+         .h2Inline {
+         display:inline;
+         }
+         #promoDiv {
+         position: absolute;
+         left: 45%;
+         top: 90px;
+         }
+         #rightSide{
+         position: absolute;
+         border: solid 0.5px #C4C4C4;
+         padding: 25px;
+         background: #E5E5E5;
+         opacity: 0.91;
+         left: 74%;
+         top: 95px;
+         }
+         h2 {
+         font-size: 24px;
+         }
+         h3{
+         font-size: 18px;
+         }
+         .placeYourOrder {
+         background-color: #61C98E;
+         padding-left: 85px;
+         padding-right: 85px;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         border-color: #3A7855;
+         }
+         .placeYourOrder:hover{
+         cursor: pointer;
+         }
+         #calcYourOrderTop{
+         padding-left: 0px;
+         padding-right: 0px;
+         width: 98%;
+         }
+         .content{
+         float: right;
+         }
+         .productImage {
+         padding-bottom: 100px;
+         padding-top: 30px;
+         padding-left: 20px;
+         }
+         #Content001{
+         position: absolute;
+         left: 15%;
+         top: 400px;
+         }
+         #Content002{
+         position: absolute;
+         left: 15%;
+         top: 670px;
+         }
+         #Content003{
+         position: absolute;
+         left: 15%;
+         top: 920px;
+         }
+         .product p{
+         margin: 5px;
+         padding: 0;
+         }
+         #products{
+         border: solid 0.5px #C4C4C4;
+         width: 264px;
+         background: #E5E5E5;
+         opacity: 0.91;
+         margin-top: 20px;
+         padding: 10px;
+         }
+         #shipping{
+         position: absolute;
+         left: 25%;
+         top: 440px;
+         border: solid 0.5px #C4C4C4;
+         background: #E5E5E5;
+         opacity: 0.91;
+         padding: 25px;
+         }
+         #bottomButton{
+         border: solid 0.5px #C4C4C4;
+         background: #E5E5E5;
+         opacity: 0.91;
+         padding: 25px;
+         width: 15%;
+         float: right;
+         position: absolute;
+         top: 950px;
+         left: 74%;
+         }
+         #shippingAddressContent{
+         transform: translateY(-20px);
+         }
+         #hiddenHr{
+         visibility: hidden;
+         }
+         #thankYouDiv {
+         position: absolute;
+         top: 25%;
+         left: 25%;
+         border: solid 0.5px #C4C4C4;
+         background: #E5E5E5;
+         opacity: 0.91;
+         padding: 25px;
+         padding-right: 100px;
+         }
+         #greenShippingChosenThankYouDiv{
+         text-align: center;
+         }
+         .textCenter{
+         display: block;
+         width: 100%;
+         }
+         #thankYouSummary{
+         float: right;
+         position:absolute;
+         top: 165px;
+         left: 400px;
+         font-size: 10px;
+         border-left: 0.5px solid #C4C4C4; 
+         padding-left: 30px;
+         }
+         #thankYouEstimate{
+         font-size: 18px;
+         padding-right: -50px;
+         }
+         #thankYouHeader{
+         padding-left: 50px;
+         font-size: 36px;
+         }
+         #logo:hover{
+         cursor: pointer;
+         }
+         #shippingAddressP{
+         width: 25%;
+         }
+         #billingAddressP{
+         width: 70%;
+         }
+         #continueShopping{
+         padding-left: 220px;
+         }
+         #thinkGreen{
+         padding-left: 150px;
+         }
+         .desktopExtent{
+         width: 115%;
+         }
+         @keyframes roll {
+         from { transform: rotate(0deg) }
+         to   { transform: rotate(360deg) }
+         }
+         @-webkit-keyframes roll {
+         from { -webkit-transform: rotate(0deg) }
+         to   { -webkit-transform: rotate(360deg) }
+         }
+         @-moz-keyframes roll {
+         from { -moz-transform: rotate(0deg) }
+         to   { -moz-transform: rotate(360deg) }
+         }
+         @media only screen and (max-device-width: 600px) {
+         #products {
+         margin-left: auto;
+         margin-right: auto;
+         }
+         #clearCart {
+         margin-left: auto;
+         margin-right: auto;
+         position: relative;
+         float: none;
+         top: 40px;
+         }
+         #logo {
+         float: left;
+         margin-left: 0px;
+         }
+         }
+      </style>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+      <!-- the magic line -->
+      <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+      <script>
+         // Your web app's Firebase configuration
+         var firebaseConfig = {
+             apiKey: "AIzaSyCOvdHqRz3f-5thaHgh8FxuGoBfbaGYL8M",
+             authDomain: "ship-green-ec2e6.firebaseapp.com",
+             databaseURL: "https://ship-green-ec2e6.firebaseio.com",
+             projectId: "ship-green-ec2e6",
+             storageBucket: "ship-green-ec2e6.appspot.com",
+             messagingSenderId: "98708125955",
+             appId: "1:98708125955:web:abb3048244ea3bca"
+         };
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+      </script>
+   </head>
+   <body>
+      <img src="../images/logo%20(2).png" onclick="redirectHomePage()" alt="logo" width="80px" height="80px" style="float: left" id="logo">
+      <div id="checkOutDiv">
+         <!-- checkout link -->
+         <a href="CheckOutPage.html">
+            <div class="logIn">
+               <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;">
+                  <img src ="../images/sign_in.jpg">
+                  <p>CheckOut</p>
+               </button>
             </div>
-            </a>
-            
-            
-    <!-- clear cart button -->
-    <button type="button" class="placeYourOrder" id="clearCart"><i class="fa fa-shopping-cart fa-lg"></i>Clear Cart</button>
-             <br><br><br>
-    <div id="products">
-        <div id="empty"></div>
-           </div>
-        </div>
-        
-    <script src="../JavaScript/cartJS.js"></script>
-    <script>
-        function redirectHomePage() {
-            window.location.href = "../index.html";
-        }
-    </script>
-  </body>
+         </a>
+         <!-- clear cart button -->
+         <button type="button" class="placeYourOrder" id="clearCart"><i class="fa fa-shopping-cart fa-lg"></i>Clear Cart</button>
+         <br><br><br>
+         <div id="products">
+            <div id="empty"></div>
+         </div>
+      </div>
+      <script src="../JavaScript/cartJS.js"></script>
+      <script>
+         function redirectHomePage() {
+             window.location.href = "../index.html";
+         }
+      </script>
+   </body>
 </html>
