@@ -33,7 +33,7 @@
             
             /*link to demo.html*/
             function redirectHomePage() {
-                window.location.href= "../demo.html";
+                window.location.href= "../index.html";
             }
             
             
