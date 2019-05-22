@@ -1,12 +1,17 @@
             body{
                 background-image:url("../screenbg.jpg");  
-                background-repeat: no-repeat;
+               
                 width: auto;
                 font-family: Roboto;
                 font-style: normal;
                 font-weight:normal;
                 font-size: 18px;
                 opacity: 1;
+                height: 100%;
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 
                 
             }
@@ -266,10 +271,10 @@
              /* For mobile */
              @media only screen and (min-device-width:320px) and (max-device-width: 667px) and (orientation: portrait) {
                  html, body {
-                     background-size: 100% ;
+                     
                      max-width: 100%;
                     
-                     background-repeat: repeat-y;
+                     
                      overflow-x: hidden;
                      overflow-y: scroll;
                  }
