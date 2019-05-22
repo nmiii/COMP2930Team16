@@ -3,9 +3,81 @@
             width: 100%;
         }
         /*Body Styling*/
+        
+        html {
+            height: 100%;
+            width: 100%;
+        }
         body {
-
+            background-image: url(../screenbg.jpg);
             background-color: #f7f7f7;
+            height: 100%;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* cart display styling */
+        .theDiv {
+            background-color: #006699;
+            height: 100px;
+            width: 263px;
+            margin-bottom: 10px;
+        }
+        .dImg {
+            background-size: cover;
+            height: 80px;
+            width: 80px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .dName {
+            padding: 3px;  
+            position: relative;
+            top: -100px;
+            left: 100px;
+        }
+        .dPrice {
+            padding: 3px;
+            position: relative;
+            top: -90px;
+            left: 100px;
+            display:inline;
+        }
+        .dQuantity {
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 3px;
+            display:inline;
+            position: relative;
+            top: -50px;
+            left: 15px;
+        } 
+
+        .card-body{
+            text-align: center;
+        }
+/* For mobile */
+@media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
+    #mainDiv {
+        height: 1900px;
+        position: relative;
+        background-color: #679267;
+        width: 100%;
+        
+        
+    }
+    #sideNavDiv{
+        height: 175px;
+        background-color: none;
+    }
+
+      /*Body styling*/
+        body{
+            background-image: url("../screenbg.jpg");
+
             height: 100%;
             width: 100%;
             /* Center and scale the image nicely */
