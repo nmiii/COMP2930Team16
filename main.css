@@ -241,7 +241,7 @@ ul .active:hover{
         margin-top: 200px;
          padding-top: 350px;
 /*        height: 200%;*/
-        background-image: url(../images/t10.jpg);
+    
         z-index: -2;
         font-size: 15pt;
 /*        transform: translate(-350px,0px);*/
@@ -258,7 +258,6 @@ ul .active:hover{
          background-size: cover;
         background-color: white;
         display: inline-block;
-        float: right;
         margin-right: 80px;
         padding: 30px;
         border-radius: 15px;
@@ -293,17 +292,13 @@ ul .active:hover{
 }
 */
     @media only screen and (min-width: 320px) and (max-width: 481px){
-        #b{
-            
-/*            background-color: black;*/
-        }
         #box{
-            width: 100%;
-/*            display: block;*/
-            float: left;
+            
+            
+            width: 80%;
             margin: 0px auto;
-            margin-top: 200px;
-            clear: both;
+            display: inline-block;
+
         }
         .big{
             transform: translate(0px,1200px);
@@ -316,6 +311,7 @@ ul .active:hover{
 /*            transform: translate(-800px,0px);*/
         }
         .navbar{
+
             width: 380px;
             height: 150px;
             
