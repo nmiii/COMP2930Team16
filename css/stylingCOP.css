@@ -1,5 +1,5 @@
             body{
-                background-image:url("../screenbg.jpg");  
+                background-image:url("../images/screenbg.jpg");  
                
                 width: auto;
                 font-family: Roboto;
@@ -301,6 +301,7 @@
                      
                  }
                  #bottomButton{
+                     visibility: hidden;
                      float: none;
                      position: absolute;
                      left: 0;
