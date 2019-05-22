@@ -147,6 +147,10 @@
           background-color: #3A7855;
         } 
     
+        .carousel-inner img {
+            margin: auto;
+        }
+    
         
     
     /* for responsive mobile-friendly page*/    
@@ -260,7 +264,7 @@
             <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
                 <!-- Side navigation Bar -->
              <div id="sideNav">
-              <a style="float: left; clear: both; text-decoration: none; color: black;" href="demo.html">Home</a>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../demo.html">Home</a>
                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
                  <br/><br/>
@@ -284,126 +288,91 @@
         <div id="main">
             <h1><b> &nbsp;Bestseller</b></h1>
             <h3>&nbsp;&nbsp;&nbsp;Seeds</h3>
-  
-       
-<div class="container">
+              
+            
+            
+            <section class ="jumbotron text-center"></section>
+                    <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                             <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" data-src ="bestseller.jpg" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-             <div class="container2">
-
-             <img src="../images/bestseller3.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="003"><button id="s1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="../images/bestseller2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="002"><button id="s2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="../images/bestseller1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="001"><button id="s3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="../images/bestseller8.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="008"><button id="s4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-         
-      </div>
-    
-      <div class="item">
-        <div class="container2">
-
-             <img src="../images/bestseller4.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="004"><button id="s5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="../images/bestseller5.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="005"><button id="s6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="../images/bestseller6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="006"><button id="s7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="../images/bestseller7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="007"><button id="s8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
             <h3>&nbsp;&nbsp;&nbsp;Gardening Tools</h3>
-                   
-<div class="container">
+                   <section class ="jumbotron text-center"></section>
+                    <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
 
-  <div id="myCarousel2" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-             <div class="container2">
-
-             <img src="../images/tool1.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="009"><button id="gt1" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="../images/tool2.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="010"><button id="gt2" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="../images/tool3.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="011"><button id="gt3" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="../images/tool4.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="012"><button id="gt4" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-         
-      </div>
-    
-      <div class="item">
-        <div class="container2">
-
-             <img src="../images/tool5.PNG" alt="Los Angeles" style="width:200px; height: 200px; margin-left: 130PX; float: left;" id="tool5"><button id="gt5" class="btn" style="transform: translate(-310%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-             
-             <div class="container2">
-             <img src="../images/tool6.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 30px; margin-right: 20px;" id="tool6"><button id="gt6" class="btn" style="transform: translate(-135%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-          
-             <div class="container2">
-             <img src="../images/tool7.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool7"><button id="gt7" class="btn" style="transform: translate(45%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-           
-             <div class="container2">
-             <img src="../images/tool1.PNG" alt="Chicago" style="width:200px;  height: 200px;float:left;margin-left: 10px; margin-right: 20px;" id="tool1"><button id="gt8" class="btn" style="transform: translate(220%,300%)" onclick="cartFunction()">Add to Cart</button></div>
-
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel2" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
-  </div>
-            </div>
-    
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                             <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" data-src ="bestseller.jpg" style="height: 200px; width: 100%; display: block;">
+                            </div>
+                            <div class="card-body">
+                            <p class="card-text">Hello!</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
     
       
   </div>

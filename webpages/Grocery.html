@@ -2,7 +2,8 @@
 
 <html>
 
-    <head><title>Shopping Page</title>
+    <head><title>Grocery Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -28,6 +29,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
 
 <style>
+    a:hover{
+        cursor: pointer;
+    }
     a:active{
         color: black;
     }
@@ -71,7 +75,7 @@ input[type=text] {
 
   background-color: white;
 
-  background-image: url("http://i47.tinypic.com/r02vbq.png");
+  background-image: url("../screenbg.jpg");
 
   background-position: left center; 
     
@@ -129,18 +133,28 @@ input[type=text]:focus {
 
     clear: both;
 
-    background-color:#679267;
+    
+    background-color: white;
+    
+    opacity: 0.91;
+                
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 
     margin: 10px 10px 10px 10px;
 
-    opacity: 0.7;
+   
 
-    color: beige;
+    color: black;
 
     
 
 }  
 
+    /*Hamburger Menu*/    
+        .sideNav2{
+            display: none;  
+            margin-left: 150px;
+        } 
     
 
 .main{
@@ -151,13 +165,18 @@ input[type=text]:focus {
 
     float: left;
 
-    background-color:#679267;
+    background-color:white;
+    
+    
+                
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+
 
     margin: 10px 10px 10px 10px;
 
-    opacity: 0.7;
+    opacity: 0.91;
 
-    color: beige;
+    color: black;
 
     
 
@@ -249,12 +268,15 @@ input[type=text]:focus {
 
     <!-- logo -->    
 
-     <div class="logo" style="float: left;">
+     <div class="logo" style="float: left;" id="logo">
 
         <img src="../images/logo%20(2).png" onclick="redirectHomePage()"/>
 
         </div> 
-
+        <div></div>
+        <br>
+        <br>
+        <div></div>
     
 
         <!-- Search bar -->
@@ -288,32 +310,35 @@ input[type=text]:focus {
         Checkout
 
     </a>
+        <!-- Hamburger menu -->
+            <div class="sideNav2" id="sideNav2Div"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
+        <div class="sideNav" id="sideNavDiv">
+            <a style="float: left; clear: both;text-decoration-line: none; color: black" href="../demo.html"\><b>&nbsp;&nbsp;Home</b></a>
+                 
+                 <br/><br/>
+           
 
-        <div class="sideNav">
+            <b>&nbsp;&nbsp;Catalog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
 
-            <br/>
-
-            <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-
-                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
+                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a>
 
             
 
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px;">
 
-            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
+            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></li>
 
-            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
+            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></li>
 
-            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
+            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></li>
 
             </div>    
-
-                
+            
+            <a style="float: left; clear: both; text-decoration: none; color: black;" href="../About.html">&nbsp;&nbsp;<b>About Us</b></a>   
 
         </div>
 
-        <div class="main">
+        <div class="main" id="mainDiv">
 
             <h1><b> &nbsp;Groceries</b></h1>
 
@@ -604,7 +629,7 @@ input[type=text]:focus {
 
         <script>
              function redirectHomePage() {
-                window.location.href= "../index.html";
+                window.location.href= "../demo.html";
             }
 
          function myFunction() {
@@ -622,6 +647,15 @@ input[type=text]:focus {
   }
 
 }
+            //for Hamburger Menu
+            function openNav(){
+                  var x = document.getElementById("sideNavDiv");
+                  if (x.style.display == "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            }
 
         </script>
 

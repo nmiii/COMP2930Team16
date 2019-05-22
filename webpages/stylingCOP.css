@@ -1,5 +1,5 @@
             body{
-                background-image:url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");  
+                background-image:url("../screenbg.jpg");  
                 background-repeat: no-repeat;
                 width: auto;
                 font-family: Roboto;
@@ -38,8 +38,8 @@
             
             #top {
                 border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.75;
+                background: white;
+                opacity: 0.91;
                 padding-bottom: 35px;
                 width: 72%;
                 height: 250px;
@@ -77,8 +77,8 @@
                 position: absolute;
                 border: solid 0.5px #C4C4C4;
                 padding: 25px;
-                background: #E5E5E5;
-                opacity: 0.75;
+                background: white;
+                opacity: 0.91;
                 left: 74%;
                 top: 95px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -142,8 +142,8 @@
             #products{
                 border: solid 0.5px #C4C4C4;
                 width: 22%;
-                background: #E5E5E5;
-                opacity: 0.75;
+                background: white;
+                opacity: 0.91;
                 margin-top: 20px;
                 padding: 10px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -153,16 +153,16 @@
                 left: 25%;
                 top: 470px;
                 border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.75;
+                background: white;
+                opacity: 0.91;
                 padding: 25px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
             }
             
             #bottomButton{
                 border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.75;
+                background: white;
+                opacity: 0.91;
                 padding: 25px;
                 width: 15%;
                 float: right;
@@ -181,8 +181,8 @@
                 top: 25%;
                 left: 25%;
                 border: solid 0.5px #C4C4C4;
-                background: #E5E5E5;
-                opacity: 0.75;
+                background: white;
+                opacity: 0.91;
                 padding: 25px;
                 padding-right: 100px;
                 
@@ -267,8 +267,8 @@
              @media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
                  body {
                      background-size: 100% ;
-                     background-repeat:repeat;
                      transform: translateY(40px);
+                     background-repeat: repeat-y;
                  }
                  .right {
                      float:none;
@@ -356,8 +356,8 @@
                      border: solid 0.5px #C4C4C4;
                      padding: 25px;
                      padding-left: 30px;
-                     background: #E5E5E5;
-                     opacity: 0.75;
+                     background: white;
+                     opacity: 0.91;
                      width: 280px;
                      left: 0px;
         
@@ -413,7 +413,7 @@
                  
                  #hiddenHr{
                      margin-top: 80px;
-                     visibility: visible;
+                     visibility: hidden;
                  }
                  
                  #shippingAddress{
@@ -445,7 +445,7 @@
                      width: 120px;
                      height: 120px;
                      display: block;
-                     transform: translate(140px,-40px);
+                     transform: translate(0px,-40px);
                  }
                  .desktopExtent{
                      width: 100%;
@@ -455,7 +455,7 @@
                  }
                  #clearCart{
                      position: absolute;
-                     top: 1580px;
+                     top: 1660px;
                      left: 50px;
                  }
             }

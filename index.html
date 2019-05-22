@@ -12,7 +12,7 @@
         
         body{
             background-color: #f7f7f7;
-            background-image: url(branch-bright-desktop-backgrounds-1353938.jpg);
+            background-image: url(/images/newBackground.jpg);
             height: 100%;
             /* Center and scale the image nicely */
             background-position: center;
@@ -47,6 +47,9 @@
             color: color(#575756 a(0.8));
             text-transform: uppercase;
             letter-spacing: 1.5px;
+        }
+        #searchinput {
+            background-color: white;
         }
         
         .search__input:hover,
@@ -165,58 +168,25 @@
         margin-right: 20px; 
         clear: right;
     }
+        #about {
+            color: black;
+            text-decoration: none;
+        }
     
         
-    /* for responsive mobile-friendly page*/    
-        
-    @media only screen and (min-width: 300px) and (max-width: 479px){
-        #sideNav{
-            display: none;
-            margin-left: 170px;
-        }    
-        .sideNav2{
+    /* for responsive mobile-friendly page*/
+    @media only screen and (max-width: 992px){
+        .sideNav{
             display: block;
-            align-content: center;
-            float: left;
-            clear: none;
-            align-self: center;
-            margin-left: 200px;
-            
         }
-        hr{
-            float: none;
-            clear: none;
-        }
-
-        .cards{
-            width: 50%;
-            column-count: 2;
+        .cards img{
+            margin: 5px;
         }
         .cards > img{
-            margin: 3px;
-            width: 100%;
-            height: 200px;
-            
-            
-        }
-        .cards > button{
-            z-index: 10;
-            
-        }
-        #banner{
-            max-width: 100%;
-            margin: 0px auto;
-        }
-        #left{
-            display: none;
-        }
-        #right{
-            margin-right: 80px;
-        }
-        
+             margin: 5px;
+             } 
     }
-        
-    @media only screen and (min-width: 480px) and (max-width: 767px){  
+    @media only screen and (max-width: 767px){  
         #sideNav{
             display: none;
             margin-left: 170px;
@@ -267,21 +237,55 @@
         #right{
             margin-right: 80px;
         }
-        
     }
-        
-    @media only screen and (min-width: 992px){
-        .sideNav{
+    
+    @media only screen and (max-width: 479px){
+        #sideNav{
+            display: none;
+            margin-left: 170px;
+        }    
+        .sideNav2{
             display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 200px;
+            
         }
-        .cards img{
-            margin: 5px;
+        hr{
+            float: none;
+            clear: none;
         }
-    }
-     @media only screen and (min-width: 768px) and (max-width: 991px){
-         .cards > img{
-             margin: 5px;
-             }  
+
+        .cards{
+            width: 100%;
+            column-count: 1;
+        }
+        .cards > img{
+            margin: 3px;
+            width: 100%;
+            height: 200px;
+            
+            
+        }
+        .cards > button{
+            z-index: 10;
+            
+        }
+        #banner{
+            max-width: 100%;
+            margin: 0px auto;
+        }
+        #left{
+            display: none;
+        }
+        #right{
+            margin-right: 80px;
+        }
+        .buttonS {
+            right: 400px;
+        }
         
     }
 
@@ -295,9 +299,9 @@
             <button type="submit" style="background-color: transparent; border: 0px; "><i class="fa fa-search" onclick="functionsearch()"></i></button>
             
         <!-- LogIn Button -->
-        <a href="123.html">    
+        <a href="/webpages/123.html">    
         <div class="logIn"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png"><p>LogIn</p></button> </center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="/images/user.png"><p>LogIn</p></button> </center>
             </div>
             </a>
             <br/><br/>
@@ -306,7 +310,7 @@
             
             <!-- Company Logo -->
             <div class="logo">
-                <img src="logo.png"/>
+                <img src="/images/logo%20(2).png"/>
             </div> 
             
             <!-- horizontal lines -->
@@ -314,8 +318,8 @@
             <hr id="left" style="background-color: #d7d8d2; width: 20%; float: left; margin-left: 20px; clear: right; margin-top:-10px;"/>
         </div>    
                
-             <!-- Menu -->
-                <!-- Hamburger menu -->
+            <!-- Menu -->
+            <!-- Hamburger menu -->
             <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
               <!-- Side navigation Bar -->
              <div id="sideNav">
@@ -323,11 +327,11 @@
                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
                  <br/><br/>
-              <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html">Catalog</a>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="/webpages/shoppingList.html">Catalog</a>
                  <br/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
                 <br/><br/>
-              <a style="float: left; clear: both;" href="About.html">About Us</a>
+              <a style="float: left; clear: both;" href="About.html" id="about">About Us</a>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
                    
              </div>
@@ -335,24 +339,24 @@
         <!-- Image Banner -->
         
         <div class="w3-content w3-section" id="banner">  
-          <img class="mySlides w3-animate-fading" src="banner1.png" style="width:100%; height: 370px;"/>
-          <img class="mySlides w3-animate-fading" src="banner2.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="/images/banner1.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="/images/banner2.png" style="width:100%; height: 370px;"/>
         </div>
         
-            <!-- Featuring collection Images -->
-            <div class="cards">
-                <b style="font-size: 25px;">Featured Collections</b><br/>
-                    <img src="tool1.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
-                    
-                    <img src="tool7.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
+        <!-- Featuring collection Images -->
+        <div class="cards">
+            <b style="font-size: 25px;">Featured Collections</b><br/>
+                <img src="/images/tool1.PNG"/><button class="buttonS"><a href="/webpages/shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
                 
-                    <img src="pet_food.jpg"/><button id="btn"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
+                <img src="/images/tool7.PNG"/><button class="buttonS"><a class="buttonS" href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
+            
+                <img src="/images/catFood7.jpg"/><button class="buttonS" id="btn"><a href="/webpages/petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
+            
+                <img src="/images/home1.jpg"/><button class="buttonS"><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
                 
-                    <img src="home1.jpg"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
-                    
-                    <img src="bestseller4.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
-                    
-                    <img src="bestseller6.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
+                <img src="/images/bestseller4.PNG"/><button class="buttonS"><a href="/webpages/shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
+                
+                <img src="/images/bestseller6.PNG"/><button class="buttonS"><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
             </div>
 
         
