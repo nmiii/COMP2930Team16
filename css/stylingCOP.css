@@ -240,6 +240,7 @@
             }
             .desktopExtent{
                 width: 115%;
+                
             }
             
 /*map*/
@@ -301,6 +302,7 @@
                      
                  }
                  #bottomButton{
+                     visibility: hidden;
                      float: none;
                      position: absolute;
                      left: 0;
@@ -382,7 +384,7 @@
                      
                      
                  }
-                 #willBeHidden {
+                 .willBeHidden {
                      visibility: hidden;
                  }
                  
