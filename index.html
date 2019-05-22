@@ -12,7 +12,7 @@
         
         body{
             background-color: #f7f7f7;
-            background-image: url(branch-bright-desktop-backgrounds-1353938.jpg);
+            background-image: url(/images/newBackground.jpg);
             height: 100%;
             /* Center and scale the image nicely */
             background-position: center;
@@ -47,6 +47,9 @@
             color: color(#575756 a(0.8));
             text-transform: uppercase;
             letter-spacing: 1.5px;
+        }
+        #searchinput {
+            background-color: white;
         }
         
         .search__input:hover,
@@ -297,7 +300,7 @@
         <!-- LogIn Button -->
         <a href="123.html">    
         <div class="logIn"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="user.png"><p>LogIn</p></button> </center>
+           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="/images/user.png"><p>LogIn</p></button> </center>
             </div>
             </a>
             <br/><br/>
@@ -306,7 +309,7 @@
             
             <!-- Company Logo -->
             <div class="logo">
-                <img src="logo.png"/>
+                <img src="/images/logo%20(2).png"/>
             </div> 
             
             <!-- horizontal lines -->
@@ -335,24 +338,24 @@
         <!-- Image Banner -->
         
         <div class="w3-content w3-section" id="banner">  
-          <img class="mySlides w3-animate-fading" src="banner1.png" style="width:100%; height: 370px;"/>
-          <img class="mySlides w3-animate-fading" src="banner2.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="/images/banner1.png" style="width:100%; height: 370px;"/>
+          <img class="mySlides w3-animate-fading" src="/images/banner2.png" style="width:100%; height: 370px;"/>
         </div>
         
             <!-- Featuring collection Images -->
             <div class="cards">
                 <b style="font-size: 25px;">Featured Collections</b><br/>
-                    <img src="tool1.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
+                    <img src="/images/tool1.PNG"/><button><a href="/webpages/shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></button>
                     
-                    <img src="tool7.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
+                    <img src="/images/tool7.PNG"/><button><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Decor</a></button>
                 
-                    <img src="pet_food.jpg"/><button id="btn"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
+                    <img src="/images/catFood7.jpg"/><button id="btn"><a href="/webpages/petFood.html" style="text-decoration: none; color: black;">Pet Food</a></button>
                 
-                    <img src="home1.jpg"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
+                    <img src="/images/home1.jpg"/><button><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Needs</a></button>
                     
-                    <img src="bestseller4.PNG"/><button><a href="shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
+                    <img src="/images/bestseller4.PNG"/><button><a href="/webpages/shoppingList.html" style="text-decoration: none; color: black;">Seeds</a></button>
                     
-                    <img src="bestseller6.PNG"/><button><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
+                    <img src="/images/bestseller6.PNG"/><button><a href="/webpages/Grocery.html" style="text-decoration: none; color: black;">Grocery</a></button>
             </div>
 
         
@@ -422,6 +425,27 @@
             
             }
             
+        </script>
+        <script>
+
+            var db = firebase.database();
+
+                var dbRef = firebase.database().ref("nooforders/");
+
+                var refcount = dbRef.child("nooforderscounter");
+
+                refcount.on("value", function(snapshot) {
+
+              var some = snapshot.val();
+
+                    console.log(some);
+
+                    $("#change").html("<i>Ship Green</i> has shipped " + some + " Orders in a<b> Greener Way</b> till date!!");
+
+                    
+
+                });
+
         </script>
         
     </body>
