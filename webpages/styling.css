@@ -1,12 +1,12 @@
 body {
-    background-image: url(../images/newBackground.jpg);
+    background-image: url(../screenbg.jpg);
     background-color: #f7f7f7;
     height: 100%;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: color-burn;
+   
 }
 /* cart display styling */
 .theDiv {
@@ -106,3 +106,55 @@ body {
         }
        
 }
+
+@media only screen and (min-width: 300px) and (max-width: 479px){
+        #sideNavDiv{
+            display: none;
+            margin-left: 50%;
+            color: #575756;
+            width: 50%;
+        }    
+        .sideNav2Div{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 200px;
+            
+        } 
+         .cart,.checkout{
+            margin-top: 10px;
+             width: 20%;
+        }
+        .logo img{
+            width: 50%;
+        }
+        
+      
+    }
+         
+    @media only screen and (min-width: 480px) and (max-width: 767px){  
+        #sideNavDiv{
+            display: none;
+            margin-left: 50#;
+            color: #575756;
+            width: 170px;
+        }    
+        .sideNav2Div{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: 50%;
+            
+        }
+        .cart,.checkout{
+            margin-top: 10px;
+        }
+        .container2{
+            max-width: 100%;
+        }
+       
+    }
