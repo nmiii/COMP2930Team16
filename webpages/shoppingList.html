@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head><title>Shopping Page</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1">    
+     <meta name="viewport" content="width=device-width, initial-scale = 1.0, 
+maximum-scale=1.0, user-scalable=no" />   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Latest compiled and minified CSS -->
@@ -61,10 +62,28 @@
             </center>
             </div>
             </a>
-            <br style="float: left; clear: both;"/>
-            <hr>
+<!--            <br style="float: left; clear: both;"/>-->
+<!--            <hr>-->
         
         <!-- Menu -->
+        
+            <div id="menuToggle">
+              <input type="checkbox" />
+
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+              <a href="../index.html"><li>Home</li></a>
+              <a href="../About.html"><li>About Us</li></a>
+              <a href="../webpages/shoppingList.html"><li>Gardening</li></a>
+              <a href="../webpages/Grocery.html"><li>Grocery</li></a>
+                <a href="../webpages/petFood.html"><li>PetFood</li></a>
+            </ul>
+          </div>
+        
                 
         
             <!-- Hamburger menu -->
@@ -122,7 +141,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/bestseller2.png">
                                 <div class="btn-group">
-                                <button type="button" id="s2" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="s2" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -140,7 +159,7 @@
                             <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/bestseller4.png"><div class="btn-group">
-                                <button type="button" id="s3" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="s3" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -159,7 +178,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/bestseller5.png">
                                 <div class="btn-group">
-                                <button type="button" id="s4" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="s4" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -177,7 +196,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/bestseller7.png">
                                 <div class="btn-group">
-                                <button type="button" id="s5" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="s5" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -197,7 +216,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/bestseller8.png">
                                  <div class="btn-group">
-                                <button type="button" id="s6" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="s6" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -222,7 +241,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/tool7.PNG">
                                 <div class="btn-group">
-                                <button type="button" id="gt1" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="gt1"  class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
@@ -236,7 +255,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/tool1.PNG">
                                  <div class="btn-group">
-                                <button type="button" id="gt2" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="gt2" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                               <center>   
@@ -248,7 +267,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/tool2.PNG">
                                 <div class="btn-group">
-                                <button type="button" id="gt3" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="gt3" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                               <center>   
@@ -262,7 +281,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/tool3.PNG">
                                 <div class="btn-group">
-                                <button type="button" id="gt4" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="gt4" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
@@ -276,7 +295,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/tool8.jpg">
                                  <div class="btn-group">
-                                <button type="button" id="gt5" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="gt5" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
@@ -292,7 +311,7 @@
                             <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src ="../images/tool5.PNG">
                                   <div class="btn-group">
-                                <button type="button" id="gt6" onclick="cartFunction()">Add to Cart</button>
+                                <button type="button" id="gt6" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                               <center>   
