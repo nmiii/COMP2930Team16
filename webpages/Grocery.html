@@ -29,6 +29,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
 
 <style>
+    a:hover{
+        cursor: pointer;
+    }
     a:active{
         color: black;
     }
@@ -72,7 +75,7 @@ input[type=text] {
 
   background-color: white;
 
-  background-image: url("http://i47.tinypic.com/r02vbq.png");
+  background-image: url("../screenbg.jpg");
 
   background-position: left center; 
     
@@ -130,13 +133,18 @@ input[type=text]:focus {
 
     clear: both;
 
-    background-color:#679267;
+    
+    background-color: white;
+    
+    opacity: 0.91;
+                
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 
     margin: 10px 10px 10px 10px;
 
-    opacity: 0.7;
+   
 
-    color: beige;
+    color: black;
 
     
 
@@ -157,13 +165,18 @@ input[type=text]:focus {
 
     float: left;
 
-    background-color:#679267;
+    background-color:white;
+    
+    
+                
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+
 
     margin: 10px 10px 10px 10px;
 
-    opacity: 0.7;
+    opacity: 0.91;
 
-    color: beige;
+    color: black;
 
     
 
@@ -300,26 +313,28 @@ input[type=text]:focus {
         <!-- Hamburger menu -->
             <div class="sideNav2" id="sideNav2Div"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
         <div class="sideNav" id="sideNavDiv">
+            <a style="float: left; clear: both;text-decoration-line: none; color: black" href="../demo.html"\><b>&nbsp;&nbsp;Home</b></a>
+                 
+                 <br/><br/>
+           
 
-            <br/>
+            <b>&nbsp;&nbsp;Catalog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
 
-            <b>&nbsp;&nbsp;Home, Kitchen, Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-
-                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: beige; transition: height 350ms ease-in-out;" id="rightDirection"></a>
+                <a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a>
 
             
 
             <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px;">
 
-            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: beige;">Gardening</a></li>
+            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black;">Gardening</a></li>
 
-            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: beige;">Pet Food</a></li>
+            <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: black;">Pet Food</a></li>
 
-            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: beige;">Grocery</a></li>
+            <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: black;">Grocery</a></li>
 
             </div>    
-
-                
+            
+            <a style="float: left; clear: both; text-decoration: none; color: black;" href="../About.html">&nbsp;&nbsp;<b>About Us</b></a>   
 
         </div>
 
@@ -614,7 +629,7 @@ input[type=text]:focus {
 
         <script>
              function redirectHomePage() {
-                window.location.href= "../index.html";
+                window.location.href= "../demo.html";
             }
 
          function myFunction() {

@@ -21,17 +21,17 @@
 
          <script src="databaseCOP.js" type="text/javascript"></script>
         
-        <style>
-            #giftCard {
-                font-size: 90%;
-            }
-            #promoDiv {
-                
-            }
-            #products {
-                width: 264px;
-            }
+        
+       <style>
+           #gift {
+               font-size: 90%;
+           }
         </style>
+        
+
+
+        
+        
     </head>
     
     <body>
@@ -40,9 +40,7 @@
             
             <h1 id="reviewYourOrder">Review Your Order</h1>
             <br>
-           <!-- top div -->
             <div id="top">
-                <!-- shipping address block -->
                 <div id="shippingAddress">
                     <h2 style="display: inline-block">Shipping Address  </h2>
                     
@@ -59,18 +57,22 @@
                     <label>Shipping from: </label>
                     <input type="text" id="from" name="Shipping Products From: " value="BCIT,Burnaby"/>
                 </div>
-                </div>
                 
-                <!-- payment -->
+                </div>
+            
                 <div class="right" id="payment" class="thanosClass">
                     <h2 class="h2Inline" >Payment</h2>
                     <br>
+                    <!-- Paypal API -->
                     <div id="paypal-button-container" style="width: 50%"></div>
+                    
+                    
                     <br>
+                    
                 </div>
-                <!-- promo and address -->
+            
                 <div class="right" id="promoDiv">
-                    <h2 id="giftCard">Gift card and promotional code</h2>
+                    <h2 id="gift">Gift card and promotional code</h2>
                     
                         <input type="text" pattern="[a-zA-Z]{1,15}" name="promo" placeholder="Enter code" id="promoCode">
                         <button type="button" id="promoButton">Apply</button><br><br>
@@ -87,19 +89,17 @@
             
             
             </div>
-           
-    <!-- clear cart button -->
-    <br>
+           <!-- clear cart button -->
+   <br>
     <button type="button" class="placeYourOrder" id="clearCart"><i class="fa fa-shopping-cart fa-lg"></i>Clear Cart</button>
            
            
-        <!-- cart display -->
+           
         <div id="products">
             <div id="empty"></div>
         </div>
         
             <hr id="hiddenHr">
-             <!-- shipping choice -->
              <div id="shipping">
                 <h3>Choose your delivery options:</h3>
                 <input type="radio" name="shipping" value="11.97" onclick="showNone()" class="radioButton" required id="oneDayShipping">CDN$11.97 One-Day Shipping<br>
