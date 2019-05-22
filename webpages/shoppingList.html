@@ -7,214 +7,14 @@
     <!-- Latest compiled and minified CSS -->
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<!--        <link rel="stylesheet" type="text/css" href="styling.css">-->
-
+        <!--        <link rel="stylesheet" type="text/css" href="styling.css">-->
+        <link rel="stylesheet" href="stylingSHOP.css"/>
+        <link rel="stylesheet" type="text/css" href="styling.css">
         
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-   
-                
-<style>
-
-        /*Body styling*/
-        body{
-            background-image: url("../screenbg.jpg");
-            height: 100%;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    
-        /* cart button styling*/
-        .cart{
-            float: right;
-            width: 80px;
-            line-height: 18px;
-            margin-right: 50px;
-            }
-        .cart:hover{
-            border-bottom: 1px solid #575756;
-        }
-        .cart img{
-            width: 30px; 
-            float: left; 
-            clear: both; 
-            line-height: 18px; 
-            transform: translate(7px,0px);
-        }
-        .cart p{
-            display: block;
-            margin-left: 10px;
-        }
-    
-    /* Checkout button styling*/
-        .checkout{
-            float: right;
-            width: 80px;
-            line-height: 18px;
-            }
-        .checkout:hover{
-            border-bottom: 1px solid #575756;
-        }
-        .checkout img{
-            width: 30px; 
-            float: left; 
-            clear: both; 
-            line-height: 18px; 
-            transform: translate(17px,0px);
-        }
-        .checkout p{
-            display: block;
-            margin-left: 3px;
-        }
-    
-        .logo > img{
-            width: 130px; 
-            height: 120px;
-            float: left;
-        } 
-
-        .logo >img:hover{
-            cursor: pointer;
-        }
-    
-        /* side navigation bar*/    
-        #sideNav{
-         width: 20%;
-         float: left;
-         color: #575756;
-         padding: 10px 30px 30px 30px;
-         font-size: 20px;
-         clear: both;
-         display: block;
-        }
-    
-        /*Hamburger Menu*/    
-        .sideNav2{
-            display: none;  
-            margin-left: 150px;
-        } 
-        /* for the products*/
-        #main{
-            width: 70%;
-            height: 100%;
-            float: right;
-            color: black;
-            margin-right: 30px;
-       background-color: rgb(0,0,0); /* Fallback color */
-/*    background-color: rgba(0,0,0, 0.2);  Black w/opacity/see-through */
- 
-border:solid #C4C4C4;
-               background: #E5E5E5;
-               opacity: 0.91;
-    font-weight: bold;
-
-    border: 3px solid #f1f1f1;
-
-    border-radius: 10px;
-            
-
-        }    
-            #rightDirection:hover{
-                cursor: pointer;
-            }
-        /*the cart*/
-            #TheCart{
-                visibility: hidden;
-            }
-
-    
-    .container{
-        width: 100%;
-    }
-
-          .container2 .btn {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          background-color: black;
-          color: white;
-          font-size: 16px;
-          padding: 12px 24px;
-          border: none;
-          cursor: pointer;
-          border-radius: 5px;
-          text-align: center;
-        }
-
-        .container2 .btn:hover {
-          background-color: #3A7855;
-        } 
-    
-        .carousel-inner img {
-            margin: auto;
-        }
-    
-        
-    
-    /* for responsive mobile-friendly page*/    
-        
-    @media only screen and (min-width: 300px) and (max-width: 479px){
-        #sideNav{
-            display: none;
-            margin-left: 50%;
-            color: #575756;
-            width: 50%;
-        }    
-        .sideNav2{
-            display: block;
-            align-content: center;
-            float: left;
-            clear: none;
-            align-self: center;
-            margin-left: 200px;
-            
-        } 
-         .cart,.checkout{
-            margin-top: 10px;
-             width: 20%;
-        }
-        .logo img{
-            width: 50%;
-        }
-        .btn-group button{
-            margin-right: -70px;
-        }
-        
-      
-    }
-         
-    @media only screen and (min-width: 480px) and (max-width: 767px){  
-        #sideNav{
-            display: none;
-            margin-left: 50#;
-            color: #575756;
-            width: 170px;
-            margin-left: 30%;
-        }    
-        .sideNav2{
-            display: block;
-            align-content: center;
-            float: left;
-            clear: none;
-            align-self: center;
-            margin-left: +50%;
-            
-        }
-        .cart,.checkout{
-            margin-top: 10px;
-        }
-        .container2{
-            max-width: 100%;
-            clear: both;
-        }
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
        
-    }
-
-</style>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js">
         </script>
@@ -222,7 +22,7 @@ border:solid #C4C4C4;
         <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
-             https://firebase.google.com/docs/web/setup#config-web-app -->
+             https://firebase.google.com/docs/web/setup#config-web-app -->      
 
         <script>
           // Your web app's Firebase configuration
@@ -249,7 +49,7 @@ border:solid #C4C4C4;
         <!-- Cart Button -->
         <a href="cart.html">    
         <div class="cart"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="cart.png"><p>Cart</p></button>
+           <button><img src ="cart.png"><p>Cart</p></button>
             </center>
             </div>
             </a>
@@ -257,24 +57,25 @@ border:solid #C4C4C4;
         <!-- Checkout Button -->
         <a href="CheckOutPage.html">    
         <div class="checkout"><center>
-           <button style="background-color: transparent;color: #575756; border-radius: 50px;border: 0px solid #575756;"><img src ="checkout.png"><p>Checkout</p></button>
+           <button><img src ="checkout.png"><p>Checkout</p></button>
             </center>
             </div>
             </a>
-            <br/><br/><br/><br/><br/><br/>
-        <hr>
+            <br style="float: left; clear: both;"/>
+            <hr>
         
         <!-- Menu -->
                 
         
             <!-- Hamburger menu -->
-            <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
+            <div class="sideNav2"><span onclick="openNav()">&#9776; </span></div>
                 <!-- Side navigation Bar -->
              <div id="sideNav">
-              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../demo.html">Home</a>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../index.html">Home</a>
+
                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
-                 <br/><br/>
+                  <br style="float: left; clear: both;"/>
               <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html"><b>Catalog</b>&nbsp;&nbsp;&nbsp;</a>
                 <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
                  
@@ -284,9 +85,9 @@ border:solid #C4C4C4;
                 <li style="padding-bottom: 10px;"><a href="petFood.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
                 <li style="padding-bottom: 10px;"><a href="Grocery.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>  
             </div>
-                 <br/>
+                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
-                <br/><br/>
+                  <br style="float: left; clear: both;"/>
               <a style="float: left; clear: both; text-decoration: none; color: black;">About Us</a>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
                    
@@ -302,9 +103,9 @@ border:solid #C4C4C4;
                         <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller1.png" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/bestseller1.png">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="s1" class="btn" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -317,16 +118,11 @@ border:solid #C4C4C4;
                             </div>
                             </div>
 
-<<<<<<< HEAD
-
-                      <div class="col-md-4">
-=======
-                        <div class="col-md-4">
->>>>>>> e956d7253bed811a2bef71218b834d79ccc13e38
+                            <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller2.png" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/bestseller2.png">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="s2" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -343,8 +139,8 @@ border:solid #C4C4C4;
                             </div>
                             <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller4.png" style="height: 200px; width: 100%; display: block;"><div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                            <img class="card-img-top" src ="../images/bestseller4.png"><div class="btn-group">
+                                <button type="button" id="s3" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -361,9 +157,9 @@ border:solid #C4C4C4;
                             </div>
                             <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller5.png" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/bestseller5.png">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="s4" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -379,9 +175,9 @@ border:solid #C4C4C4;
                             
                               <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller7.png" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/bestseller7.png">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="s5" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -399,9 +195,9 @@ border:solid #C4C4C4;
                             
                               <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/bestseller8.png" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/bestseller8.png">
                                  <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="s6" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -424,9 +220,9 @@ border:solid #C4C4C4;
                         <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool7.PNG" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/tool7.PNG">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="gt1" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
@@ -438,9 +234,9 @@ border:solid #C4C4C4;
 
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool1.PNG" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/tool1.PNG">
                                  <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="gt2" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                               <center>   
@@ -450,9 +246,9 @@ border:solid #C4C4C4;
                             </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool2.PNG" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/tool2.PNG">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="gt3" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                               <center>   
@@ -464,9 +260,9 @@ border:solid #C4C4C4;
                             
                              <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool3.PNG" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/tool3.PNG">
                                 <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="gt4" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
@@ -478,9 +274,9 @@ border:solid #C4C4C4;
                             </div>
                                      <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool8.jpg" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/tool8.jpg">
                                  <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="gt5" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                                 
                             </div>
@@ -494,9 +290,9 @@ border:solid #C4C4C4;
                                                         
                                 <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src ="../images/tool5.PNG" style="height: 200px; width: 100%; display: block;">
+                            <img class="card-img-top" src ="../images/tool5.PNG">
                                   <div class="btn-group">
-                                <button type="button" style="transform: translate(25%,-100%); background-color: #f3d27e; border:1px solid black; border-radius: 2px; width: 200px; height: 40px; font-size: 15px;">Add to Cart</button>
+                                <button type="button" id="gt6" onclick="cartFunction()">Add to Cart</button>
                                 </div>
                             </div>
                               <center>   
@@ -506,15 +302,12 @@ border:solid #C4C4C4;
 
                             </div>
                             </div>
-                            
+                             
                        
                         </div>
                         </div>
                     </div>
-    
-      
-  </div>
-        
+ 
         
         <!--The Shopping Cart src"https://www.youtube.com/watch?v=q271lk0G6YQ" -->
         
