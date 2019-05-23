@@ -60,7 +60,7 @@
             text-align: center;
         }
 /* For mobile */
-@media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
+@media only screen and (max-device-width: 600px) and (orientation: portrait) {
     #mainDiv {
         height: 1900px;
         position: relative;
@@ -124,7 +124,7 @@
         } 
 
         /* For mobile */
-        @media only screen and (min-device-width:320px) and (max-device-width: 600px) and (orientation: portrait) {
+        @media only screen and (max-device-width: 600px) and (orientation: portrait) {
             #mainDiv {
                 height: 1900px;
                 position: relative;
@@ -335,7 +335,10 @@
                 .btn-group button{
                     margin-right: 170px;
                 }
-
+                #main {
+                    width: 100%;
+                    margin-right: 0px;
+                }
 
             }
 

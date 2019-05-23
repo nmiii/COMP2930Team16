@@ -294,8 +294,33 @@
         
     
     /* for responsive mobile-friendly page*/    
-        
-    @media only screen and (min-width: 300px) and (max-width: 479px){
+         
+    @media only screen and (max-width: 767px){  
+        #sideNav{
+            display: none;
+            margin-left: 50#;
+            color: #575756;
+            width: 170px;
+            margin-left: 30%;
+        }    
+        .sideNav2{
+            display: block;
+            align-content: center;
+            float: left;
+            clear: none;
+            align-self: center;
+            margin-left: +50%;
+            
+        }
+        .cart,.checkout{
+            margin-top: 10px;
+        }
+        .container2{
+            max-width: 100%;
+            clear: both;
+        }
+    }
+@media only screen and (max-width: 479px){
         #sideNav{
             display: none;
             margin-left: 50%;
@@ -338,35 +363,5 @@
             width: 100%;
             margin-top: 50px;
             height: 3450px;
-            
         }
-        
-      
-    }
-         
-    @media only screen and (min-width: 480px) and (max-width: 767px){  
-        #sideNav{
-            display: none;
-            margin-left: 50#;
-            color: #575756;
-            width: 170px;
-            margin-left: 30%;
-        }    
-        .sideNav2{
-            display: block;
-            align-content: center;
-            float: left;
-            clear: none;
-            align-self: center;
-            margin-left: +50%;
-            
-        }
-        .cart,.checkout{
-            margin-top: 10px;
-        }
-        .container2{
-            max-width: 100%;
-            clear: both;
-        }
-       
     }
