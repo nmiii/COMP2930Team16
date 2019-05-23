@@ -307,7 +307,7 @@
                      float: none;
                      position: relative;
                      left: -10px;
-                     top:940px;
+                     top:440px;
                      margin-left: 30px;
                      width: 250px;
                  }
@@ -325,7 +325,7 @@
                  #payment {
                      position: relative;
                      left: -20px;
-                     top: 1700px;
+                     top: 1200px;
                      background-color: white;
                      padding-left: 30px;
                      margin-left: 0;
@@ -371,11 +371,11 @@
                  
                  #output {
                      position: relative;
-                     top: 600px;
-                     border: solid 0.5px #C4C4C4;
+                     top: 0px;
+                     
                      padding: 25px;
                      padding-left: 30px;
-                     background: white;
+                     
                      opacity: 0.91;
                      width: 280px;
                      left: -25px;
