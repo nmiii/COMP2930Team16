@@ -4,7 +4,7 @@ ShipGreen: An e-commerce website shipping your products in a Greener Way!
 
 ![](images/poster.jpg)
 
-Instructions:/n
+Instructions:<br>
 Login/n
 Add products to the cart/n
 Go to check out page/n
