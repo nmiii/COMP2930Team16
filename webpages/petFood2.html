@@ -2,7 +2,8 @@
 <html lang="en">
      <head>
       <title>Shopping Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale = 1.0,
+maximum-scale=1.0, user-scalable=no" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -52,23 +53,43 @@
       <br style="float: left; clear: both;"/>
       <hr>
       <!-- Menu -->
-      <!-- Hamburger menu -->
-      <div class="sideNav2"><span onclick="openNav()">&#9776; </span></div>
-      <!-- Side navigation Bar -->
-      <div id="sideNav">
-         <a style="float: left; clear: both; text-decoration: none; color: black;" href="../index.html">Home</a>
-         <br style="float: left; clear: both;"/>
-         <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
-         <br style="float: left; clear: both;"/>
-         <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html"><b>Catalog</b>&nbsp;&nbsp;&nbsp;</a>
-         <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
-         <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none;">
-            <ul style="list-style-type:none;">
-            <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black; font-size: 17px;">Gardening</a></li>
-            <li style="padding-bottom: 10px;"><a href="petFood2.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
-            <li style="padding-bottom: 10px;"><a href="Grocery2.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>
-             </ul>
-         </div>
+       <!-- Menu -->
+        
+            <div id="menuToggle">
+              <input type="checkbox" />
+
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu" style="list-style-type:none;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../About.html">About Us</a></li>
+                <li><a href="../webpages/shoppingList.html">Gardening</a></li>
+                <li><a href="../webpages/Grocery.html">Grocery</a></li>
+                <li><a href="../webpages/petFood.html">PetFood</a></li>
+            </ul>
+          </div>
+
+             <div id="sideNav">
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../index.html">Home</a>
+
+                 <br style="float: left; clear: both;"/>
+                 <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
+                  <br style="float: left; clear: both;"/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html"><b>Catalog</b>&nbsp;&nbsp;&nbsp;</a>
+                <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
+                 
+            
+            <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none; ">
+                <ul style="list-style-type:none;">
+                <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black; font-size: 17px;">Gardening</a></li>
+                <li style="padding-bottom: 10px;"><a href="petFood2.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
+                <li style="padding-bottom: 10px;"><a href="Grocery2.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>  
+                </ul>
+            </div>
+       
          <br style="float: left; clear: both;"/>
          <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
          <br style="float: left; clear: both;"/>
@@ -87,13 +108,14 @@
                         <div class="btn-group">
                            <button type="button" id="df1" class="btn" onclick="cartFunction()">Add to Cart</button>
                         </div>
-                     </div>
+                     </div><center>
                      <div class="card-body">
-                         
-                           <p class="card-text" style="margin-top: -15px;">Dog Food 1</p>
+                           
+                           <p class="card-text" style="margin-top: -15px;">Pedigree</p>
                            <p class="card-text" style="margin-top: -15px;">Price: CAD 0.99</p>
                          
                      </div>
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -102,14 +124,16 @@
                            <button type="button" id="df2" onclick="cartFunction()">Add to Cart</button>
                         </div>
                                     </div>
+                      <center>
                      <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             
-                              <p class="card-text" style="margin-top: -15px;">Dog Food 2</p>
+                              <p class="card-text" style="margin-top: -15px;">Prairie</p>
                               <p class="card-text" style="margin-top: -15px;">Price: CAD 1.99</p>
                             
                         </div>
                      </div>
+                          </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -118,14 +142,16 @@
                            <button type="button" id="df3" onclick="cartFunction()">Add to Cart</button>
                         </div>
                           </div>
+                      <center>
                      <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             
-                              <p class="card-text" style="margin-top: -15px;">Dog Food 3</p>
+                              <p class="card-text" style="margin-top: -15px;">Cesar Dog Food</p>
                               <p class="card-text" style="margin-top: -15px;">Price: CAD 2.49</p>
                             
                         </div>
                      </div>
+                          </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -133,15 +159,16 @@
                         <div class="btn-group">
                            <button type="button" id="df4" onclick="cartFunction()">Add to Cart</button>
                         </div>
-                     </div>
+                     </div><center>
                      <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             
-                              <p class="card-text" style="margin-top: -15px;">Dog Food 4</p>
+                              <p class="card-text" style="margin-top: -15px;">Blue Wilderness Dog Food</p>
                               <p class="card-text" style="margin-top: -15px;">Price: CAD 4.99</p>
                             
                         </div>
                      </div>
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -149,15 +176,15 @@
                         <div class="btn-group">
                            <button type="button" id="df5" onclick="cartFunction()">Add to Cart</button>
                         </div>
-                     </div>
+                     </div><center>
                      <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             
-                              <p class="card-text" style="margin-top: -15px;">Dog Food 5</p>
+                              <p class="card-text" style="margin-top: -15px;">Kibbles n Bits</p>
                               <p class="card-text" style="margin-top: -15px;">Price: CAD 0.99</p>
                             
                         </div>
-                     </div>
+                      </div></center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -165,15 +192,15 @@
                         <div class="btn-group">
                            <button type="button" id="df6" onclick="cartFunction()">Add to Cart</button>
                         </div>
-                     </div>
+                     </div><center>
                      <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             
-                              <p class="card-text" style="margin-top: -15px;">Dog Food 6</p>
+                              <p class="card-text" style="margin-top: -15px;">Authority's Dog Food</p>
                               <p class="card-text" style="margin-top: -15px;">Price: CAD 1.49</p>
                             
                         </div>
-                     </div>
+                      </div></center>
                   </div>
                </div>
             </div>
@@ -189,10 +216,10 @@
                            <button type="button" id="cf1" onclick="cartFunction()">Add to Cart</button>
                         </div>
                      </div>
-                      
-                        <p class="card-text" style="margin-top: -15px;">Cat Food 1</p>
+                      <center>
+                        <p class="card-text" style="margin-top: -15px;">Friskies</p>
                         <p class="card-text" style="margin-top: -15px;">Price: CAD 3.99</p>
-                      
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -200,11 +227,11 @@
                         <div class="btn-group">
                            <button type="button" id="cf2" onclick="cartFunction()">Add to Cart</button>
                         </div>
-                     </div>
+                     </div><center>
                       
-                        <p class="card-text" style="margin-top: -15px;">Cat Food 2</p>
+                        <p class="card-text" style="margin-top: -15px;">Fancy Feast</p>
                         <p class="card-text" style="margin-top: -15px;">Price: CAD 5.99</p>
-                      
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -213,10 +240,10 @@
                            <button type="button" id="cf3" onclick="cartFunction()">Add to Cart</button>
                         </div>
                      </div>
-                      
-                        <p class="card-text" style="margin-top: -15px;">Cat Food 3</p>
+                      <center>
+                        <p class="card-text" style="margin-top: -15px;">Blue Wilderness's Cat Food</p>
                         <p class="card-text" style="margin-top: -15px;">Price: CAD 4.99</p>
-                      
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -225,10 +252,10 @@
                            <button type="button" id="cf4" onclick="cartFunction()">Add to Cart</button>
                         </div>
                      </div>
-                      
-                        <p class="card-text" style="margin-top: -15px;">Cat Food 4</p>
+                       <center>
+                        <p class="card-text" style="margin-top: -15px;">Source's Cat</p>
                         <p class="card-text" style="margin-top: -15px;">Price: CAD 6.99</p>
-                      
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -237,10 +264,10 @@
                            <button type="button" id="cf5" onclick="cartFunction()">Add to Cart</button>
                         </div>
                      </div>
-                      
-                        <p class="card-text" style="margin-top: -15px;">Cat Food 5</p>
+                      <center>
+                        <p class="card-text" style="margin-top: -15px;">Purina's Cat Food</p>
                         <p class="card-text" style="margin-top: -15px;">Price: CAD 7.99</p>
-                      
+                      </center>
                   </div>
                   <div class="col-md-4">
                      <div class="card mb-4 box-shadow">
@@ -249,10 +276,10 @@
                            <button type="button" id="cf6" onclick="cartFunction()">Add to Cart</button>
                         </div>
                      </div>
-                      
-                        <p class="card-text" style="margin-top: -15px;">Cat Food 6</p>
+                        <center>
+                        <p class="card-text" style="margin-top: -15px;">Source's Cat Food</p>
                         <p class="card-text" style="margin-top: -15px;">Price: CAD 7.99</p>
-                      
+                      </center>
                   </div>
                </div>
             </div>
