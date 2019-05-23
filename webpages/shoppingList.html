@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/styling.css">
     <link rel="stylesheet" href="../css/stylingSHOP.css"/>
+        <style>
+            #cart {
+                position: relative;
+                top: 60px;
+                right: 60px;
+            }
+        </style>
         
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -45,7 +52,7 @@
     
         <!-- Cart Button -->
       <form style="display: inline" action="cart.html" method="get">
-         <div class="cart">
+         <div class="cart" id="cart">
             <button><img src ="../images/cart.png" alt="cart"><br> &nbsp;&nbsp;&nbsp;Cart</button>
          </div>
       </form>
