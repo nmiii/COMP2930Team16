@@ -312,26 +312,26 @@
             
         } 
          .cart{
-             transform: translate(-180px,35px);
+             transform: translate(-180px,25px);
              width: 20px;
         }
+     
         .checkout{
-            transform: translate(0px,35px);
+            transform: translate(0px,25px);
         }
         
         .logo img{
             clear: both;
         }
-        .logo{
-            
-          
-        }
+ 
         .btn-group button{
             transform: translate(70px,-50px);
         }
         #menuToggle{
             display: block;
             float: left;
+            margin-top: -100px;
+            margin-left: -30px;
         }
         #main{
             float: left;
