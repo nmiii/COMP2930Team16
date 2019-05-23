@@ -4,12 +4,12 @@ ShipGreen: An e-commerce website shipping your products in a Greener Way!
 
 ![](images/poster.jpg)
 
-Instructions:
-Login
-Add products to the cart
-Go to check out page
-Calculate your order
-Choose Green shipping method to display environmental awareness information.
-Pay by Paypal/Credit Card/Debit Card
-Place your order
-Continue shopping
+Instructions:/n
+Login/n
+Add products to the cart/n
+Go to check out page/n
+Calculate your order/n
+Choose Green shipping method to display environmental awareness information./n
+Pay by Paypal/Credit Card/Debit Card/n
+Place your order/n
+Continue shopping/n
