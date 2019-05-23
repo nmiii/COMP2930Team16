@@ -279,7 +279,7 @@
 
                      overflow-y: scroll;
                     background-repeat: repeat-y;
-                     
+                    
                  }
                  
                  .right {
@@ -296,9 +296,11 @@
                      position: absolute;
                      left: auto;
                      margin-top: 30px;
-                     margin-left: 30px;
+                     margin-left: 10px;
+                     padding-left: 30px;
                      margin-bottom: 30px;
                      top: 1420px;
+                     width: 280px;
                      
                  }
                  #bottomButton{
@@ -315,7 +317,7 @@
                  #top {
                      position: absolute;
                      margin-top:130px;
-                     margin-left: 30px;
+                     margin-left: 10px;
                      padding-left: 30px;
                      position: relative;
                      top: -160px;
@@ -359,13 +361,15 @@
                  #rightSide{
                      top: 750px;
                      position: absolute;
-                     margin-left: 30px;
+                     padding-left: 30px;
+                     margin-left: 10px;
                      left: 10px;
+                     width: 274px;
                  }
                  
                  #output {
                      position: absolute;
-                     top: 1920px;
+                     top: 920px;
                      border: solid 0.5px #C4C4C4;
                      padding: 25px;
                      padding-left: 30px;
@@ -377,9 +381,10 @@
                  }
                  #products{
                      position: absolute;
-                     top: 1690px;
-                     margin-left: 30px;
-                     width: 280px;
+                     top: 1940px;
+                     margin-left: 20px;
+                     padding-left: 30px;
+                     width: 300px;
                      left: 0;
                      
                      
@@ -473,8 +478,9 @@
                  }
                  #clearCart{
                      position: absolute;
-                     top: 1660px;
+                     top: 1900px;
                      left: 50px;
+                     width: 280px;
                  }
             }
 
