@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head><title>Home Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0,maximum-scale=1.0, user-scalable=no" />   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
         @use postcss-color-function;
@@ -132,6 +132,130 @@
         display: none;  
         margin-left: 150px;
     } 
+    
+    a:hover
+        {
+          color: tomato;
+        }
+
+        #menuToggle
+        {
+          display: none;
+          position: relative;
+          top: 50px;
+          left: 50px;
+
+          z-index: 1;
+
+          -webkit-user-select: none;
+          user-select: none;
+        }
+
+        #menuToggle input
+        {
+          display: block;
+          width: 40px;
+          height: 32px;
+          position: absolute;
+          top: -7px;
+          left: -5px;
+
+          cursor: pointer;
+
+          opacity: 0; /* hide this */
+          z-index: 2; /* and place it over the hamburger */
+
+          -webkit-touch-callout: none;
+          color:black
+        }
+
+        /*
+         * Just a quick hamburger
+         */
+        #menuToggle span
+        {
+          display: block;
+          width: 33px;
+          height: 4px;
+          margin-bottom: 5px;
+          position: relative;
+          background: black;
+          border-radius: 3px;
+          z-index: 1;
+          transform-origin: 4px 0px;
+          transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                      background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                      opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child
+        {
+          transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2)
+        {
+          transform-origin: 0% 100%;
+        }
+
+        /* 
+         * Transform all the slices of hamburger
+         * into a crossmark.
+         */
+        #menuToggle input:checked ~ span
+        {
+          opacity: 1;
+          transform: rotate(45deg) translate(-2px, -1px);
+          background: #232323;
+        }
+
+        /*
+         * But let's hide the middle one.
+         */
+        #menuToggle input:checked ~ span:nth-last-child(3)
+        {
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        /*
+         * Ohyeah and the last one should go the other direction
+         */
+        #menuToggle input:checked ~ span:nth-last-child(2)
+        {
+          transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu
+        {
+          position: absolute;
+          width: 300px;
+          margin: -100px 0 0 -50px;
+          padding: 50px;
+          padding-top: 125px;
+          background: #ededed;
+          list-style-type: none;
+          -webkit-font-smoothing: antialiased;
+          /* to stop flickering of text in safari */
+          transform-origin: 0% 0%;
+          transform: translate(-100%, 0);
+          transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+
+        #menu li
+        {
+          padding: 10px 0;
+          font-size: 22px;
+        }
+
+        /*
+         * And let's slide it in from the left
+         */
+        #menuToggle input:checked ~ ul
+        {
+          transform: none;
+        }
+
         
         
     .w3-content,.w3-auto{
@@ -239,6 +363,10 @@
         #right{
             margin-right: 80px;
         }
+        #menuToggle{
+            display: block;
+            float: left;
+        }
     }
     /*  responsive for Mobile Devices*/
     @media only screen and (max-width: 479px){
@@ -289,6 +417,10 @@
             right: 400px;
             
         }
+        #menuToggle{
+            display: block;
+            float: left;
+        }
         
     }
 
@@ -323,23 +455,46 @@
         </div>    
                
             <!-- Menu -->
-            <!-- Hamburger menu -->
-            <div class="sideNav2"><span style="font-size:30px;cursor:pointer; align: center;" onclick="openNav()">&#9776; </span></div>
-              <!-- Side navigation Bar -->
+        
+            <div id="menuToggle">
+              <input type="checkbox" />
+
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu" style="list-style-type:none;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../About.html">About Us</a></li>
+                <li><a href="../webpages/shoppingList.html">Gardening</a></li>
+                <li><a href="../webpages/Grocery.html">Grocery</a></li>
+                <li><a href="../webpages/petFood.html">PetFood</a></li>
+            </ul>
+          </div>
+
              <div id="sideNav">
-              <a style="float: left; clear: both; text-decoration: none; color: black;" href="index.html"><b>Home</b></a>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="../index.html">Home</a>
+
                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left; clear: both;"/>
-                 <br/><br/>
-              <a style="float: left; clear: both; text-decoration: none; color: black;" href="/webpages/shoppingList.html">Catalog</a>
-                 <br/>
+                  <br style="float: left; clear: both;"/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="shoppingList.html"><b>Catalog</b>&nbsp;&nbsp;&nbsp;</a>
+                <b><a class="fa fa-angle-rightfa fa-angle-right" onclick="myFunction()" style="text-decoration-line: none; color: black; transition: height 350ms ease-in-out;" id="rightDirection"></a></b>
+              <div id="list" style="padding-left: 20px; list-style: none; padding-top: 10px; display: none; ">
+                <ul style="list-style-type:none;">
+                <li style="padding-bottom: 10px;"><a href="shoppingList.html" style="text-decoration: none; color: black; font-size: 17px;">Gardening</a></li>
+                <li style="padding-bottom: 10px;"><a href="petFood2.html" style="text-decoration: none; color: black; font-size: 17px;">Pet Food</a></li>
+                <li style="padding-bottom: 10px;"><a href="Grocery2.html" style="text-decoration: none; color: black; font-size: 17px;">Grocery</a></li>  
+                </ul>
+            </div>
+                  <br style="float: left; clear: both;"/>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/>
-                <br/><br/>
-              <a style="float: left; clear: both;" href="/webpages/About.html" id="about">About Us</a>
+                  <br style="float: left; clear: both;"/>
+              <a style="float: left; clear: both; text-decoration: none; color: black;" href="About.html">About Us</a>
                  <hr style="background-color: #d7d8d2; width: 20%; float: left;clear: both;"/> 
                    
              </div>
-        
         <!-- Image Banner -->
         
         <div class="w3-content w3-section" id="banner">  
