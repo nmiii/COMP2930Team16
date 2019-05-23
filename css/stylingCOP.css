@@ -293,47 +293,49 @@
             
                  #shipping {
                      float:none;
-                     position: absolute;
+                     position: relative;
                      left: auto;
                      margin-top: 30px;
                      margin-left: 10px;
                      padding-left: 30px;
                      margin-bottom: 30px;
-                     top: 1420px;
+                     top: 240px;
                      width: 280px;
                      
                  }
-                 #bottomButton{
-                     visibility: hidden;
+                 #bottomButton{ 
                      float: none;
-                     position: absolute;
-                     left: 0;
-                     top:2370px;
-                     
+                     position: relative;
+                     left: -10px;
+                     top:940px;
                      margin-left: 30px;
-                     width: 280px;
+                     width: 250px;
                  }
                 
                  #top {
-                     position: absolute;
+                     position: relative;
                      margin-top:130px;
                      margin-left: 10px;
                      padding-left: 30px;
                      position: relative;
-                     top: -160px;
+                     top: 370px;
                      width:300px;
-                     height: 580px;
+                     height: 430px;
                  }
                  #payment {
                      position: relative;
-                     left:auto;
-                     top: auto;
+                     left: -20px;
+                     top: 1700px;
+                     background-color: white;
+                     padding-left: 30px;
+                     margin-left: 0;
+                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
                  }
             
                  #promoDiv {
                      position: relative;
                      left:auto;
-                     top:auto;
+                     top:-150px;
                  }
             
                  #Content001{
@@ -359,29 +361,30 @@
                  }
                  
                  #rightSide{
-                     top: 750px;
-                     position: absolute;
+                     top: 240px;
+                     position: relative;
                      padding-left: 30px;
                      margin-left: 10px;
-                     left: 10px;
+                     left: 0;
                      width: 274px;
                  }
                  
                  #output {
-                     position: absolute;
-                     top: 920px;
+                     position: relative;
+                     top: 600px;
                      border: solid 0.5px #C4C4C4;
                      padding: 25px;
                      padding-left: 30px;
                      background: white;
                      opacity: 0.91;
                      width: 280px;
-                     left: 0px;
+                     left: -25px;
+                     margin-left: 0;
         
                  }
                  #products{
                      position: absolute;
-                     top: 1940px;
+                     top: 100px;
                      margin-left: 20px;
                      padding-left: 30px;
                      width: 300px;
@@ -477,8 +480,8 @@
                      visibility: hidden;
                  }
                  #clearCart{
-                     position: absolute;
-                     top: 1900px;
+                     position: relative;
+                     top: -170px;
                      left: 50px;
                      width: 280px;
                  }
