@@ -237,7 +237,7 @@
                 /* for the products*/
                 #main{
                     width: 70%;
-                    height: 100%;
+                    height: 200%;
                     float: right;
                     color: black;
                     margin-right: 30px;
@@ -338,6 +338,7 @@
                 #main {
                     width: 100%;
                     margin-right: 0px;
+                    height: 650%;
                 }
 
             }
