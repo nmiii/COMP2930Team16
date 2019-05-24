@@ -28,6 +28,202 @@ firebase.auth().onAuthStateChanged(function(user) {
                     var uid = user.uid;
                     var cartPath = firebase.database().ref().child("users").child(uid).child("cart");
                     // DOG FOOD
+                    
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            var checkOutDiv = document.getElementById("checkOutDiv");                         checkOutDiv.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df1")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("div");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("div");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("div");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                             /* add span price class spanPrice =====================================================*/
+                            var spanPrice = document.createElement("span");
+                            spanPrice.className="spanPrice";
+                            divPrice.appendChild(spanPrice);
+                            
+                            /* add span quantity class spanQuantity=============================================== */
+                            var spanQuantity = document.createElement("span");
+                            spanQuantity.className="spanQuantity";
+                            divQuantity.appendChild(spanQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df1").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df1");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                spanPrice.innerHTML = price;
+                                divPrice.innerHTML = "Price: " + "<span class='spanPrice'>"+ price + "</span>";
+                               
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                spanQuantity.innerHTML = q;
+                                divQuantity.innerHTML = "Quantity: " + "<span class='spanQuantity'>" + q + "</span>";
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            var checkOutDiv = document.getElementById("checkOutDiv");                         checkOutDiv.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df2")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("div");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("div");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("div");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                             /* add span price class spanPrice =====================================================*/
+                            var spanPrice = document.createElement("span");
+                            spanPrice.className="spanPrice";
+                            divPrice.appendChild(spanPrice);
+                            
+                            /* add span quantity class spanQuantity=============================================== */
+                            var spanQuantity = document.createElement("span");
+                            spanQuantity.className="spanQuantity";
+                            divQuantity.appendChild(spanQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df2").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df2");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                spanPrice.innerHTML = price;
+                                divPrice.innerHTML = "Price: " + "<span class='spanPrice'>"+ price + "</span>";
+                               
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                spanQuantity.innerHTML = q;
+                                divQuantity.innerHTML = "Quantity: " + "<span class='spanQuantity'>" + q + "</span>";
+                            })
+                        }
+                    });
+                    cartPath.once('value', function(snapshot){
+                        var products = document.getElementById("products");
+                            var checkOutDiv = document.getElementById("checkOutDiv");                         checkOutDiv.appendChild(products);
+                        // CHANGE DF1
+                        if (snapshot.hasChild("df3")){
+                            // GENERAL DOM
+                            var theDiv = document.createElement("div");
+                            theDiv.className = "theDiv";
+                            products.appendChild(theDiv);
+
+                            var imgDiv = document.createElement("div");
+                            imgDiv.className = "dImg";
+                            theDiv.appendChild(imgDiv);
+
+                            var divName = document.createElement("div");
+                            divName.className = "dName";
+                            theDiv.appendChild(divName);
+
+                            var divPrice = document.createElement("div");
+                            divPrice.className = "dPrice";
+                            theDiv.appendChild(divPrice);
+
+                            var divQuantity = document.createElement("div");
+                            divQuantity.className = "dQuantity";
+                            theDiv.appendChild(divQuantity);
+                            
+                             /* add span price class spanPrice =====================================================*/
+                            var spanPrice = document.createElement("span");
+                            spanPrice.className="spanPrice";
+                            divPrice.appendChild(spanPrice);
+                            
+                            /* add span quantity class spanQuantity=============================================== */
+                            var spanQuantity = document.createElement("span");
+                            spanQuantity.className="spanQuantity";
+                            divQuantity.appendChild(spanQuantity);
+                            
+                            // ITEM SPECIFIC DOM
+                            // CHANGE DF1
+                            var qPath = firebase.database().ref().child("users").child(uid).child("cart").child("df3").child("quantity");
+                            // CHANGE DF1
+                            var items = firebase.database().ref().child("items").child("df3");
+                            var imgPath = items.child("img");
+                            var namePath = items.child("name");
+                            var pricePath = items.child("price");
+                            imgPath.on('value', function (snap) {
+                                var img = snap.val();
+                                imgDiv.style.backgroundImage = "url(" + img + ")";
+                            });
+                            namePath.on('value', function (snap) {
+                                var name = snap.val();
+                                divName.innerHTML = name;
+                            });
+                            pricePath.on('value', function (snap) {
+                                var price = snap.val();
+                                spanPrice.innerHTML = price;
+                                divPrice.innerHTML = "Price: " + "<span class='spanPrice'>"+ price + "</span>";
+                               
+                            });
+                            qPath.on('value', function (snap) {
+                                var q = snap.val();
+                                spanQuantity.innerHTML = q;
+                                divQuantity.innerHTML = "Quantity: " + "<span class='spanQuantity'>" + q + "</span>";
+                            })
+                        }
+                    });
 
                     cartPath.once('value', function(snapshot){
                         var products = document.getElementById("products");
