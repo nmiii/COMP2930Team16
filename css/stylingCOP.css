@@ -485,6 +485,10 @@
                      left: 50px;
                      width: 280px;
                  }
+                 input[type="text"] {
+                     width: 120px;
+                 }
+                 
             }
 
                 
